@@ -29,10 +29,7 @@ namespace audiovisalParcial.Design.Panel.Brand
                 {
                     txtBrandDescripcion.Text = DescripcionBrand;
                 }
-                else 
-                {
-                    btnBrandEliminar.Enabled = false;
-                }
+               
             }
             catch (Exception)
             {
@@ -76,7 +73,6 @@ namespace audiovisalParcial.Design.Panel.Brand
                 }
                 else
                     MessageBox.Show("Marca no existe");
-                this.Close();
             }
             catch (Exception)
             {

@@ -30,14 +30,16 @@ namespace audiovisalParcial.Design.Panel.Brand
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBrandAgregar = new System.Windows.Forms.Button();
+            this.btnBrandBuscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBrandBuscar = new System.Windows.Forms.TextBox();
+            this.cxbBrandCriterio = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dvgBrand = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cxbBrandCriterio = new System.Windows.Forms.ComboBox();
-            this.txtBrandBuscar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnBrandBuscar = new System.Windows.Forms.Button();
-            this.btnBrandAgregar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgBrand)).BeginInit();
             this.panel2.SuspendLayout();
@@ -46,6 +48,8 @@ namespace audiovisalParcial.Design.Panel.Brand
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnBrandAgregar);
             this.panel1.Controls.Add(this.btnBrandBuscar);
             this.panel1.Controls.Add(this.label2);
@@ -56,6 +60,59 @@ namespace audiovisalParcial.Design.Panel.Brand
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 384);
             this.panel1.TabIndex = 0;
+            // 
+            // btnBrandAgregar
+            // 
+            this.btnBrandAgregar.Location = new System.Drawing.Point(105, 152);
+            this.btnBrandAgregar.Name = "btnBrandAgregar";
+            this.btnBrandAgregar.Size = new System.Drawing.Size(83, 72);
+            this.btnBrandAgregar.TabIndex = 5;
+            this.btnBrandAgregar.Text = "Agregar";
+            this.btnBrandAgregar.UseVisualStyleBackColor = true;
+            this.btnBrandAgregar.Click += new System.EventHandler(this.btnBrandAgregar_Click);
+            // 
+            // btnBrandBuscar
+            // 
+            this.btnBrandBuscar.Location = new System.Drawing.Point(13, 152);
+            this.btnBrandBuscar.Name = "btnBrandBuscar";
+            this.btnBrandBuscar.Size = new System.Drawing.Size(83, 72);
+            this.btnBrandBuscar.TabIndex = 4;
+            this.btnBrandBuscar.Text = "Buscar";
+            this.btnBrandBuscar.UseVisualStyleBackColor = true;
+            this.btnBrandBuscar.Click += new System.EventHandler(this.btnBrandBuscar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(74, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Buscar";
+            // 
+            // txtBrandBuscar
+            // 
+            this.txtBrandBuscar.Location = new System.Drawing.Point(13, 112);
+            this.txtBrandBuscar.Name = "txtBrandBuscar";
+            this.txtBrandBuscar.Size = new System.Drawing.Size(175, 20);
+            this.txtBrandBuscar.TabIndex = 2;
+            // 
+            // cxbBrandCriterio
+            // 
+            this.cxbBrandCriterio.FormattingEnabled = true;
+            this.cxbBrandCriterio.Location = new System.Drawing.Point(13, 42);
+            this.cxbBrandCriterio.Name = "cxbBrandCriterio";
+            this.cxbBrandCriterio.Size = new System.Drawing.Size(175, 21);
+            this.cxbBrandCriterio.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(74, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Criterios";
             // 
             // dvgBrand
             // 
@@ -79,58 +136,25 @@ namespace audiovisalParcial.Design.Panel.Brand
             this.panel2.Size = new System.Drawing.Size(576, 384);
             this.panel2.TabIndex = 2;
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Criterios";
+            this.button1.Location = new System.Drawing.Point(13, 230);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 72);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Editar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cxbBrandCriterio
+            // button2
             // 
-            this.cxbBrandCriterio.FormattingEnabled = true;
-            this.cxbBrandCriterio.Location = new System.Drawing.Point(13, 42);
-            this.cxbBrandCriterio.Name = "cxbBrandCriterio";
-            this.cxbBrandCriterio.Size = new System.Drawing.Size(175, 21);
-            this.cxbBrandCriterio.TabIndex = 1;
-            // 
-            // txtBrandBuscar
-            // 
-            this.txtBrandBuscar.Location = new System.Drawing.Point(13, 112);
-            this.txtBrandBuscar.Name = "txtBrandBuscar";
-            this.txtBrandBuscar.Size = new System.Drawing.Size(175, 20);
-            this.txtBrandBuscar.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Buscar";
-            // 
-            // btnBrandBuscar
-            // 
-            this.btnBrandBuscar.Location = new System.Drawing.Point(51, 152);
-            this.btnBrandBuscar.Name = "btnBrandBuscar";
-            this.btnBrandBuscar.Size = new System.Drawing.Size(83, 72);
-            this.btnBrandBuscar.TabIndex = 4;
-            this.btnBrandBuscar.Text = "Buscar";
-            this.btnBrandBuscar.UseVisualStyleBackColor = true;
-            this.btnBrandBuscar.Click += new System.EventHandler(this.btnBrandBuscar_Click);
-            // 
-            // btnBrandAgregar
-            // 
-            this.btnBrandAgregar.Location = new System.Drawing.Point(51, 240);
-            this.btnBrandAgregar.Name = "btnBrandAgregar";
-            this.btnBrandAgregar.Size = new System.Drawing.Size(83, 72);
-            this.btnBrandAgregar.TabIndex = 5;
-            this.btnBrandAgregar.Text = "Agregar";
-            this.btnBrandAgregar.UseVisualStyleBackColor = true;
-            this.btnBrandAgregar.Click += new System.EventHandler(this.btnBrandAgregar_Click);
+            this.button2.Location = new System.Drawing.Point(105, 230);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 72);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Brand
             // 
@@ -163,5 +187,7 @@ namespace audiovisalParcial.Design.Panel.Brand
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dvgBrand;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

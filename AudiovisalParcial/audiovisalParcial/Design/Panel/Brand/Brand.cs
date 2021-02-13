@@ -13,7 +13,7 @@ namespace audiovisalParcial.Design.Panel.Brand
     public partial class Brand : Form
     {
         
-        private AUDIOVISUALESEntities audiovisualEntities = new AUDIOVISUALESEntities();
+        public AUDIOVISUALESEntities audiovisualEntities = new AUDIOVISUALESEntities();
         public Brand()
         {
             InitializeComponent();
@@ -73,7 +73,7 @@ namespace audiovisalParcial.Design.Panel.Brand
         {
             try
             {
-                DataGridViewRow row = this.dvgBrand.SelectedRows[0];
+                DataGridViewRow row = dvgBrand.SelectedRows[0];
                 UpsertBrand upsertBrandForm = new UpsertBrand();
                 upsertBrandForm.IdBrand = row.Cells[0].Value.ToString();
                 upsertBrandForm.DescripcionBrand = row.Cells[1].Value.ToString();
@@ -86,6 +86,47 @@ namespace audiovisalParcial.Design.Panel.Brand
                 MessageBox.Show("Error al editar registro: " + ex.Message);
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(dvgBrand.Rows[dvgBrand.CurrentRow.Index].Cells[0].Value.ToString());
+                var marca = audiovisualEntities.marcas.Find(id);
+                UpsertBrand upsertBrandForm = new UpsertBrand();
+                upsertBrandForm.IdBrand = id.ToString();
+                upsertBrandForm.DescripcionBrand = marca.Descripcion;
+                upsertBrandForm.ModalidadBrand = "U";
+                upsertBrandForm.Text = "Actualizar Marca";
+                upsertBrandForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al editar registro: " + ex.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(dvgBrand.Rows[dvgBrand.CurrentRow.Index].Cells[0].Value.ToString());
+                var marca = audiovisualEntities.marcas.Find(id);
+                if (marca != null)
+                {
+                    audiovisualEntities.marcas.Remove(marca);
+                    audiovisualEntities.SaveChanges();
+                    MessageBox.Show("Marca eliminada con exito");
+                }
+                else
+                    MessageBox.Show("Marca no existe");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("No se pudo eliminar la marca");
+            }
         }
     }
 }
