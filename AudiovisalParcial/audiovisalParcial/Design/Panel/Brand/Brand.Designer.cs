@@ -59,7 +59,7 @@ namespace audiovisalParcial.Design.Panel.Brand
             // 
             // btnBrandAgregar
             // 
-            this.btnBrandAgregar.Location = new System.Drawing.Point(105, 152);
+            this.btnBrandAgregar.Location = new System.Drawing.Point(101, 126);
             this.btnBrandAgregar.Name = "btnBrandAgregar";
             this.btnBrandAgregar.Size = new System.Drawing.Size(83, 72);
             this.btnBrandAgregar.TabIndex = 5;
@@ -69,7 +69,7 @@ namespace audiovisalParcial.Design.Panel.Brand
             // 
             // btnBrandBuscar
             // 
-            this.btnBrandBuscar.Location = new System.Drawing.Point(13, 152);
+            this.btnBrandBuscar.Location = new System.Drawing.Point(9, 126);
             this.btnBrandBuscar.Name = "btnBrandBuscar";
             this.btnBrandBuscar.Size = new System.Drawing.Size(83, 72);
             this.btnBrandBuscar.TabIndex = 4;
@@ -80,7 +80,7 @@ namespace audiovisalParcial.Design.Panel.Brand
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 14);
+            this.label2.Location = new System.Drawing.Point(58, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 3;
@@ -88,7 +88,7 @@ namespace audiovisalParcial.Design.Panel.Brand
             // 
             // txtBrandBuscar
             // 
-            this.txtBrandBuscar.Location = new System.Drawing.Point(13, 43);
+            this.txtBrandBuscar.Location = new System.Drawing.Point(9, 85);
             this.txtBrandBuscar.Name = "txtBrandBuscar";
             this.txtBrandBuscar.Size = new System.Drawing.Size(175, 20);
             this.txtBrandBuscar.TabIndex = 2;
@@ -117,7 +117,7 @@ namespace audiovisalParcial.Design.Panel.Brand
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 230);
+            this.button1.Location = new System.Drawing.Point(9, 204);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 72);
             this.button1.TabIndex = 6;
@@ -127,7 +127,7 @@ namespace audiovisalParcial.Design.Panel.Brand
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(105, 230);
+            this.button2.Location = new System.Drawing.Point(101, 204);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 72);
             this.button2.TabIndex = 7;
