@@ -1,0 +1,10 @@
+C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\bin\Debug\audiovisalParcial.exe.config
+C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\bin\Debug\audiovisalParcial.exe
+C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\bin\Debug\audiovisalParcial.pdb
+C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.csprojAssemblyReference.cache
+C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Properties.Resources.resources
+C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.csproj.GenerateResource.cache
+C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.csproj.CoreCompileInputs.cache
+C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.exe
+C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.pdb
+C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Form1.resources
