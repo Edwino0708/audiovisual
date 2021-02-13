@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Syncfusion.Licensing, Version=18.4460.0.42, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.18.4.0.42\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=18.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.18.4.0.42\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,7 +71,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,7 +88,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Design\Icon\" />
     <Folder Include="Design\Panel\Brand\" />
     <Folder Include="Design\Panel\Employees\" />
     <Folder Include="Design\Panel\EquipmentType\" />
@@ -90,6 +97,24 @@
     <Folder Include="Design\Panel\Reports\" />
     <Folder Include="Design\Panel\TechnologiesConnection\" />
     <Folder Include="Design\Panel\Users\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\audioVisual.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\tipos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\marca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\salir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

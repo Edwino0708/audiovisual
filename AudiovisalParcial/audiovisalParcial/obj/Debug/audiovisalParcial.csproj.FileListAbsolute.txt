@@ -8,3 +8,17 @@ C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcia
 C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.exe
 C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.pdb
 C:\Users\edwin\source\repos\PrimerParcialPropietaria\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Form1.resources
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\bin\Debug\audiovisalParcial.exe.config
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\bin\Debug\audiovisalParcial.exe
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\bin\Debug\audiovisalParcial.pdb
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.csprojAssemblyReference.cache
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Form1.resources
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Properties.Resources.resources
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.csproj.GenerateResource.cache
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.csproj.CoreCompileInputs.cache
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.exe
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.pdb
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Users\edwin\source\repos\audivisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.csproj.CopyComplete
