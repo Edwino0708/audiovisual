@@ -34,8 +34,6 @@ namespace audiovisalParcial.Design.Panel.Brand
             this.btnBrandBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBrandBuscar = new System.Windows.Forms.TextBox();
-            this.cxbBrandCriterio = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dvgBrand = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,8 +52,6 @@ namespace audiovisalParcial.Design.Panel.Brand
             this.panel1.Controls.Add(this.btnBrandBuscar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtBrandBuscar);
-            this.panel1.Controls.Add(this.cxbBrandCriterio);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 384);
@@ -84,35 +80,18 @@ namespace audiovisalParcial.Design.Panel.Brand
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 82);
+            this.label2.Location = new System.Drawing.Point(62, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Buscar";
+            this.label2.Text = "Texto a buscar";
             // 
             // txtBrandBuscar
             // 
-            this.txtBrandBuscar.Location = new System.Drawing.Point(13, 112);
+            this.txtBrandBuscar.Location = new System.Drawing.Point(13, 43);
             this.txtBrandBuscar.Name = "txtBrandBuscar";
             this.txtBrandBuscar.Size = new System.Drawing.Size(175, 20);
             this.txtBrandBuscar.TabIndex = 2;
-            // 
-            // cxbBrandCriterio
-            // 
-            this.cxbBrandCriterio.FormattingEnabled = true;
-            this.cxbBrandCriterio.Location = new System.Drawing.Point(13, 42);
-            this.cxbBrandCriterio.Name = "cxbBrandCriterio";
-            this.cxbBrandCriterio.Size = new System.Drawing.Size(175, 21);
-            this.cxbBrandCriterio.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Criterios";
             // 
             // dvgBrand
             // 
@@ -183,8 +162,6 @@ namespace audiovisalParcial.Design.Panel.Brand
         private System.Windows.Forms.Button btnBrandBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBrandBuscar;
-        private System.Windows.Forms.ComboBox cxbBrandCriterio;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dvgBrand;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
