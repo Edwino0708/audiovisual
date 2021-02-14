@@ -1,4 +1,5 @@
 ﻿using audiovisalParcial.Design.Panel.Brand;
+using audiovisalParcial.Design.Panel.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace audiovisalParcial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Brand());
+            Application.Run(new Modelo());
         }
     }
 }

@@ -67,6 +67,18 @@
     <Compile Include="Design\Panel\Brand\UpsertBrand.Designer.cs">
       <DependentUpon>UpsertBrand.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Panel\Models\Modelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\Models\Modelo.Designer.cs">
+      <DependentUpon>Modelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\Models\UpsertModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\Models\UpsertModelo.Designer.cs">
+      <DependentUpon>UpsertModelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="empleados.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -120,6 +132,12 @@
     <EmbeddedResource Include="Design\Panel\Brand\UpsertBrand.resx">
       <DependentUpon>UpsertBrand.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Models\Modelo.resx">
+      <DependentUpon>Modelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Models\UpsertModelo.resx">
+      <DependentUpon>UpsertModelo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,7 +177,6 @@
     <Folder Include="Design\Panel\EquipmentType\" />
     <Folder Include="Design\Panel\Equipment\" />
     <Folder Include="Design\Panel\LoanAndReturn\" />
-    <Folder Include="Design\Panel\Models\" />
     <Folder Include="Design\Panel\Reports\" />
     <Folder Include="Design\Panel\TechnologiesConnection\" />
     <Folder Include="Design\Panel\Users\" />
