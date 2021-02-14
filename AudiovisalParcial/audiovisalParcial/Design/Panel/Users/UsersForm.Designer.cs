@@ -1,14 +1,14 @@
 ﻿
-namespace audiovisalParcial.Design.Panel.Equipment
+namespace audiovisalParcial.Design.Panel.Users
 {
-    partial class EquipmentControl1
+    partial class UsersForm
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -21,22 +21,23 @@ namespace audiovisalParcial.Design.Panel.Equipment
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
             // 
-            // EquipmentControl1
+            // UsersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "EquipmentControl1";
-            this.Size = new System.Drawing.Size(370, 310);
+            this.ClientSize = new System.Drawing.Size(1671, 1351);
+            this.Name = "UsersForm";
+            this.Text = "UsersForm";
             this.ResumeLayout(false);
 
         }

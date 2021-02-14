@@ -22,5 +22,16 @@ namespace audiovisalParcial.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-AURP706;Initial Catalog=AUDIOVISUALES;Integrated Security=Tru" +
+            "e")]
+        public string AUDIOVISUALESConnectionString {
+            get {
+                return ((string)(this["AUDIOVISUALESConnectionString"]));
+            }
+        }
     }
 }

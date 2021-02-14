@@ -24,10 +24,9 @@ C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\bin\
 C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\bin\Debug\EntityFramework.xml
 C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.csprojAssemblyReference.cache
-C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.Equipment.EquipmentControl1.resources
+C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.EquipmentType.EquipmentTypeControl.resources
+C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.EquipmentType.EquipmentTypeControlForm.resources
 C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.Home.HomeControl.resources
-C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.TechnologiesConnection.AgregarForm.resources
 C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.TechnologiesConnection.TechnologiesConnectionControl.resources
 C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Form1.resources
 C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Properties.Resources.resources
@@ -36,4 +35,11 @@ C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\
 C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.csproj.CopyComplete
 C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.exe
 C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.pdb
-C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.EquipmentType.EquipmentTypeControl.resources
+C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.csprojAssemblyReference.cache
+C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.Models.ModelsControl.resources
+C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.Brand.BrandControl.resources
+C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.Brand.BrandForm.resources
+C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.Models.ModelsForm.resources
+C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.TechnologiesConnection.TechnologiesConnectionForm.resources
+C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.Equiment.EquimentControl.resources
+C:\Users\edwin\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.Equiment.EquimentForm.resources

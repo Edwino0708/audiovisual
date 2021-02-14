@@ -55,17 +55,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Design\Panel\EquipmentType\EquipmentTypeControl.cs">
+    <Compile Include="Design\Panel\Brand\BrandControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\Panel\EquipmentType\EquipmentTypeControl.Designer.cs">
-      <DependentUpon>EquipmentTypeControl.cs</DependentUpon>
+    <Compile Include="Design\Panel\Brand\BrandControl.Designer.cs">
+      <DependentUpon>BrandControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\Panel\Equipment\EquipmentControl.cs">
+    <Compile Include="Design\Panel\Brand\BrandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\Brand\BrandForm.Designer.cs">
+      <DependentUpon>BrandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\EquimentType\EquimentTypeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\Panel\Equipment\EquipmentControl.Designer.cs">
-      <DependentUpon>EquipmentControl.cs</DependentUpon>
+    <Compile Include="Design\Panel\EquimentType\EquimentTypeControl.Designer.cs">
+      <DependentUpon>EquimentTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\EquimentType\EquimentTypeControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\EquimentType\EquimentTypeControlForm.Designer.cs">
+      <DependentUpon>EquimentTypeControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\Equiment\EquimentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\Equiment\EquimentControl.Designer.cs">
+      <DependentUpon>EquimentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\Equiment\EquimentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\Equiment\EquimentForm.Designer.cs">
+      <DependentUpon>EquimentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\Panel\Home\HomeControl.cs">
       <SubType>UserControl</SubType>
@@ -73,17 +97,29 @@
     <Compile Include="Design\Panel\Home\HomeControl.Designer.cs">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\Panel\TechnologiesConnection\AgregarForm.cs">
+    <Compile Include="Design\Panel\Models\ModelsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design\Panel\TechnologiesConnection\AgregarForm.Designer.cs">
-      <DependentUpon>AgregarForm.cs</DependentUpon>
+    <Compile Include="Design\Panel\Models\ModelsForm.Designer.cs">
+      <DependentUpon>ModelsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\Models\ModelsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\Models\ModelsControl.Designer.cs">
+      <DependentUpon>ModelsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\Panel\TechnologiesConnection\TechnologiesConnectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Design\Panel\TechnologiesConnection\TechnologiesConnectionControl.Designer.cs">
       <DependentUpon>TechnologiesConnectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\TechnologiesConnection\TechnologiesConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\TechnologiesConnection\TechnologiesConnectionForm.Designer.cs">
+      <DependentUpon>TechnologiesConnectionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form.cs">
       <SubType>Form</SubType>
@@ -132,20 +168,39 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Design\Panel\EquipmentType\EquipmentTypeControl.resx">
-      <DependentUpon>EquipmentTypeControl.cs</DependentUpon>
+    <Compile Include="Utils\Utils.cs" />
+    <EmbeddedResource Include="Design\Panel\Brand\BrandControl.resx">
+      <DependentUpon>BrandControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Panel\Equipment\EquipmentControl.resx">
-      <DependentUpon>EquipmentControl.cs</DependentUpon>
+    <EmbeddedResource Include="Design\Panel\Brand\BrandForm.resx">
+      <DependentUpon>BrandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\EquimentType\EquimentTypeControl.resx">
+      <DependentUpon>EquimentTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\EquimentType\EquimentTypeControlForm.resx">
+      <DependentUpon>EquimentTypeControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Equiment\EquimentControl.resx">
+      <DependentUpon>EquimentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Equiment\EquimentForm.resx">
+      <DependentUpon>EquimentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Panel\Home\HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Panel\TechnologiesConnection\AgregarForm.resx">
-      <DependentUpon>AgregarForm.cs</DependentUpon>
+    <EmbeddedResource Include="Design\Panel\Models\ModelsForm.resx">
+      <DependentUpon>ModelsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Models\ModelsControl.resx">
+      <DependentUpon>ModelsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Panel\TechnologiesConnection\TechnologiesConnectionControl.resx">
       <DependentUpon>TechnologiesConnectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\TechnologiesConnection\TechnologiesConnectionForm.resx">
+      <DependentUpon>TechnologiesConnectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
@@ -182,29 +237,32 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Design\Panel\Brand\" />
     <Folder Include="Design\Panel\Employees\" />
     <Folder Include="Design\Panel\LoanAndReturn\" />
-    <Folder Include="Design\Panel\Models\" />
     <Folder Include="Design\Panel\Reports\" />
-    <Folder Include="Design\Panel\Users\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Design\Icon\search.png" />
     <None Include="Design\Icon\add.png" />
+    <None Include="Design\Icon\save.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\refresh.png" />
+    <None Include="Design\Icon\update.png" />
+    <None Include="Design\Icon\delete.png" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

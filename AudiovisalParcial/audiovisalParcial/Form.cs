@@ -1,5 +1,8 @@
-﻿using audiovisalParcial.Design.Panel.EquipmentType;
+﻿using audiovisalParcial.Design.Panel.Brand;
+using audiovisalParcial.Design.Panel.Equiment;
+using audiovisalParcial.Design.Panel.EquipmentType;
 using audiovisalParcial.Design.Panel.Home;
+using audiovisalParcial.Design.Panel.Models;
 using audiovisalParcial.Design.Panel.TechnologiesConnection;
 using System;
 using System.Collections.Generic;
@@ -18,6 +21,9 @@ namespace audiovisalParcial
         private HomeControl pHome;
         private TechnologiesConnectionControl pTech;
         private EquipmentTypeControl pEquipmentType;
+        private BrandControl pBrand;
+        private ModelsControl pModel;
+        private EquimentControl pEquiment;
 
         public Form1()
         {
@@ -53,6 +59,27 @@ namespace audiovisalParcial
             pTech = new TechnologiesConnectionControl();
             pBodySub.Controls.Clear();
             pBodySub.Controls.Add(pTech);
+        }
+
+        private void btnMenuOption2_Click(object sender, EventArgs e)
+        {
+            pBrand = new BrandControl();
+            pBodySub.Controls.Clear();
+            pBodySub.Controls.Add(pBrand);
+        }
+
+        private void btnMenuOption3_Click(object sender, EventArgs e)
+        {
+            pModel = new ModelsControl();
+            pBodySub.Controls.Clear();
+            pBodySub.Controls.Add(pModel);
+        }
+
+        private void btnMenuOption5_Click(object sender, EventArgs e)
+        {
+            pEquiment = new EquimentControl();
+            pBodySub.Controls.Clear();
+            pBodySub.Controls.Add(pEquiment);
         }
     }
 }

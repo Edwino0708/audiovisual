@@ -28,7 +28,7 @@ namespace audiovisalParcial.Model
         public virtual DbSet<empleado> empleados { get; set; }
         public virtual DbSet<equipos> equipos { get; set; }
         public virtual DbSet<marca> marcas { get; set; }
-        public virtual DbSet<modelo> modelos { get; set; }
+        public virtual DbSet<modelo> usuarios { get; set; }
         public virtual DbSet<rentaDevolucion> rentaDevolucions { get; set; }
         public virtual DbSet<tecnologias_conexion> tecnologias_conexion { get; set; }
         public virtual DbSet<tipo_equipos> tipo_equipos { get; set; }

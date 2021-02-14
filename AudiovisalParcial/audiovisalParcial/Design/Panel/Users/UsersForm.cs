@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace audiovisalParcial.Design.Panel.EquipmentType
+namespace audiovisalParcial.Design.Panel.Users
 {
-    public partial class EquipmentTypeControl : UserControl
+    public partial class UsersForm : Form
     {
-        public EquipmentTypeControl()
+        public UsersForm()
         {
             InitializeComponent();
         }
