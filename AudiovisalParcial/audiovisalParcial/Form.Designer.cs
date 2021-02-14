@@ -136,7 +136,7 @@ namespace audiovisalParcial
             this.button1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold);
             this.button1.Image = global::audiovisalParcial.Properties.Resources.salir;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(54, 675);
+            this.button1.Location = new System.Drawing.Point(54, 654);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 40);
             this.button1.TabIndex = 7;

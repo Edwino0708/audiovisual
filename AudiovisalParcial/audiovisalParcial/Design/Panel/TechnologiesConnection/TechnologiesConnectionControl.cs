@@ -19,7 +19,9 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
 
         private void cmdAgregar_Click(object sender, EventArgs e)
         {
-            
+            AgregarForm addform = new AgregarForm();
+            addform.ShowDialog();
+
         }
     }
 }
