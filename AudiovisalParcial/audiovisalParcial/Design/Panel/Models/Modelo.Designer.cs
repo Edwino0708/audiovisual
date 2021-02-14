@@ -49,7 +49,9 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.dvgModelo);
-            this.panel2.Location = new System.Drawing.Point(238, 32);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.txtModeloBuscar);
+            this.panel2.Location = new System.Drawing.Point(255, 32);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(576, 384);
             this.panel2.TabIndex = 6;
@@ -59,11 +61,11 @@ namespace audiovisalParcial.Design.Panel.Models
             this.dvgModelo.AllowUserToAddRows = false;
             this.dvgModelo.AllowUserToDeleteRows = false;
             this.dvgModelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgModelo.Location = new System.Drawing.Point(14, 14);
+            this.dvgModelo.Location = new System.Drawing.Point(14, 40);
             this.dvgModelo.Name = "dvgModelo";
             this.dvgModelo.ReadOnly = true;
             this.dvgModelo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgModelo.Size = new System.Drawing.Size(546, 353);
+            this.dvgModelo.Size = new System.Drawing.Size(546, 327);
             this.dvgModelo.TabIndex = 1;
             this.dvgModelo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgModelo_CellDoubleClick);
             // 
@@ -76,26 +78,24 @@ namespace audiovisalParcial.Design.Panel.Models
             this.panel1.Controls.Add(this.btnModeloEditar);
             this.panel1.Controls.Add(this.btnModeloAgregar);
             this.panel1.Controls.Add(this.btnModeloBuscar);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtModeloBuscar);
             this.panel1.Location = new System.Drawing.Point(12, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(204, 384);
+            this.panel1.Size = new System.Drawing.Size(237, 384);
             this.panel1.TabIndex = 5;
             // 
             // cbxMarca
             // 
             this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(9, 46);
+            this.cbxMarca.Location = new System.Drawing.Point(44, 18);
             this.cbxMarca.Name = "cbxMarca";
-            this.cbxMarca.Size = new System.Drawing.Size(175, 21);
+            this.cbxMarca.Size = new System.Drawing.Size(114, 21);
             this.cbxMarca.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 14);
+            this.label1.Location = new System.Drawing.Point(6, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 8;
@@ -103,7 +103,7 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             // btnModeloEliminar
             // 
-            this.btnModeloEliminar.Location = new System.Drawing.Point(101, 249);
+            this.btnModeloEliminar.Location = new System.Drawing.Point(129, 84);
             this.btnModeloEliminar.Name = "btnModeloEliminar";
             this.btnModeloEliminar.Size = new System.Drawing.Size(83, 72);
             this.btnModeloEliminar.TabIndex = 7;
@@ -113,7 +113,7 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             // btnModeloEditar
             // 
-            this.btnModeloEditar.Location = new System.Drawing.Point(9, 249);
+            this.btnModeloEditar.Location = new System.Drawing.Point(75, 174);
             this.btnModeloEditar.Name = "btnModeloEditar";
             this.btnModeloEditar.Size = new System.Drawing.Size(83, 72);
             this.btnModeloEditar.TabIndex = 6;
@@ -123,7 +123,7 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             // btnModeloAgregar
             // 
-            this.btnModeloAgregar.Location = new System.Drawing.Point(101, 171);
+            this.btnModeloAgregar.Location = new System.Drawing.Point(9, 84);
             this.btnModeloAgregar.Name = "btnModeloAgregar";
             this.btnModeloAgregar.Size = new System.Drawing.Size(83, 72);
             this.btnModeloAgregar.TabIndex = 5;
@@ -133,9 +133,9 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             // btnModeloBuscar
             // 
-            this.btnModeloBuscar.Location = new System.Drawing.Point(9, 171);
+            this.btnModeloBuscar.Location = new System.Drawing.Point(164, 19);
             this.btnModeloBuscar.Name = "btnModeloBuscar";
-            this.btnModeloBuscar.Size = new System.Drawing.Size(83, 72);
+            this.btnModeloBuscar.Size = new System.Drawing.Size(58, 20);
             this.btnModeloBuscar.TabIndex = 4;
             this.btnModeloBuscar.Text = "Buscar";
             this.btnModeloBuscar.UseVisualStyleBackColor = true;
@@ -144,7 +144,7 @@ namespace audiovisalParcial.Design.Panel.Models
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 101);
+            this.label2.Location = new System.Drawing.Point(11, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 3;
@@ -152,16 +152,17 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             // txtModeloBuscar
             // 
-            this.txtModeloBuscar.Location = new System.Drawing.Point(9, 130);
+            this.txtModeloBuscar.Location = new System.Drawing.Point(95, 11);
             this.txtModeloBuscar.Name = "txtModeloBuscar";
-            this.txtModeloBuscar.Size = new System.Drawing.Size(175, 20);
+            this.txtModeloBuscar.Size = new System.Drawing.Size(465, 20);
             this.txtModeloBuscar.TabIndex = 2;
+            this.txtModeloBuscar.TextChanged += new System.EventHandler(this.txtModeloBuscar_TextChanged);
             // 
             // Modelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 450);
+            this.ClientSize = new System.Drawing.Size(843, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Modelo";
@@ -169,6 +170,7 @@ namespace audiovisalParcial.Design.Panel.Models
             this.Activated += new System.EventHandler(this.Modelo_Activated);
             this.Load += new System.EventHandler(this.Modelo_Load);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgModelo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

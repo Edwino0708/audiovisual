@@ -128,5 +128,10 @@ namespace audiovisalParcial.Design.Panel.Brand
                 MessageBox.Show("No se pudo eliminar la marca");
             }
         }
+
+        private void txtBrandBuscar_TextChanged(object sender, EventArgs e)
+        {
+            getBrandByFilter();
+        }
     }
 }

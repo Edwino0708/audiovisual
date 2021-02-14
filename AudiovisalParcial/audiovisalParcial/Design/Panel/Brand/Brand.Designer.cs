@@ -30,14 +30,14 @@ namespace audiovisalParcial.Design.Panel.Brand
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnBrandAgregar = new System.Windows.Forms.Button();
             this.btnBrandBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBrandBuscar = new System.Windows.Forms.TextBox();
             this.dvgBrand = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgBrand)).BeginInit();
             this.panel2.SuspendLayout();
@@ -50,16 +50,34 @@ namespace audiovisalParcial.Design.Panel.Brand
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnBrandAgregar);
             this.panel1.Controls.Add(this.btnBrandBuscar);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtBrandBuscar);
             this.panel1.Location = new System.Drawing.Point(12, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 384);
             this.panel1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(101, 129);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 72);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(9, 129);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 72);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Editar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnBrandAgregar
             // 
-            this.btnBrandAgregar.Location = new System.Drawing.Point(101, 126);
+            this.btnBrandAgregar.Location = new System.Drawing.Point(101, 33);
             this.btnBrandAgregar.Name = "btnBrandAgregar";
             this.btnBrandAgregar.Size = new System.Drawing.Size(83, 72);
             this.btnBrandAgregar.TabIndex = 5;
@@ -69,18 +87,19 @@ namespace audiovisalParcial.Design.Panel.Brand
             // 
             // btnBrandBuscar
             // 
-            this.btnBrandBuscar.Location = new System.Drawing.Point(9, 126);
+            this.btnBrandBuscar.Location = new System.Drawing.Point(9, 33);
             this.btnBrandBuscar.Name = "btnBrandBuscar";
             this.btnBrandBuscar.Size = new System.Drawing.Size(83, 72);
             this.btnBrandBuscar.TabIndex = 4;
             this.btnBrandBuscar.Text = "Buscar";
             this.btnBrandBuscar.UseVisualStyleBackColor = true;
+            this.btnBrandBuscar.Visible = false;
             this.btnBrandBuscar.Click += new System.EventHandler(this.btnBrandBuscar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 56);
+            this.label2.Location = new System.Drawing.Point(11, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 3;
@@ -88,21 +107,22 @@ namespace audiovisalParcial.Design.Panel.Brand
             // 
             // txtBrandBuscar
             // 
-            this.txtBrandBuscar.Location = new System.Drawing.Point(9, 85);
+            this.txtBrandBuscar.Location = new System.Drawing.Point(100, 7);
             this.txtBrandBuscar.Name = "txtBrandBuscar";
-            this.txtBrandBuscar.Size = new System.Drawing.Size(175, 20);
+            this.txtBrandBuscar.Size = new System.Drawing.Size(460, 20);
             this.txtBrandBuscar.TabIndex = 2;
+            this.txtBrandBuscar.TextChanged += new System.EventHandler(this.txtBrandBuscar_TextChanged);
             // 
             // dvgBrand
             // 
             this.dvgBrand.AllowUserToAddRows = false;
             this.dvgBrand.AllowUserToDeleteRows = false;
             this.dvgBrand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgBrand.Location = new System.Drawing.Point(14, 14);
+            this.dvgBrand.Location = new System.Drawing.Point(14, 33);
             this.dvgBrand.Name = "dvgBrand";
             this.dvgBrand.ReadOnly = true;
             this.dvgBrand.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgBrand.Size = new System.Drawing.Size(546, 353);
+            this.dvgBrand.Size = new System.Drawing.Size(546, 334);
             this.dvgBrand.TabIndex = 1;
             this.dvgBrand.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgBrand_CellDoubleClick);
             // 
@@ -110,30 +130,12 @@ namespace audiovisalParcial.Design.Panel.Brand
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.dvgBrand);
+            this.panel2.Controls.Add(this.txtBrandBuscar);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(238, 22);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(576, 384);
             this.panel2.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(9, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 72);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(101, 204);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 72);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Brand
             // 
@@ -148,9 +150,9 @@ namespace audiovisalParcial.Design.Panel.Brand
             this.Activated += new System.EventHandler(this.Brand_Activated);
             this.Load += new System.EventHandler(this.Brand_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgBrand)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

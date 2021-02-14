@@ -44,21 +44,10 @@ namespace audiovisalParcial.Design.Panel.Models
         {
             try
             {
-                var modelos = from modelo in audiovisualEntities.modelos
-                              select modelo;
-                if (string.IsNullOrEmpty(txtModeloBuscar.Text))
-                {
-                    modelos = from modelo in audiovisualEntities.modelos
+                
+                   var modelos = from modelo in audiovisualEntities.modelos
                               where (modelo.Marca == (int)cbxMarca.SelectedValue)
                               select modelo;
-                }
-                else 
-                {
-                    modelos = from modelo in audiovisualEntities.modelos
-                              where (modelo.Marca == (int)cbxMarca.SelectedValue
-                              || modelo.Descripcion.Contains(txtModeloBuscar.Text))
-                              select modelo;
-                }
                 
                 dvgModelo.DataSource = null;
                 dvgModelo.DataSource = modelos.ToList();
@@ -165,6 +154,16 @@ namespace audiovisalParcial.Design.Panel.Models
             {
                 MessageBox.Show("Error al editar registro: " + ex.Message);
             }
+        }
+
+        private void txtModeloBuscar_TextChanged(object sender, EventArgs e)
+        {
+            var modelos = from modelo in audiovisualEntities.modelos
+                          where (modelo.Descripcion.StartsWith(txtModeloBuscar.Text))
+                          select modelo;
+
+            dvgModelo.DataSource = null;
+            dvgModelo.DataSource = modelos.ToList();
         }
     }
 }

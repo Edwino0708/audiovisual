@@ -18,7 +18,7 @@ namespace audiovisalParcial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Modelo());
+            Application.Run(new Brand());
         }
     }
 }
