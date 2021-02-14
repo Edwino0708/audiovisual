@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AUDIOVISUALESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="empleados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Cedula" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TandaLabor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FechaIngreso" Type="datetime" />
+          <Property Name="Estado" Type="int" />
+        </EntityType>
+        <EntityType Name="equipos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Noserial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ServiceTag" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TipoEquipo" Type="int" Nullable="false" />
+          <Property Name="Marca" Type="int" Nullable="false" />
+          <Property Name="Modelo" Type="int" Nullable="false" />
+          <Property Name="TecnologiaConexion" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="int" />
+        </EntityType>
+        <EntityType Name="marcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Estado" Type="int" />
+        </EntityType>
+        <EntityType Name="modelos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marca" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Estado" Type="int" />
+        </EntityType>
+        <EntityType Name="rentaDevolucion">
+          <Key>
+            <PropertyRef Name="NoPrestamo" />
+          </Key>
+          <Property Name="NoPrestamo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empleado" Type="int" Nullable="false" />
+          <Property Name="Equipo" Type="int" Nullable="false" />
+          <Property Name="Usuario" Type="int" Nullable="false" />
+          <Property Name="FechaPrestamo" Type="datetime" Nullable="false" />
+          <Property Name="FechaDevolucion" Type="datetime" />
+          <Property Name="Comentario" Type="varchar" MaxLength="200" />
+          <Property Name="Estado" Type="int" />
+        </EntityType>
+        <EntityType Name="tecnologias_conexion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Estado" Type="int" />
+        </EntityType>
+        <EntityType Name="tipo_equipos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Estado" Type="int" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Cedula" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NoCarnet" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TipoUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TipoPersona" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estado" Type="int" />
+        </EntityType>
+        <Association Name="FK__equipos__Marca__32E0915F">
+          <End Role="marcas" Type="Self.marcas" Multiplicity="1" />
+          <End Role="equipos" Type="Self.equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipos">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__equipos__Modelo__33D4B598">
+          <End Role="modelos" Type="Self.modelos" Multiplicity="1" />
+          <End Role="equipos" Type="Self.equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipos">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__equipos__Tecnolo__34C8D9D1">
+          <End Role="tecnologias_conexion" Type="Self.tecnologias_conexion" Multiplicity="1" />
+          <End Role="equipos" Type="Self.equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tecnologias_conexion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipos">
+              <PropertyRef Name="TecnologiaConexion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__equipos__TipoEqu__31EC6D26">
+          <End Role="tipo_equipos" Type="Self.tipo_equipos" Multiplicity="1" />
+          <End Role="equipos" Type="Self.equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_equipos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipos">
+              <PropertyRef Name="TipoEquipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__modelos__Marca__2B3F6F97">
+          <End Role="marcas" Type="Self.marcas" Multiplicity="1" />
+          <End Role="modelos" Type="Self.modelos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="modelos">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__rentaDevo__Emple__3F466844">
+          <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
+          <End Role="rentaDevolucion" Type="Self.rentaDevolucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="rentaDevolucion">
+              <PropertyRef Name="Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__rentaDevo__Equip__403A8C7D">
+          <End Role="equipos" Type="Self.equipos" Multiplicity="1" />
+          <End Role="rentaDevolucion" Type="Self.rentaDevolucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equipos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="rentaDevolucion">
+              <PropertyRef Name="Equipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__rentaDevo__Usuar__412EB0B6">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="rentaDevolucion" Type="Self.rentaDevolucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="rentaDevolucion">
+              <PropertyRef Name="Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AUDIOVISUALESModelStoreContainer">
+          <EntitySet Name="empleados" EntityType="Self.empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="equipos" EntityType="Self.equipos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="marcas" EntityType="Self.marcas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="modelos" EntityType="Self.modelos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rentaDevolucion" EntityType="Self.rentaDevolucion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tecnologias_conexion" EntityType="Self.tecnologias_conexion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipo_equipos" EntityType="Self.tipo_equipos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__equipos__Marca__32E0915F" Association="Self.FK__equipos__Marca__32E0915F">
+            <End Role="marcas" EntitySet="marcas" />
+            <End Role="equipos" EntitySet="equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__equipos__Modelo__33D4B598" Association="Self.FK__equipos__Modelo__33D4B598">
+            <End Role="modelos" EntitySet="modelos" />
+            <End Role="equipos" EntitySet="equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__equipos__Tecnolo__34C8D9D1" Association="Self.FK__equipos__Tecnolo__34C8D9D1">
+            <End Role="tecnologias_conexion" EntitySet="tecnologias_conexion" />
+            <End Role="equipos" EntitySet="equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__equipos__TipoEqu__31EC6D26" Association="Self.FK__equipos__TipoEqu__31EC6D26">
+            <End Role="tipo_equipos" EntitySet="tipo_equipos" />
+            <End Role="equipos" EntitySet="equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__modelos__Marca__2B3F6F97" Association="Self.FK__modelos__Marca__2B3F6F97">
+            <End Role="marcas" EntitySet="marcas" />
+            <End Role="modelos" EntitySet="modelos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__rentaDevo__Emple__3F466844" Association="Self.FK__rentaDevo__Emple__3F466844">
+            <End Role="empleados" EntitySet="empleados" />
+            <End Role="rentaDevolucion" EntitySet="rentaDevolucion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__rentaDevo__Equip__403A8C7D" Association="Self.FK__rentaDevo__Equip__403A8C7D">
+            <End Role="equipos" EntitySet="equipos" />
+            <End Role="rentaDevolucion" EntitySet="rentaDevolucion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__rentaDevo__Usuar__412EB0B6" Association="Self.FK__rentaDevo__Usuar__412EB0B6">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="rentaDevolucion" EntitySet="rentaDevolucion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AUDIOVISUALESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="empleados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TandaLabor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Precision="3" />
+          <Property Name="Estado" Type="Int32" />
+          <NavigationProperty Name="rentaDevolucion" Relationship="Self.FK__rentaDevo__Emple__3F466844" FromRole="empleados" ToRole="rentaDevolucion" />
+        </EntityType>
+        <EntityType Name="equipos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Noserial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ServiceTag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoEquipo" Type="Int32" Nullable="false" />
+          <Property Name="Marca" Type="Int32" Nullable="false" />
+          <Property Name="Modelo" Type="Int32" Nullable="false" />
+          <Property Name="TecnologiaConexion" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Int32" />
+          <NavigationProperty Name="marcas" Relationship="Self.FK__equipos__Marca__32E0915F" FromRole="equipos" ToRole="marcas" />
+          <NavigationProperty Name="modelos" Relationship="Self.FK__equipos__Modelo__33D4B598" FromRole="equipos" ToRole="modelos" />
+          <NavigationProperty Name="tecnologias_conexion" Relationship="Self.FK__equipos__Tecnolo__34C8D9D1" FromRole="equipos" ToRole="tecnologias_conexion" />
+          <NavigationProperty Name="tipo_equipos" Relationship="Self.FK__equipos__TipoEqu__31EC6D26" FromRole="equipos" ToRole="tipo_equipos" />
+          <NavigationProperty Name="rentaDevolucion" Relationship="Self.FK__rentaDevo__Equip__403A8C7D" FromRole="equipos" ToRole="rentaDevolucion" />
+        </EntityType>
+        <EntityType Name="marcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Int32" />
+          <NavigationProperty Name="equipos" Relationship="Self.FK__equipos__Marca__32E0915F" FromRole="marcas" ToRole="equipos" />
+          <NavigationProperty Name="modelos" Relationship="Self.FK__modelos__Marca__2B3F6F97" FromRole="marcas" ToRole="modelos" />
+        </EntityType>
+        <EntityType Name="modelos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marca" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Int32" />
+          <NavigationProperty Name="equipos" Relationship="Self.FK__equipos__Modelo__33D4B598" FromRole="modelos" ToRole="equipos" />
+          <NavigationProperty Name="marcas" Relationship="Self.FK__modelos__Marca__2B3F6F97" FromRole="modelos" ToRole="marcas" />
+        </EntityType>
+        <EntityType Name="rentaDevolucion">
+          <Key>
+            <PropertyRef Name="NoPrestamo" />
+          </Key>
+          <Property Name="NoPrestamo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empleado" Type="Int32" Nullable="false" />
+          <Property Name="Equipo" Type="Int32" Nullable="false" />
+          <Property Name="Usuario" Type="Int32" Nullable="false" />
+          <Property Name="FechaPrestamo" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaDevolucion" Type="DateTime" Precision="3" />
+          <Property Name="Comentario" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="Int32" />
+          <NavigationProperty Name="empleados" Relationship="Self.FK__rentaDevo__Emple__3F466844" FromRole="rentaDevolucion" ToRole="empleados" />
+          <NavigationProperty Name="equipos" Relationship="Self.FK__rentaDevo__Equip__403A8C7D" FromRole="rentaDevolucion" ToRole="equipos" />
+          <NavigationProperty Name="usuarios" Relationship="Self.FK__rentaDevo__Usuar__412EB0B6" FromRole="rentaDevolucion" ToRole="usuarios" />
+        </EntityType>
+        <EntityType Name="tecnologias_conexion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Int32" />
+          <NavigationProperty Name="equipos" Relationship="Self.FK__equipos__Tecnolo__34C8D9D1" FromRole="tecnologias_conexion" ToRole="equipos" />
+        </EntityType>
+        <EntityType Name="tipo_equipos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Int32" />
+          <NavigationProperty Name="equipos" Relationship="Self.FK__equipos__TipoEqu__31EC6D26" FromRole="tipo_equipos" ToRole="equipos" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NoCarnet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoPersona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Int32" />
+          <NavigationProperty Name="rentaDevolucion" Relationship="Self.FK__rentaDevo__Usuar__412EB0B6" FromRole="usuarios" ToRole="rentaDevolucion" />
+        </EntityType>
+        <Association Name="FK__rentaDevo__Emple__3F466844">
+          <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
+          <End Role="rentaDevolucion" Type="Self.rentaDevolucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="rentaDevolucion">
+              <PropertyRef Name="Empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__equipos__Marca__32E0915F">
+          <End Role="marcas" Type="Self.marcas" Multiplicity="1" />
+          <End Role="equipos" Type="Self.equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipos">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__equipos__Modelo__33D4B598">
+          <End Role="modelos" Type="Self.modelos" Multiplicity="1" />
+          <End Role="equipos" Type="Self.equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipos">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__equipos__Tecnolo__34C8D9D1">
+          <End Role="tecnologias_conexion" Type="Self.tecnologias_conexion" Multiplicity="1" />
+          <End Role="equipos" Type="Self.equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tecnologias_conexion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipos">
+              <PropertyRef Name="TecnologiaConexion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__equipos__TipoEqu__31EC6D26">
+          <End Role="tipo_equipos" Type="Self.tipo_equipos" Multiplicity="1" />
+          <End Role="equipos" Type="Self.equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_equipos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipos">
+              <PropertyRef Name="TipoEquipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__rentaDevo__Equip__403A8C7D">
+          <End Role="equipos" Type="Self.equipos" Multiplicity="1" />
+          <End Role="rentaDevolucion" Type="Self.rentaDevolucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equipos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="rentaDevolucion">
+              <PropertyRef Name="Equipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__modelos__Marca__2B3F6F97">
+          <End Role="marcas" Type="Self.marcas" Multiplicity="1" />
+          <End Role="modelos" Type="Self.modelos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="modelos">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__rentaDevo__Usuar__412EB0B6">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="rentaDevolucion" Type="Self.rentaDevolucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="rentaDevolucion">
+              <PropertyRef Name="Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AUDIOVISUALESEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="empleados" EntityType="Self.empleados" />
+          <EntitySet Name="equipos" EntityType="Self.equipos" />
+          <EntitySet Name="marcas" EntityType="Self.marcas" />
+          <EntitySet Name="modelos" EntityType="Self.modelos" />
+          <EntitySet Name="rentaDevolucion" EntityType="Self.rentaDevolucion" />
+          <EntitySet Name="tecnologias_conexion" EntityType="Self.tecnologias_conexion" />
+          <EntitySet Name="tipo_equipos" EntityType="Self.tipo_equipos" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" />
+          <AssociationSet Name="FK__rentaDevo__Emple__3F466844" Association="Self.FK__rentaDevo__Emple__3F466844">
+            <End Role="empleados" EntitySet="empleados" />
+            <End Role="rentaDevolucion" EntitySet="rentaDevolucion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__equipos__Marca__32E0915F" Association="Self.FK__equipos__Marca__32E0915F">
+            <End Role="marcas" EntitySet="marcas" />
+            <End Role="equipos" EntitySet="equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__equipos__Modelo__33D4B598" Association="Self.FK__equipos__Modelo__33D4B598">
+            <End Role="modelos" EntitySet="modelos" />
+            <End Role="equipos" EntitySet="equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__equipos__Tecnolo__34C8D9D1" Association="Self.FK__equipos__Tecnolo__34C8D9D1">
+            <End Role="tecnologias_conexion" EntitySet="tecnologias_conexion" />
+            <End Role="equipos" EntitySet="equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__equipos__TipoEqu__31EC6D26" Association="Self.FK__equipos__TipoEqu__31EC6D26">
+            <End Role="tipo_equipos" EntitySet="tipo_equipos" />
+            <End Role="equipos" EntitySet="equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__rentaDevo__Equip__403A8C7D" Association="Self.FK__rentaDevo__Equip__403A8C7D">
+            <End Role="equipos" EntitySet="equipos" />
+            <End Role="rentaDevolucion" EntitySet="rentaDevolucion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__modelos__Marca__2B3F6F97" Association="Self.FK__modelos__Marca__2B3F6F97">
+            <End Role="marcas" EntitySet="marcas" />
+            <End Role="modelos" EntitySet="modelos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__rentaDevo__Usuar__412EB0B6" Association="Self.FK__rentaDevo__Usuar__412EB0B6">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="rentaDevolucion" EntitySet="rentaDevolucion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AUDIOVISUALESModelStoreContainer" CdmEntityContainer="AUDIOVISUALESEntities">
+          <EntitySetMapping Name="empleados">
+            <EntityTypeMapping TypeName="AUDIOVISUALESModel.empleados">
+              <MappingFragment StoreEntitySet="empleados">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="TandaLabor" ColumnName="TandaLabor" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equipos">
+            <EntityTypeMapping TypeName="AUDIOVISUALESModel.equipos">
+              <MappingFragment StoreEntitySet="equipos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Noserial" ColumnName="Noserial" />
+                <ScalarProperty Name="ServiceTag" ColumnName="ServiceTag" />
+                <ScalarProperty Name="TipoEquipo" ColumnName="TipoEquipo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="TecnologiaConexion" ColumnName="TecnologiaConexion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="marcas">
+            <EntityTypeMapping TypeName="AUDIOVISUALESModel.marcas">
+              <MappingFragment StoreEntitySet="marcas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="modelos">
+            <EntityTypeMapping TypeName="AUDIOVISUALESModel.modelos">
+              <MappingFragment StoreEntitySet="modelos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rentaDevolucion">
+            <EntityTypeMapping TypeName="AUDIOVISUALESModel.rentaDevolucion">
+              <MappingFragment StoreEntitySet="rentaDevolucion">
+                <ScalarProperty Name="NoPrestamo" ColumnName="NoPrestamo" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Equipo" ColumnName="Equipo" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="FechaPrestamo" ColumnName="FechaPrestamo" />
+                <ScalarProperty Name="FechaDevolucion" ColumnName="FechaDevolucion" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tecnologias_conexion">
+            <EntityTypeMapping TypeName="AUDIOVISUALESModel.tecnologias_conexion">
+              <MappingFragment StoreEntitySet="tecnologias_conexion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipo_equipos">
+            <EntityTypeMapping TypeName="AUDIOVISUALESModel.tipo_equipos">
+              <MappingFragment StoreEntitySet="tipo_equipos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="AUDIOVISUALESModel.usuarios">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="NoCarnet" ColumnName="NoCarnet" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+                <ScalarProperty Name="TipoPersona" ColumnName="TipoPersona" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

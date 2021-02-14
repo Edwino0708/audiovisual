@@ -1,4 +1,6 @@
-﻿using System;
+﻿using audiovisalParcial.Design.Panel.Brand;
+using audiovisalParcial.Design.Panel.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,44 @@ namespace audiovisalParcial
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            Brand brand = new Brand();
+            brand.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Brand brand = new Brand();
+            brand.ShowDialog();
+        }
+
+        private void btnMenuModelo_Click(object sender, EventArgs e)
+        {
+            Modelo modelo = new Modelo();
+            modelo.ShowDialog();
         }
     }
 }

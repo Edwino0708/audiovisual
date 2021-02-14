@@ -41,15 +41,11 @@ namespace audiovisalParcial
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.pMenuHeader = new System.Windows.Forms.Panel();
-            this.lMenuTitle = new System.Windows.Forms.Label();
-            this.splitter2 = new System.Windows.Forms.Splitter();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -71,6 +67,10 @@ namespace audiovisalParcial
             this.panel16 = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.pMenuHeader = new System.Windows.Forms.Panel();
+            this.lMenuTitle = new System.Windows.Forms.Label();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.button1 = new System.Windows.Forms.Button();
             this.lMenuTypes = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -91,6 +91,8 @@ namespace audiovisalParcial
             this.label34 = new System.Windows.Forms.Label();
             this.lLogo = new System.Windows.Forms.Label();
             this.lMenu = new System.Windows.Forms.Label();
+            this.btnMenuMarca = new System.Windows.Forms.Button();
+            this.btnMenuModelo = new System.Windows.Forms.Button();
             this.pMenu.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.pMenuOption1.SuspendLayout();
@@ -98,7 +100,6 @@ namespace audiovisalParcial
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.pMenuHeader.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -111,6 +112,7 @@ namespace audiovisalParcial
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
+            this.pMenuHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // pMenu
@@ -165,14 +167,16 @@ namespace audiovisalParcial
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnMenuMarca);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(2, 58);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(219, 52);
             this.panel1.TabIndex = 9;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -206,14 +210,16 @@ namespace audiovisalParcial
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnMenuModelo);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label8);
             this.panel3.Location = new System.Drawing.Point(2, 114);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(219, 52);
             this.panel3.TabIndex = 11;
+            this.panel3.Click += new System.EventHandler(this.panel3_Click);
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel4
             // 
@@ -245,50 +251,6 @@ namespace audiovisalParcial
             this.label7.TabIndex = 1;
             this.label7.Text = "Gestión de Modelos​";
             // 
-            // pMenuHeader
-            // 
-            this.pMenuHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pMenuHeader.Controls.Add(this.lMenuTitle);
-            this.pMenuHeader.Controls.Add(this.lLogo);
-            this.pMenuHeader.Controls.Add(this.lMenu);
-            this.pMenuHeader.Location = new System.Drawing.Point(0, 0);
-            this.pMenuHeader.Margin = new System.Windows.Forms.Padding(2);
-            this.pMenuHeader.Name = "pMenuHeader";
-            this.pMenuHeader.Size = new System.Drawing.Size(223, 128);
-            this.pMenuHeader.TabIndex = 5;
-            // 
-            // lMenuTitle
-            // 
-            this.lMenuTitle.AutoSize = true;
-            this.lMenuTitle.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lMenuTitle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lMenuTitle.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lMenuTitle.Location = new System.Drawing.Point(14, 88);
-            this.lMenuTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lMenuTitle.Name = "lMenuTitle";
-            this.lMenuTitle.Size = new System.Drawing.Size(191, 19);
-            this.lMenuTitle.TabIndex = 6;
-            this.lMenuTitle.Text = "Sistema de Audivisuales";
-            this.lMenuTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // splitter2
-            // 
-            this.splitter2.Location = new System.Drawing.Point(0, 0);
-            this.splitter2.Margin = new System.Windows.Forms.Padding(2);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(2, 749);
-            this.splitter2.TabIndex = 4;
-            this.splitter2.TabStop = false;
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(225, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 749);
-            this.splitter1.TabIndex = 1;
-            this.splitter1.TabStop = false;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label13);
@@ -300,6 +262,16 @@ namespace audiovisalParcial
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(219, 52);
             this.panel5.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(86, 27);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 14);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Conexión​";
             // 
             // panel6
             // 
@@ -330,16 +302,6 @@ namespace audiovisalParcial
             this.label11.Size = new System.Drawing.Size(139, 14);
             this.label11.TabIndex = 1;
             this.label11.Text = " Gestión de Tecnologías";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(86, 27);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 14);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Conexión​";
             // 
             // panel7
             // 
@@ -557,6 +519,50 @@ namespace audiovisalParcial
             this.label33.TabIndex = 1;
             this.label33.Text = "Reporte de rentas";
             // 
+            // pMenuHeader
+            // 
+            this.pMenuHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pMenuHeader.Controls.Add(this.lMenuTitle);
+            this.pMenuHeader.Controls.Add(this.lLogo);
+            this.pMenuHeader.Controls.Add(this.lMenu);
+            this.pMenuHeader.Location = new System.Drawing.Point(0, 0);
+            this.pMenuHeader.Margin = new System.Windows.Forms.Padding(2);
+            this.pMenuHeader.Name = "pMenuHeader";
+            this.pMenuHeader.Size = new System.Drawing.Size(223, 128);
+            this.pMenuHeader.TabIndex = 5;
+            // 
+            // lMenuTitle
+            // 
+            this.lMenuTitle.AutoSize = true;
+            this.lMenuTitle.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lMenuTitle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lMenuTitle.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lMenuTitle.Location = new System.Drawing.Point(14, 88);
+            this.lMenuTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lMenuTitle.Name = "lMenuTitle";
+            this.lMenuTitle.Size = new System.Drawing.Size(191, 19);
+            this.lMenuTitle.TabIndex = 6;
+            this.lMenuTitle.Text = "Sistema de Audivisuales";
+            this.lMenuTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // splitter2
+            // 
+            this.splitter2.Location = new System.Drawing.Point(0, 0);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(2);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(2, 749);
+            this.splitter2.TabIndex = 4;
+            this.splitter2.TabStop = false;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(225, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(2, 749);
+            this.splitter1.TabIndex = 1;
+            this.splitter1.TabStop = false;
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold);
@@ -591,10 +597,11 @@ namespace audiovisalParcial
             // 
             this.label2.Image = global::audiovisalParcial.Properties.Resources.marca;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label2.Location = new System.Drawing.Point(5, 11);
+            this.label2.Location = new System.Drawing.Point(460, 313);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 32);
             this.label2.TabIndex = 0;
+            this.label2.Visible = false;
             // 
             // label6
             // 
@@ -609,10 +616,11 @@ namespace audiovisalParcial
             // 
             this.label8.Image = global::audiovisalParcial.Properties.Resources.icono;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label8.Location = new System.Drawing.Point(5, 11);
+            this.label8.Location = new System.Drawing.Point(492, 248);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 32);
             this.label8.TabIndex = 0;
+            this.label8.Visible = false;
             // 
             // label10
             // 
@@ -742,17 +750,42 @@ namespace audiovisalParcial
             this.lMenu.Size = new System.Drawing.Size(25, 25);
             this.lMenu.TabIndex = 4;
             // 
+            // btnMenuMarca
+            // 
+            this.btnMenuMarca.BackgroundImage = global::audiovisalParcial.Properties.Resources.marca;
+            this.btnMenuMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenuMarca.Location = new System.Drawing.Point(8, 12);
+            this.btnMenuMarca.Name = "btnMenuMarca";
+            this.btnMenuMarca.Size = new System.Drawing.Size(40, 29);
+            this.btnMenuMarca.TabIndex = 2;
+            this.btnMenuMarca.UseVisualStyleBackColor = true;
+            this.btnMenuMarca.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnMenuModelo
+            // 
+            this.btnMenuModelo.BackgroundImage = global::audiovisalParcial.Properties.Resources.marca;
+            this.btnMenuModelo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenuModelo.Location = new System.Drawing.Point(8, 12);
+            this.btnMenuModelo.Name = "btnMenuModelo";
+            this.btnMenuModelo.Size = new System.Drawing.Size(40, 29);
+            this.btnMenuModelo.TabIndex = 11;
+            this.btnMenuModelo.UseVisualStyleBackColor = true;
+            this.btnMenuModelo.Click += new System.EventHandler(this.btnMenuModelo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 749);
             this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.pMenu);
             this.Location = new System.Drawing.Point(2, 0);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.pMenu.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.pMenuOption1.ResumeLayout(false);
@@ -765,8 +798,6 @@ namespace audiovisalParcial
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.pMenuHeader.ResumeLayout(false);
-            this.pMenuHeader.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -791,6 +822,8 @@ namespace audiovisalParcial
             this.panel15.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
+            this.pMenuHeader.ResumeLayout(false);
+            this.pMenuHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -858,6 +891,8 @@ namespace audiovisalParcial
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button btnMenuMarca;
+        private System.Windows.Forms.Button btnMenuModelo;
     }
 }
 
