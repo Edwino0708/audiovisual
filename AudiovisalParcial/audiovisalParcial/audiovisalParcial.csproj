@@ -33,11 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+=======
+    <Reference Include="Syncfusion.Licensing, Version=18.4460.0.42, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.18.4.0.42\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=18.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.18.4.0.42\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
+>>>>>>> f6cc8118900700e0b7ee57f656d79cf7a53b547a
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -113,7 +121,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+<<<<<<< HEAD
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -121,6 +131,8 @@
     <None Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
+=======
+>>>>>>> f6cc8118900700e0b7ee57f656d79cf7a53b547a
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,7 +148,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Design\Icon\" />
     <Folder Include="Design\Panel\Brand\" />
     <Folder Include="Design\Panel\Employees\" />
     <Folder Include="Design\Panel\EquipmentType\" />
@@ -148,6 +159,7 @@
     <Folder Include="Design\Panel\Users\" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -161,6 +173,24 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+=======
+    <None Include="Design\Icon\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\audioVisual.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\tipos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\marca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design\Icon\salir.png" />
+>>>>>>> f6cc8118900700e0b7ee57f656d79cf7a53b547a
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
