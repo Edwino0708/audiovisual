@@ -33,19 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-=======
-    <Reference Include="Syncfusion.Licensing, Version=18.4460.0.42, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.18.4.0.42\lib\net46\Syncfusion.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Shared.Base, Version=18.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Shared.Base.18.4.0.42\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
->>>>>>> f6cc8118900700e0b7ee57f656d79cf7a53b547a
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -63,11 +55,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="home.cs">
+    <Compile Include="Design\Panel\Home\HomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\Home\HomeControl.Designer.cs">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\TechnologiesConnection\AgregarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="home.Designer.cs">
-      <DependentUpon>home.cs</DependentUpon>
+    <Compile Include="Design\Panel\TechnologiesConnection\AgregarForm.Designer.cs">
+      <DependentUpon>AgregarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\TechnologiesConnection\TechnologiesConnectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\TechnologiesConnection\TechnologiesConnectionControl.Designer.cs">
+      <DependentUpon>TechnologiesConnectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\empleado.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -110,8 +120,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="home.resx">
-      <DependentUpon>home.cs</DependentUpon>
+    <EmbeddedResource Include="Design\Panel\Home\HomeControl.resx">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\TechnologiesConnection\AgregarForm.resx">
+      <DependentUpon>AgregarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\TechnologiesConnection\TechnologiesConnectionControl.resx">
+      <DependentUpon>TechnologiesConnectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form.resx">
+      <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,7 +142,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-<<<<<<< HEAD
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -131,8 +149,6 @@
     <None Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
-=======
->>>>>>> f6cc8118900700e0b7ee57f656d79cf7a53b547a
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -155,11 +171,11 @@
     <Folder Include="Design\Panel\LoanAndReturn\" />
     <Folder Include="Design\Panel\Models\" />
     <Folder Include="Design\Panel\Reports\" />
-    <Folder Include="Design\Panel\TechnologiesConnection\" />
     <Folder Include="Design\Panel\Users\" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+    <None Include="Design\Icon\search.png" />
+    <None Include="Design\Icon\add.png" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -173,24 +189,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-=======
-    <None Include="Design\Icon\menu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Design\Icon\audioVisual.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Design\Icon\tipos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Design\Icon\marca.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Design\Icon\icono.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Design\Icon\salir.png" />
->>>>>>> f6cc8118900700e0b7ee57f656d79cf7a53b547a
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

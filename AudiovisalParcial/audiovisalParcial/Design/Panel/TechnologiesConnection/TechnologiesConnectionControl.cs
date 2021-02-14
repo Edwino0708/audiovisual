@@ -16,5 +16,10 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
         {
             InitializeComponent();
         }
+
+        private void cmdAgregar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
