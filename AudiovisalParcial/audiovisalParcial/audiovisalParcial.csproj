@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Design\Panel\EquipmentType\EquipmentTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\EquipmentType\EquipmentTypeControl.Designer.cs">
+      <DependentUpon>EquipmentTypeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\Panel\Equipment\EquipmentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Design\Panel\EquipmentType\EquipmentTypeControl.resx">
+      <DependentUpon>EquipmentTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\Panel\Equipment\EquipmentControl.resx">
       <DependentUpon>EquipmentControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,7 +184,6 @@
   <ItemGroup>
     <Folder Include="Design\Panel\Brand\" />
     <Folder Include="Design\Panel\Employees\" />
-    <Folder Include="Design\Panel\EquipmentType\" />
     <Folder Include="Design\Panel\LoanAndReturn\" />
     <Folder Include="Design\Panel\Models\" />
     <Folder Include="Design\Panel\Reports\" />
