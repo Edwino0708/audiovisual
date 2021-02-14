@@ -16,3 +16,4 @@ C:\Users\vdelacruz\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\
 C:\Users\vdelacruz\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.TechnologiesConnection.TechnologiesConnectionControl.resources
 C:\Users\vdelacruz\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.Home.HomeControl.resources
 C:\Users\vdelacruz\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.TechnologiesConnection.AgregarForm.resources
+C:\Users\vdelacruz\source\repos\audiovisual\AudiovisalParcial\audiovisalParcial\obj\Debug\audiovisalParcial.Design.Panel.Equipment.EquipmentControl1.resources
