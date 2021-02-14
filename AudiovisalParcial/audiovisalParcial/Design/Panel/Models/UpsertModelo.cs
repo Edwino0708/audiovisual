@@ -60,7 +60,7 @@ namespace audiovisalParcial.Design.Panel.Models
                     }
                     else if (cbxUpsertMarcas.Items.Count == 0)
                     {
-                        MessageBox.Show("Descripcion es un campo requerido");
+                        MessageBox.Show("No hay marcas registradas");
                         return;
                     }
                     audiovisualEntities.modelos.Add(new modelos
