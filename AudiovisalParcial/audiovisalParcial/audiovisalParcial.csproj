@@ -221,6 +221,7 @@
     <Content Include="Design\Icon\edit.png" />
     <Content Include="Design\Icon\plus.jpg" />
     <Content Include="Design\Icon\save.png" />
+    <Content Include="Design\Icon\search.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -231,6 +232,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\search.png" />
     <None Include="Resources\save.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\edit.png" />

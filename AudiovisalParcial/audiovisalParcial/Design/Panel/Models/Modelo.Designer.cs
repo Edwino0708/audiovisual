@@ -31,6 +31,8 @@ namespace audiovisalParcial.Design.Panel.Models
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.dvgModelo = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtModeloBuscar = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbxMarca = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@ namespace audiovisalParcial.Design.Panel.Models
             this.btnModeloEditar = new System.Windows.Forms.Button();
             this.btnModeloAgregar = new System.Windows.Forms.Button();
             this.btnModeloBuscar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtModeloBuscar = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgModelo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -47,11 +47,12 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.dvgModelo);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtModeloBuscar);
-            this.panel2.Location = new System.Drawing.Point(255, 32);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(576, 384);
             this.panel2.TabIndex = 6;
@@ -60,6 +61,7 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             this.dvgModelo.AllowUserToAddRows = false;
             this.dvgModelo.AllowUserToDeleteRows = false;
+            this.dvgModelo.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dvgModelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgModelo.Location = new System.Drawing.Point(14, 40);
             this.dvgModelo.Name = "dvgModelo";
@@ -69,8 +71,27 @@ namespace audiovisalParcial.Design.Panel.Models
             this.dvgModelo.TabIndex = 1;
             this.dvgModelo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgModelo_CellDoubleClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Buscar por descripcion";
+            // 
+            // txtModeloBuscar
+            // 
+            this.txtModeloBuscar.Location = new System.Drawing.Point(170, 13);
+            this.txtModeloBuscar.Name = "txtModeloBuscar";
+            this.txtModeloBuscar.Size = new System.Drawing.Size(390, 20);
+            this.txtModeloBuscar.TabIndex = 2;
+            this.txtModeloBuscar.TextChanged += new System.EventHandler(this.txtModeloBuscar_TextChanged);
+            // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.cbxMarca);
             this.panel1.Controls.Add(this.label1);
@@ -78,93 +99,89 @@ namespace audiovisalParcial.Design.Panel.Models
             this.panel1.Controls.Add(this.btnModeloEditar);
             this.panel1.Controls.Add(this.btnModeloAgregar);
             this.panel1.Controls.Add(this.btnModeloBuscar);
-            this.panel1.Location = new System.Drawing.Point(12, 32);
+            this.panel1.Location = new System.Drawing.Point(605, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(237, 384);
+            this.panel1.Size = new System.Drawing.Size(262, 384);
             this.panel1.TabIndex = 5;
             // 
             // cbxMarca
             // 
+            this.cbxMarca.BackColor = System.Drawing.SystemColors.HighlightText;
             this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(44, 18);
+            this.cbxMarca.Location = new System.Drawing.Point(53, 13);
             this.cbxMarca.Name = "cbxMarca";
-            this.cbxMarca.Size = new System.Drawing.Size(114, 21);
+            this.cbxMarca.Size = new System.Drawing.Size(131, 21);
             this.cbxMarca.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 21);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Marca";
             // 
             // btnModeloEliminar
             // 
-            this.btnModeloEliminar.Location = new System.Drawing.Point(129, 84);
+            this.btnModeloEliminar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnModeloEliminar.BackgroundImage = global::audiovisalParcial.Properties.Resources.delete;
+            this.btnModeloEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModeloEliminar.Location = new System.Drawing.Point(84, 261);
             this.btnModeloEliminar.Name = "btnModeloEliminar";
             this.btnModeloEliminar.Size = new System.Drawing.Size(83, 72);
             this.btnModeloEliminar.TabIndex = 7;
-            this.btnModeloEliminar.Text = "Eliminar";
-            this.btnModeloEliminar.UseVisualStyleBackColor = true;
+            this.btnModeloEliminar.UseVisualStyleBackColor = false;
             this.btnModeloEliminar.Click += new System.EventHandler(this.btnModeloEliminar_Click);
             // 
             // btnModeloEditar
             // 
-            this.btnModeloEditar.Location = new System.Drawing.Point(75, 174);
+            this.btnModeloEditar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnModeloEditar.BackgroundImage = global::audiovisalParcial.Properties.Resources.edit;
+            this.btnModeloEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModeloEditar.Location = new System.Drawing.Point(84, 154);
             this.btnModeloEditar.Name = "btnModeloEditar";
             this.btnModeloEditar.Size = new System.Drawing.Size(83, 72);
             this.btnModeloEditar.TabIndex = 6;
-            this.btnModeloEditar.Text = "Editar";
-            this.btnModeloEditar.UseVisualStyleBackColor = true;
+            this.btnModeloEditar.UseVisualStyleBackColor = false;
             this.btnModeloEditar.Click += new System.EventHandler(this.btnModeloEditar_Click);
             // 
             // btnModeloAgregar
             // 
-            this.btnModeloAgregar.Location = new System.Drawing.Point(9, 84);
+            this.btnModeloAgregar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnModeloAgregar.BackgroundImage = global::audiovisalParcial.Properties.Resources.plus;
+            this.btnModeloAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModeloAgregar.Location = new System.Drawing.Point(84, 55);
             this.btnModeloAgregar.Name = "btnModeloAgregar";
             this.btnModeloAgregar.Size = new System.Drawing.Size(83, 72);
             this.btnModeloAgregar.TabIndex = 5;
-            this.btnModeloAgregar.Text = "Agregar";
-            this.btnModeloAgregar.UseVisualStyleBackColor = true;
+            this.btnModeloAgregar.UseVisualStyleBackColor = false;
             this.btnModeloAgregar.Click += new System.EventHandler(this.btnModeloAgregar_Click);
             // 
             // btnModeloBuscar
             // 
-            this.btnModeloBuscar.Location = new System.Drawing.Point(164, 19);
+            this.btnModeloBuscar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnModeloBuscar.BackgroundImage = global::audiovisalParcial.Properties.Resources.search;
+            this.btnModeloBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModeloBuscar.Location = new System.Drawing.Point(190, 3);
             this.btnModeloBuscar.Name = "btnModeloBuscar";
-            this.btnModeloBuscar.Size = new System.Drawing.Size(58, 20);
+            this.btnModeloBuscar.Size = new System.Drawing.Size(67, 46);
             this.btnModeloBuscar.TabIndex = 4;
-            this.btnModeloBuscar.Text = "Buscar";
-            this.btnModeloBuscar.UseVisualStyleBackColor = true;
+            this.btnModeloBuscar.UseVisualStyleBackColor = false;
             this.btnModeloBuscar.Click += new System.EventHandler(this.btnModeloBuscar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Texto a buscar";
-            // 
-            // txtModeloBuscar
-            // 
-            this.txtModeloBuscar.Location = new System.Drawing.Point(95, 11);
-            this.txtModeloBuscar.Name = "txtModeloBuscar";
-            this.txtModeloBuscar.Size = new System.Drawing.Size(465, 20);
-            this.txtModeloBuscar.TabIndex = 2;
-            this.txtModeloBuscar.TextChanged += new System.EventHandler(this.txtModeloBuscar_TextChanged);
             // 
             // Modelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 450);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(893, 432);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Modelo";
             this.Text = "Modelo";
             this.Activated += new System.EventHandler(this.Modelo_Activated);

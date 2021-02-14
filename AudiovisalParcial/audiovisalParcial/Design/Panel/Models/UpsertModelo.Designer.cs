@@ -30,76 +30,82 @@ namespace audiovisalParcial.Design.Panel.Models
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbxUpsertMarcas = new System.Windows.Forms.ComboBox();
             this.btnBrandGuardar = new System.Windows.Forms.Button();
             this.txtModeloDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbxUpsertMarcas = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbxUpsertMarcas);
             this.panel1.Controls.Add(this.btnBrandGuardar);
             this.panel1.Controls.Add(this.txtModeloDescripcion);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(22, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(480, 221);
+            this.panel1.Size = new System.Drawing.Size(370, 221);
             this.panel1.TabIndex = 1;
             // 
-            // btnBrandGuardar
+            // label2
             // 
-            this.btnBrandGuardar.Location = new System.Drawing.Point(186, 124);
-            this.btnBrandGuardar.Name = "btnBrandGuardar";
-            this.btnBrandGuardar.Size = new System.Drawing.Size(83, 54);
-            this.btnBrandGuardar.TabIndex = 2;
-            this.btnBrandGuardar.Text = "Guardar";
-            this.btnBrandGuardar.UseVisualStyleBackColor = true;
-            this.btnBrandGuardar.Click += new System.EventHandler(this.btnBrandGuardar_Click);
-            // 
-            // txtModeloDescripcion
-            // 
-            this.txtModeloDescripcion.Location = new System.Drawing.Point(269, 80);
-            this.txtModeloDescripcion.Name = "txtModeloDescripcion";
-            this.txtModeloDescripcion.Size = new System.Drawing.Size(194, 20);
-            this.txtModeloDescripcion.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(338, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Descripcion";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(146, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Marca";
             // 
             // cbxUpsertMarcas
             // 
             this.cbxUpsertMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxUpsertMarcas.FormattingEnabled = true;
-            this.cbxUpsertMarcas.Location = new System.Drawing.Point(17, 79);
+            this.cbxUpsertMarcas.Location = new System.Drawing.Point(49, 36);
             this.cbxUpsertMarcas.Name = "cbxUpsertMarcas";
-            this.cbxUpsertMarcas.Size = new System.Drawing.Size(163, 21);
+            this.cbxUpsertMarcas.Size = new System.Drawing.Size(263, 21);
             this.cbxUpsertMarcas.TabIndex = 3;
             // 
-            // label2
+            // btnBrandGuardar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Marca";
+            this.btnBrandGuardar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBrandGuardar.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
+            this.btnBrandGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBrandGuardar.Location = new System.Drawing.Point(127, 134);
+            this.btnBrandGuardar.Name = "btnBrandGuardar";
+            this.btnBrandGuardar.Size = new System.Drawing.Size(102, 82);
+            this.btnBrandGuardar.TabIndex = 2;
+            this.btnBrandGuardar.UseVisualStyleBackColor = false;
+            this.btnBrandGuardar.Click += new System.EventHandler(this.btnBrandGuardar_Click);
+            // 
+            // txtModeloDescripcion
+            // 
+            this.txtModeloDescripcion.Location = new System.Drawing.Point(49, 108);
+            this.txtModeloDescripcion.Name = "txtModeloDescripcion";
+            this.txtModeloDescripcion.Size = new System.Drawing.Size(263, 20);
+            this.txtModeloDescripcion.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(135, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Descripcion";
             // 
             // UpsertModelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 263);
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.ClientSize = new System.Drawing.Size(413, 247);
             this.Controls.Add(this.panel1);
             this.Name = "UpsertModelo";
             this.Text = "UpsertModelo";
