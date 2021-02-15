@@ -1,0 +1,168 @@
+GO
+CREATE DATABASE audiovisualdb;
+
+GO
+USE audiovisualdb;
+
+CREATE TABLE EquimentTypesStates(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	State VARCHAR(10),
+	Description VARCHAR(50) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL
+)
+
+CREATE TABLE EquimentTypes(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	StateId INT DEFAULT 1,
+	Description VARCHAR(50) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL,
+	FOREIGN KEY (StateId) REFERENCES EquimentTypesStates (Id)
+)
+
+CREATE TABLE BrandsStates(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	State VARCHAR(10),
+	Description VARCHAR(40) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL
+)
+
+CREATE TABLE Brands(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Description VARCHAR(50) NOT NULL,
+	StateId INT DEFAULT 1,
+	Enabled bit DEFAULT 1 NOT NULL,
+	FOREIGN KEY (StateId) REFERENCES BrandsStates (Id)
+)
+
+CREATE TABLE ModelsStates(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	State VARCHAR(10),
+	Description VARCHAR(40) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL,
+)
+
+CREATE TABLE Models(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	BranksId INT NOT NULL,
+	Description VARCHAR(50) NOT NULL,
+	StateId INT DEFAULT 1,
+	Enabled bit DEFAULT 1 NOT NULL,
+	FOREIGN KEY (StateId) REFERENCES ModelsStates (Id),
+	FOREIGN KEY (BranksId) REFERENCES Brands (Id)
+)
+
+
+CREATE TABLE TechnologiesConnectionStates(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	State VARCHAR(10),
+	Description VARCHAR(50) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL,
+)
+
+CREATE TABLE TechnologiesConnection(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Descripcion VARCHAR(50) NOT NULL,
+	StateId INT DEFAULT 1,
+	Enabled bit DEFAULT 1 NOT NULL,
+	FOREIGN KEY (StateId) REFERENCES TechnologiesConnectionStates (Id),
+)
+
+CREATE TABLE EquimentsStates(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	State VARCHAR(10),
+	Description VARCHAR(50) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL,
+)
+
+CREATE TABLE Equiments(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Descripcion VARCHAR(150) NOT NULL,
+	Serial VARCHAR(50) NOT NULL,
+	ServiceTag VARCHAR(50) NOT NULL,
+	EquimentTypesId INT NOT NULL,
+	BrandId INT NOT NULL,
+	ModelsId INT NOT NULL,
+	TechnologiesConnectionId INT NOT NULL,
+	StateId INT DEFAULT 1,
+	Enabled bit DEFAULT 1 NOT NULL,
+	FOREIGN KEY (EquimentTypesId) REFERENCES EquimentTypes (Id),
+	FOREIGN KEY (BrandId) REFERENCES Brands (Id),
+	FOREIGN KEY (ModelsId) REFERENCES Models (Id),
+	FOREIGN KEY (TechnologiesConnectionId) REFERENCES TechnologiesConnection (Id),
+	FOREIGN KEY (StateId) REFERENCES EquimentsStates (Id)
+)
+
+CREATE TABLE UsersStates(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	State VARCHAR(10),
+	Description VARCHAR(50) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL,
+)
+
+CREATE TABLE UsersTypes(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Description VARCHAR(50) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL,
+)
+
+CREATE TABLE PersonalTypes(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Description VARCHAR(50) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL,
+)
+
+CREATE TABLE Users(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	FirstName VARCHAR(50) NOT NULL,
+	LastName VARCHAR(50) NOT NULL,
+	IdentificationCard VARCHAR(20) NOT NULL,
+	Carnet VARCHAR(50) NOT NULL,
+	UsersTypesId INT DEFAULT 1,
+	PersonalTypesID INT DEFAULT 1,
+	StateId INT DEFAULT 1,
+	Enabled bit DEFAULT 1 NOT NULL,
+	FOREIGN KEY (UsersTypesId) REFERENCES UsersTypes (Id),
+	FOREIGN KEY (PersonalTypesID) REFERENCES PersonalTypes (Id),
+	FOREIGN KEY (StateId) REFERENCES UsersStates (Id)
+)
+
+CREATE TABLE EmployeesStates(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	State VARCHAR(10),
+	Description VARCHAR(50) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL,
+)
+
+CREATE TABLE Employees(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	FirstName VARCHAR(150) NOT NULL,
+	LastName VARCHAR(50) NOT NULL,
+	IdentificationCard VARCHAR(20) NOT NULL,
+	Workshift VARCHAR(50) NOT NULL,
+	HiredDate DATETIME DEFAULT getdate(),
+	StateId INT DEFAULT 1,
+	FOREIGN KEY (StateId) REFERENCES EmployeesStates (Id)
+)
+
+CREATE TABLE RentReturnStates(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	State VARCHAR(10),
+	Description VARCHAR(50) NOT NULL,
+	Enabled bit DEFAULT 1 NOT NULL,
+)
+
+CREATE TABLE RentReturn(
+	Id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	NoPay VARCHAR(40) NOT NULL,
+	EmployeeId INT NOT NULL,
+	EquimentId INT NOT NULL,
+	UserId INT NOT NULL,
+	LoanDate DATETIME NOT NULL,
+	ReturnDate DATETIME,
+	Comentary VARCHAR(100),
+	StateId INT DEFAULT 1,
+	FOREIGN KEY (EmployeeId) REFERENCES Employees (Id),
+	FOREIGN KEY (EquimentId) REFERENCES Equiments (Id),
+	FOREIGN KEY (UserId) REFERENCES Users (Id),
+	FOREIGN KEY (StateId) REFERENCES RentReturnStates (Id)
+)

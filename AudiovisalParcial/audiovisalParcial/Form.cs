@@ -1,17 +1,6 @@
-﻿using audiovisalParcial.Design.Panel.Brand;
-using audiovisalParcial.Design.Panel.Equiment;
-using audiovisalParcial.Design.Panel.EquipmentType;
+﻿using audiovisalParcial.Design.Menu.Maintances;
 using audiovisalParcial.Design.Panel.Home;
-using audiovisalParcial.Design.Panel.Models;
-using audiovisalParcial.Design.Panel.TechnologiesConnection;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial
@@ -19,24 +8,13 @@ namespace audiovisalParcial
     public partial class Form1 : Form
     {
         private HomeControl pHome;
-        private TechnologiesConnectionControl pTech;
-        private EquipmentTypeControl pEquipmentType;
-        private BrandControl pBrand;
-        private ModelsControl pModel;
-        private EquimentControl pEquiment;
+        private MaintenanceMenuControl maintenanceMenu;
 
         public Form1()
         {
             InitializeComponent();
             pHome = new HomeControl();
-            pBodySub.Controls.Clear();
-            pBodySub.Controls.Add(pHome);
-        }
-
-        private void pMenuTech_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            pBodySub.Controls.Clear();
-            pBodySub.Controls.Add(pTech);
+            maintenanceMenu = new MaintenanceMenuControl(this); ;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -47,39 +25,17 @@ namespace audiovisalParcial
             }
         }
 
-        private void btnMenuOption1_MouseClick(object sender, MouseEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            pEquipmentType = new EquipmentTypeControl(); 
-            pBodySub.Controls.Clear();
-            pBodySub.Controls.Add(pEquipmentType);
+            
+            pHeaderMenu.Controls.Clear();
+            pHeaderMenu.Controls.Add(maintenanceMenu);
         }
 
-        private void btnMenuOption4_MouseClick(object sender, MouseEventArgs e)
+        public Panel getPanelBody() 
         {
-            pTech = new TechnologiesConnectionControl();
-            pBodySub.Controls.Clear();
-            pBodySub.Controls.Add(pTech);
+            return pSubBody;
         }
 
-        private void btnMenuOption2_Click(object sender, EventArgs e)
-        {
-            pBrand = new BrandControl();
-            pBodySub.Controls.Clear();
-            pBodySub.Controls.Add(pBrand);
-        }
-
-        private void btnMenuOption3_Click(object sender, EventArgs e)
-        {
-            pModel = new ModelsControl();
-            pBodySub.Controls.Clear();
-            pBodySub.Controls.Add(pModel);
-        }
-
-        private void btnMenuOption5_Click(object sender, EventArgs e)
-        {
-            pEquiment = new EquimentControl();
-            pBodySub.Controls.Clear();
-            pBodySub.Controls.Add(pEquiment);
-        }
     }
 }

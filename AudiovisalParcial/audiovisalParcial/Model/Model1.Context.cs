@@ -13,10 +13,10 @@ namespace audiovisalParcial.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AUDIOVISUALESEntities : DbContext
+    public partial class AudiovisualDbEntities : DbContext
     {
-        public AUDIOVISUALESEntities()
-            : base("name=AUDIOVISUALESEntities")
+        public AudiovisualDbEntities()
+            : base("name=AudiovisualDbEntities")
         {
         }
     
@@ -25,13 +25,23 @@ namespace audiovisalParcial.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<empleado> empleados { get; set; }
-        public virtual DbSet<equipos> equipos { get; set; }
-        public virtual DbSet<marca> marcas { get; set; }
-        public virtual DbSet<modelo> usuarios { get; set; }
-        public virtual DbSet<rentaDevolucion> rentaDevolucions { get; set; }
-        public virtual DbSet<tecnologias_conexion> tecnologias_conexion { get; set; }
-        public virtual DbSet<tipo_equipos> tipo_equipos { get; set; }
-        public virtual DbSet<usuario> usuarios { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
+        public virtual DbSet<BrandsState> BrandsStates { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<EmployeesState> EmployeesStates { get; set; }
+        public virtual DbSet<Equiment> Equiments { get; set; }
+        public virtual DbSet<EquimentsState> EquimentsStates { get; set; }
+        public virtual DbSet<EquimentType> EquimentTypes { get; set; }
+        public virtual DbSet<EquimentTypesState> EquimentTypesStates { get; set; }
+        public virtual DbSet<Model> Models { get; set; }
+        public virtual DbSet<ModelsState> ModelsStates { get; set; }
+        public virtual DbSet<PersonalType> PersonalTypes { get; set; }
+        public virtual DbSet<RentReturn> RentReturns { get; set; }
+        public virtual DbSet<RentReturnState> RentReturnStates { get; set; }
+        public virtual DbSet<TechnologiesConnection> TechnologiesConnections { get; set; }
+        public virtual DbSet<TechnologiesConnectionState> TechnologiesConnectionStates { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UsersState> UsersStates { get; set; }
+        public virtual DbSet<UsersType> UsersTypes { get; set; }
     }
 }
