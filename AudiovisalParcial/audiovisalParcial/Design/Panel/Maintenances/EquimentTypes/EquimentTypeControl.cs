@@ -14,17 +14,23 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
         public EquipmentTypeControl()
         {
             InitializeComponent();
-            getListEquimentType();
+            GetList();
         }
 
         #region Private Methods
-        private void getListEquimentType()
+        private void GetList()
          {
     
             try
             {
-               dgvListEquipmentType.DataSource = audiovisualEntities.EquimentTypesStates.Select(s => s).ToList();
-                dgvListEquipmentType.Refresh();
+                dgvListEquipmentType.DataSource = audiovisualEntities.EquimentTypes.Where(w => w.Enabled != false).Select(s => new
+                {
+                    Id = s.Id,
+                    Estado = s.EquimentTypesState.Description,
+                    Descripcion = s.Description,
+                    Existe = s.Enabled
+                }).ToList();
+               dgvListEquipmentType.Refresh();
             }
             catch (Exception ex)
             {
@@ -32,21 +38,20 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             }
         }
 
-        private void getFilterEquimentType()
+        private void Filter()
         {
             try
             {
+                var modelos = from data in audiovisualEntities.EquimentTypes
+                              where (
+                                        data.Id == int.Parse(txtBuscar.Text) ||
+                                        data.Description.Contains(txtBuscar.Text) ||
+                                        data.StateId == int.Parse(txtBuscar.Text)
+                                     )
+                              select data;
 
-                //var modelos = from data in audiovisualEntities.modelos
-                //              where (
-                //                        data.Id == int.Parse(txtBuscar.Text) ||
-                //                        data.Descripcion.Contains(txtBuscar.Text) ||
-                //                        data.Estado == int.Parse(txtBuscar.Text) 
-                //                     )
-                //              select data;
-
-                //dgvListEquipmentType.DataSource = null;
-                //dgvListEquipmentType.DataSource = modelos.ToList();
+                dgvListEquipmentType.DataSource = null;
+                dgvListEquipmentType.DataSource = modelos.ToList();
             }
             catch (Exception ex)
             {
@@ -71,7 +76,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
 
         private void btnSearchEquipmentType_Click(object sender, EventArgs e)
         {
-            getFilterEquimentType();
+            Filter();
         }
 
         private void btnAddEquipmentType_Click(object sender, EventArgs e)
@@ -82,7 +87,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            getListEquimentType();
+            GetList();
         }
 
         private void btnDeleteEquipmentType_Click(object sender, EventArgs e)
@@ -96,7 +101,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
                     data.Enabled = false;
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Equipo de tipo eliminado con exito");
-                    getListEquimentType();
+                    GetList();
                 }
                 else
                     MessageBox.Show("Equipo de tipo no existe");
