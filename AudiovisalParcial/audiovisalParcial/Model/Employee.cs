@@ -27,6 +27,7 @@ namespace audiovisalParcial.Model
         public string Workshift { get; set; }
         public Nullable<System.DateTime> HiredDate { get; set; }
         public Nullable<int> StateId { get; set; }
+        public bool Enabled { get; set; }
     
         public virtual EmployeesState EmployeesState { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
