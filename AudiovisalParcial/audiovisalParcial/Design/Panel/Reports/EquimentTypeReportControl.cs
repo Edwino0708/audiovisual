@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace audiovisalParcial.Design.Menu.Reports
+namespace audiovisalParcial.Design.Panel.Reports
 {
-    public partial class ReportsControl : UserControl
+    public partial class EquimentTypeReportControl : UserControl
     {
-        public ReportsControl()
+        public EquimentTypeReportControl()
         {
             InitializeComponent();
         }

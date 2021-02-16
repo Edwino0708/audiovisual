@@ -9,12 +9,14 @@ namespace audiovisalParcial
     {
         private HomeControl pHome;
         private MaintenanceMenuControl maintenanceMenu;
+        private ReportMenuControl resportMenu;
 
         public Form1()
         {
             InitializeComponent();
             pHome = new HomeControl();
-            maintenanceMenu = new MaintenanceMenuControl(this); ;
+            maintenanceMenu = new MaintenanceMenuControl(this);
+            resportMenu = new ReportMenuControl(this);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -37,5 +39,10 @@ namespace audiovisalParcial
             return pSubBody;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pHeaderMenu.Controls.Clear();
+            pHeaderMenu.Controls.Add(resportMenu);
+        }
     }
 }

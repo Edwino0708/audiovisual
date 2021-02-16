@@ -7,10 +7,9 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
 {
     public partial class EquipmentTypeControl : UserControl
     {
-       private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
-
-
+        private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
         private EquipmentTypeControlForm createForm; 
+
         public EquipmentTypeControl()
         {
             InitializeComponent();

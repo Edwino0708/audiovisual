@@ -15,7 +15,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
     public partial class EquipmentTypeControlForm : Form
     {
         private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
-        private EquimentType equimentTypes;
+        private EquimentType data;
         private int id = 0;
         public EquipmentTypeControlForm(int id = 0)
         {
@@ -24,7 +24,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.id = id;
             if (id > 0) 
             {
-                FindEquimentType();
+                Find();
             }
         }
 
@@ -36,23 +36,23 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
                 
                 int state = item.Value;
                 string description = txtDescription.Text;
-                equimentTypes = new EquimentType();
+                data = new EquimentType();
 
                 if (id == 0)
                 {
                     
-                    equimentTypes.Description = description;
-                    equimentTypes.StateId = state;
-                    audiovisualEntities.EquimentTypes.Add(equimentTypes);
+                    data.Description = description;
+                    data.StateId = state;
+                    audiovisualEntities.EquimentTypes.Add(data);
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron insertados correctamente");
                     this.Close();
                 }
                 else
                 {
-                    equimentTypes = audiovisualEntities.EquimentTypes.Find(id);
-                    equimentTypes.Description = description;
-                    equimentTypes.StateId = state;
+                    data = audiovisualEntities.EquimentTypes.Find(id);
+                    data.Description = description;
+                    data.StateId = state;
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron actualizado correctamente");
                     this.Close();
@@ -65,13 +65,13 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             }
         }
 
-        private void FindEquimentType() 
+        private void Find() 
         {
-            var equimentTypes = audiovisualEntities.EquimentTypes.Find(id);
-            if (equimentTypes != null)
+            var search = audiovisualEntities.EquimentTypes.Find(id);
+            if (search != null)
             {
-                txtDescription.Text = equimentTypes.Description;
-                cbxState.SelectedValue = equimentTypes.StateId;
+                txtDescription.Text = search.Description;
+                cbxState.SelectedValue = search.StateId;
             }
             else
             {
@@ -85,7 +85,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
 
             try
             {
-                List<EquimentTypesState> listStates = audiovisualEntities.EquimentTypesStates.Select(s => s).Where(w => w.Enabled != false).ToList();
+                List<EquimentType> listStates = audiovisualEntities.EquimentTypes.Select(s => s).Where(w => w.Enabled != false).ToList();
                 foreach (var item in listStates)
                 {
                     ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);

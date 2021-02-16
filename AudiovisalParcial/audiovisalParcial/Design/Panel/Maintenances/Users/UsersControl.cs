@@ -13,22 +13,34 @@ namespace audiovisalParcial.Design.Panel.Users
 {
     public partial class UsersControl : UserControl
     {
-        //private AUDIOVISUALESEntities audiovisualEntities = new AUDIOVISUALESEntities();
+        private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
         private UsersForm createForm;
+
         public UsersControl()
         {
             InitializeComponent();
-            getList();
+            GetList();
         }
 
         #region Private Methods
-        private void getList()
+        private void GetList()
         {
 
             try
             {
                 dgvListEquipmentType.DataSource = null;
-            //    dgvListEquipmentType.DataSource = audiovisualEntities.usuarios.ToList();
+                dgvListEquipmentType.DataSource = audiovisualEntities.Users.Where(w => w.Enabled == true).Select(s => new 
+                {
+                    Id = s.Id,
+                    Nombre = s.FirstName,
+                    Apellido = s.LastName,
+                    Cedula = s.IdentificationCard,
+                    No_Carnet = s.Carnet,
+                    Tipo_Usuario = s.UsersType.Description,
+                    Tipo_Persona = s.PersonalType.Description,
+                    Estado = s.UsersState.Description,
+                    Activo = s.Enabled
+                }).ToList();
                 dgvListEquipmentType.Refresh();
             }
             catch (Exception ex)
@@ -37,21 +49,21 @@ namespace audiovisalParcial.Design.Panel.Users
             }
         }
 
-        private void filter()
+        private void Filter()
         {
             try
             {
 
-                //var modelos = from data in audiovisualEntities.usuarios
-                //              where (
-                //                        data.Id == int.Parse(txtBuscar.Text) ||
-                //                        data.Descripcion.Contains(txtBuscar.Text) ||
-                //                        data.Estado == int.Parse(txtBuscar.Text)
-                //                     )
-                //              select data;
-
-                //dgvListEquipmentType.DataSource = null;
-                //dgvListEquipmentType.DataSource = modelos.ToList();
+                dgvListEquipmentType.DataSource = null;
+                var search = from data in audiovisualEntities.Users
+                              where (
+                                        data.Id == int.Parse(txtBuscar.Text) ||
+                                        data.FirstName.Contains(txtBuscar.Text) ||
+                                        data.LastName.Contains(txtBuscar.Text) 
+                                        //data.StateId == int.Parse(txtBuscar.Text)
+                                     )
+                              select data;
+                dgvListEquipmentType.DataSource = search.ToList();
             }
             catch (Exception ex)
             {
@@ -65,29 +77,48 @@ namespace audiovisalParcial.Design.Panel.Users
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            Filter();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-
+            GetList();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            createForm = new UsersForm();
+            createForm.ShowDialog();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
-            //createForm = new UsersForm(id);
-            //createForm.ShowDialog();
+            createForm = new UsersForm(id);
+            createForm.ShowDialog();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
+                var data = audiovisualEntities.Users.Find(id);
+                if (data != null)
+                {
+                    data.Enabled = false;
+                    audiovisualEntities.SaveChanges();
+                    Utils.Utils.Message("Usuario eliminado con exito");
+                    GetList();
+                }
+                else
+                    MessageBox.Show("Usuario de tipo no existe");
+            }
+            catch (Exception)
+            {
 
+                MessageBox.Show("No se pudo eliminar el Usuario");
+            }
         }
     }
 }

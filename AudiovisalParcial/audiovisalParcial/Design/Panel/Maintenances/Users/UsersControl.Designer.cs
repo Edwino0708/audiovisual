@@ -42,9 +42,6 @@ namespace audiovisalParcial.Design.Panel.Users
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvListEquipmentType = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEquipmentType)).BeginInit();
@@ -54,11 +51,11 @@ namespace audiovisalParcial.Design.Panel.Users
             // 
             this.lTitle.AutoSize = true;
             this.lTitle.Font = new System.Drawing.Font("Constantia", 14F, System.Drawing.FontStyle.Bold);
-            this.lTitle.Location = new System.Drawing.Point(621, 0);
+            this.lTitle.Location = new System.Drawing.Point(558, 12);
             this.lTitle.Name = "lTitle";
-            this.lTitle.Size = new System.Drawing.Size(307, 46);
+            this.lTitle.Size = new System.Drawing.Size(497, 46);
             this.lTitle.TabIndex = 18;
-            this.lTitle.Text = "Crud de usuario";
+            this.lTitle.Text = "Mantenimiento de usuario";
             // 
             // groupBox1
             // 
@@ -219,10 +216,6 @@ namespace audiovisalParcial.Design.Panel.Users
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListEquipmentType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListEquipmentType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListEquipmentType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Descripcion,
-            this.Estado});
             this.dgvListEquipmentType.Location = new System.Drawing.Point(44, 160);
             this.dgvListEquipmentType.Margin = new System.Windows.Forms.Padding(6);
             this.dgvListEquipmentType.Name = "dgvListEquipmentType";
@@ -231,30 +224,6 @@ namespace audiovisalParcial.Design.Panel.Users
             this.dgvListEquipmentType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListEquipmentType.Size = new System.Drawing.Size(1551, 894);
             this.dgvListEquipmentType.TabIndex = 8;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "ID";
-            this.Id.MinimumWidth = 10;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.MinimumWidth = 10;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 10;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
             // 
             // UsersControl
             // 
@@ -289,8 +258,5 @@ namespace audiovisalParcial.Design.Panel.Users
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dgvListEquipmentType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

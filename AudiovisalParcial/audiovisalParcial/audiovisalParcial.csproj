@@ -71,11 +71,11 @@
     <Compile Include="Design\Menu\Maintances\MaintenanceMenuControl.Designer.cs">
       <DependentUpon>MaintenanceMenuControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\Menu\Reports\ReportsControl.cs">
+    <Compile Include="Design\Menu\Reports\ReportsMenuControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\Menu\Reports\ReportsControl.Designer.cs">
-      <DependentUpon>ReportsControl.cs</DependentUpon>
+    <Compile Include="Design\Menu\Reports\ReportsMenuControl.Designer.cs">
+      <DependentUpon>ReportsMenuControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\Panel\Home\HomeControl.cs">
       <SubType>UserControl</SubType>
@@ -175,6 +175,12 @@
     <Compile Include="Design\Panel\Maintenances\Users\UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\Panel\Reports\EquimentTypeReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\Reports\EquimentTypeReportControl.Designer.cs">
+      <DependentUpon>EquimentTypeReportControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,8 +263,8 @@
     <EmbeddedResource Include="Design\Menu\Maintances\MaintenanceMenuControl.resx">
       <DependentUpon>MaintenanceMenuControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Menu\Reports\ReportsControl.resx">
-      <DependentUpon>ReportsControl.cs</DependentUpon>
+    <EmbeddedResource Include="Design\Menu\Reports\ReportsMenuControl.resx">
+      <DependentUpon>ReportsMenuControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Panel\Home\HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Panel\Maintenances\Users\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Reports\EquimentTypeReportControl.resx">
+      <DependentUpon>EquimentTypeReportControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
@@ -362,7 +371,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Design\Menu\Services\" />
-    <Folder Include="Design\Panel\Reports\" />
     <Folder Include="Design\Panel\Services\" />
   </ItemGroup>
   <ItemGroup>
