@@ -1,4 +1,5 @@
 ﻿using audiovisalParcial.Model;
+using audiovisalParcial.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,18 +14,18 @@ namespace audiovisalParcial.Design.Panel.Models
 {
     public partial class ModelsForm : Form
     {
-        //private AUDIOVISUALESEntities audiovisualEntities = new AUDIOVISUALESEntities();
-        //private modelo data;
+        private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
+        private Model.Model model;
         private int id = 0;
 
         public ModelsForm(int id = 0)
         {
             InitializeComponent();
-            InitializeComponent();
+            LoadComboBox();
             this.id = id;
             if (id > 0)
             {
-                FindEquimentType();
+                FindModel();
             }
         }
 
@@ -32,31 +33,34 @@ namespace audiovisalParcial.Design.Panel.Models
         {
             try
             {
-                int marca = int.Parse(cbxState.SelectedItem.ToString());
-                int state = int.Parse(cbxState.SelectedItem.ToString());
+                ComboBoxItem item = (ComboBoxItem)cbxState.SelectedItem;
+                ComboBoxItem item2 = (ComboBoxItem)cbxMarca.SelectedItem;
+
+                int state = item.Value;
+                int marca = item2.Value;
                 string description = txtDescription.Text;
-                //if (id == 0)
-                //{
-                 
-                //    data = new modelo();
-                //    data.Descripcion = description;
-                //    data.Estado = state;
-                //    data.Marca = marca;
-                //    audiovisualEntities.modelos.Add(data);
-                //    audiovisualEntities.SaveChanges();
-                //    Utils.Utils.Message("Datos fueron insertados correctamente");
-                //    this.Close();
-                //}
-                //else
-                //{
-                //    data = audiovisualEntities.modelos.Find(id);
-                //    data.Descripcion = description;
-                //    data.Estado = state;
-                //    data.Marca = marca;
-                //    audiovisualEntities.SaveChanges();
-                //    Utils.Utils.Message("Datos fueron actualizado correctamente");
-                //    this.Close();
-                //}
+                model = new Model.Model();
+
+                if (id == 0)
+                {
+
+                    model.Description = description;
+                    model.BranksId = marca;
+                    model.StateId = state;
+                    audiovisualEntities.Models.Add(model);
+                    audiovisualEntities.SaveChanges();
+                    Utils.Utils.Message("Datos fueron insertados correctamente");
+                    this.Close();
+                }
+                else
+                {
+                    model = audiovisualEntities.Models.Find(id);
+                    model.Description = description;
+                    model.StateId = state;
+                    audiovisualEntities.SaveChanges();
+                    Utils.Utils.Message("Datos fueron actualizado correctamente");
+                    this.Close();
+                }
 
             }
             catch (Exception ex)
@@ -65,19 +69,55 @@ namespace audiovisalParcial.Design.Panel.Models
             }
         }
 
-        private void FindEquimentType()
+        private void FindModel()
         {
-            //var search = audiovisualEntities.modelos.Find(id);
-            //if (search != null)
-            //{
-            //    txtDescription.Text = search.Descripcion;
-            //    cbxMarca.SelectedValue = search.Marca;
-            //    cbxState.SelectedValue = search.Estado;
-            //}
-            //else
-            //{
-            //    Utils.Utils.MessageError("Error en buscar este dato");
-            //}
+            var model = audiovisualEntities.Models.Find(id);
+            if (model != null)
+            {
+                txtDescription.Text = model.Description;
+                cbxState.SelectedValue = model.StateId;
+                cbxMarca.SelectedValue = model.BranksId;
+            }
+            else
+            {
+                Utils.Utils.MessageError("Error en buscar este dato");
+            }
+        }
+
+        private void LoadComboBox()
+        {
+            List<ComboBoxItem> listItem = new List<ComboBoxItem>();
+            List<ComboBoxItem> listMarcas = new List<ComboBoxItem>();
+
+            try
+            {
+                List<BrandsState> listStates = audiovisualEntities.BrandsStates.Select(s => s).Where(w => w.Enabled != false).ToList();
+                List<Brand> listBrands = audiovisualEntities.Brands.Select(s => s).Where(w => w.Enabled != false).ToList();
+
+                foreach (var item in listStates)
+                {
+                    ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
+                    listItem.Add(comboxBoxItem);
+                }
+
+                foreach (var item in listBrands)
+                {
+                    ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
+                    listMarcas.Add(comboxBoxItem);
+                }
+
+                cbxMarca.DataSource = listMarcas;
+                cbxMarca.DisplayMember = "Name";
+                cbxMarca.ValueMember = "Value";
+
+                cbxMarca.DataSource = listItem;
+                cbxMarca.DisplayMember = "Name";
+                cbxMarca.ValueMember = "Value";
+            }
+            catch (Exception ex)
+            {
+                Utils.Utils.MessageError(ex.Message);
+            }
         }
     }
 }

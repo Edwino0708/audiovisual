@@ -32,17 +32,17 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.panel1 = new System.Windows.Forms.Panel();
             this.lTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.dgvListEquipmentType = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbxCriterio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEquipmentType)).BeginInit();
@@ -81,6 +81,77 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(720, 526);
             this.panel2.TabIndex = 8;
+            // 
+            // dgvListEquipmentType
+            // 
+            this.dgvListEquipmentType.AllowUserToAddRows = false;
+            this.dgvListEquipmentType.AllowUserToDeleteRows = false;
+            this.dgvListEquipmentType.AllowUserToResizeColumns = false;
+            this.dgvListEquipmentType.AllowUserToResizeRows = false;
+            this.dgvListEquipmentType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListEquipmentType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListEquipmentType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListEquipmentType.Location = new System.Drawing.Point(3, 68);
+            this.dgvListEquipmentType.Name = "dgvListEquipmentType";
+            this.dgvListEquipmentType.ReadOnly = true;
+            this.dgvListEquipmentType.RowHeadersWidth = 82;
+            this.dgvListEquipmentType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListEquipmentType.Size = new System.Drawing.Size(714, 465);
+            this.dgvListEquipmentType.TabIndex = 8;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.txtBuscar);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cbxCriterio);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(0, 73);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(724, 68);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscador";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(412, 28);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(186, 20);
+            this.txtBuscar.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(326, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Valor a buscar";
+            // 
+            // cbxCriterio
+            // 
+            this.cbxCriterio.FormattingEnabled = true;
+            this.cbxCriterio.Items.AddRange(new object[] {
+            "Id",
+            "Descripcion"});
+            this.cbxCriterio.Location = new System.Drawing.Point(150, 30);
+            this.cbxCriterio.Name = "cbxCriterio";
+            this.cbxCriterio.Size = new System.Drawing.Size(121, 21);
+            this.cbxCriterio.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(90, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Criterio";
             // 
             // btnRefresh
             // 
@@ -145,41 +216,6 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDeleteEquipmentType_Click);
             // 
-            // dgvListEquipmentType
-            // 
-            this.dgvListEquipmentType.AllowUserToAddRows = false;
-            this.dgvListEquipmentType.AllowUserToDeleteRows = false;
-            this.dgvListEquipmentType.AllowUserToResizeColumns = false;
-            this.dgvListEquipmentType.AllowUserToResizeRows = false;
-            this.dgvListEquipmentType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvListEquipmentType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListEquipmentType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListEquipmentType.Location = new System.Drawing.Point(3, 68);
-            this.dgvListEquipmentType.Name = "dgvListEquipmentType";
-            this.dgvListEquipmentType.ReadOnly = true;
-            this.dgvListEquipmentType.RowHeadersWidth = 82;
-            this.dgvListEquipmentType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListEquipmentType.Size = new System.Drawing.Size(714, 465);
-            this.dgvListEquipmentType.TabIndex = 8;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.txtBuscar);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cbxCriterio);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 73);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(724, 68);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscador";
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -194,42 +230,6 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearchEquipmentType_Click);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(412, 28);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(186, 20);
-            this.txtBuscar.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(326, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Valor a buscar";
-            // 
-            // cbxCriterio
-            // 
-            this.cbxCriterio.FormattingEnabled = true;
-            this.cbxCriterio.Items.AddRange(new object[] {
-            "Id",
-            "Descripcion"});
-            this.cbxCriterio.Location = new System.Drawing.Point(150, 30);
-            this.cbxCriterio.Name = "cbxCriterio";
-            this.cbxCriterio.Size = new System.Drawing.Size(121, 21);
-            this.cbxCriterio.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Criterio";
             // 
             // EquipmentTypeControl
             // 

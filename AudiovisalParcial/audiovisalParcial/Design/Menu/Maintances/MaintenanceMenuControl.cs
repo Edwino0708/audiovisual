@@ -1,4 +1,6 @@
 ﻿using audiovisalParcial.Design.Panel.EquipmentType;
+using audiovisalParcial.Design.Panel.Maintenances.Brands;
+using audiovisalParcial.Design.Panel.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +17,17 @@ namespace audiovisalParcial.Design.Menu.Maintances
     {
         private Form1 form;
         private EquipmentTypeControl equimentType;
+        private BrandControl brand;
+        private ModelsControl model;
+
 
         public MaintenanceMenuControl(Form1 form)
         {
             InitializeComponent();
             this.form = form;
             equimentType = new EquipmentTypeControl();
+            brand = new BrandControl();
+            model = new ModelsControl();
         }
 
 
@@ -32,11 +39,15 @@ namespace audiovisalParcial.Design.Menu.Maintances
         }
         private void btnMaintenanceOption2_Click(object sender, EventArgs e)
         {
-
+            var body = this.form.getPanelBody();
+            body.Controls.Clear();
+            body.Controls.Add(brand);
         }
         private void btnMaintenanceOption3_Click(object sender, EventArgs e)
         {
-
+            var body = this.form.getPanelBody();
+            body.Controls.Clear();
+            body.Controls.Add(model);
         }
         private void btnMaintenanceOption4_Click(object sender, EventArgs e)
         {

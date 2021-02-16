@@ -9,30 +9,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace audiovisalParcial.Design.Panel.Brand
+namespace audiovisalParcial.Design.Panel.Maintenances.Brands
 {
     public partial class BrandControl : UserControl
     {
-
-        //private AUDIOVISUALESEntities audiovisualEntities = new AUDIOVISUALESEntities();
-
-        private BrandForm createForm;
+        private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
+        private BrandControlForm brandForm;
         public BrandControl()
         {
             InitializeComponent();
-            getList();
         }
 
-
-        #region Private Methods
-        private void getList()
+        private void GetList()
         {
 
             try
             {
-                dgvListEquipmentType.DataSource = null;
-               // dgvListEquipmentType.DataSource = audiovisualEntities.marcas.ToList();
-                dgvListEquipmentType.Refresh();
+                dgvMarca.DataSource = audiovisualEntities.Brands.Where(w => w.Enabled != false).Select(s => new
+                {
+                    Id = s.Id,
+                    Estado = s.BrandsState.Description,
+                    Descripcion = s.Description,
+                    Existe = s.Enabled
+                }).ToList();
+                dgvMarca.Refresh();
             }
             catch (Exception ex)
             {
@@ -40,22 +40,20 @@ namespace audiovisalParcial.Design.Panel.Brand
             }
         }
 
-        private void filter()
+        private void Filter()
         {
             try
             {
+                var modelos = from data in audiovisualEntities.Brands
+                              where (
+                                        data.Id == int.Parse(txtBuscarMarca.Text) ||
+                                        data.Description.Contains(txtBuscarMarca.Text) ||
+                                        data.StateId == int.Parse(txtBuscarMarca.Text)
+                                     )
+                              select data;
 
-                //var modelos = from data in audiovisualEntities.marcas
-                //              where (
-
-                //                        data.Id == int.Parse(txtBuscar.Text) ||
-                //                        data.Descripcion.Contains(txtBuscar.Text) ||
-                //                        data.Estado == int.Parse(txtBuscar.Text)
-                //                     )
-                //              select data;
-
-                //dgvListEquipmentType.DataSource = null;
-                //dgvListEquipmentType.DataSource = modelos.ToList();
+                dgvMarca.DataSource = null;
+                dgvMarca.DataSource = modelos.ToList();
             }
             catch (Exception ex)
             {
@@ -64,57 +62,51 @@ namespace audiovisalParcial.Design.Panel.Brand
             }
 
         }
-        #endregion
-   
-        #region Events
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            createForm = new BrandForm();
-            createForm.ShowDialog();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDeleteMarca_Click(object sender, EventArgs e)
         {
             try
             {
-                int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
-               // var data = audiovisualEntities.marcas.Find(id);
-                //if (data != null)
-                //{
-                //    //audiovisualEntities.marcas.Remove(data);
-                //    //audiovisualEntities.SaveChanges();
-                //    Utils.Utils.Message("Marca eliminado con exito");
-                //    getList();
-                //}
-                //else
-                //    MessageBox.Show("Marca no existe");
+                int id = int.Parse(dgvMarca.Rows[dgvMarca.CurrentRow.Index].Cells[0].Value.ToString());
+                var data = audiovisualEntities.Brands.Find(id);
+                if (data != null)
+                {
+                    data.Enabled = false;
+                    audiovisualEntities.SaveChanges();
+                    Utils.Utils.Message("Marca eliminada con exito");
+                    GetList();
+                }
+                else
+                    MessageBox.Show("Marca no existe");
             }
             catch (Exception)
             {
 
-                MessageBox.Show("No se pudo eliminar el Marca");
+                MessageBox.Show("No se pudo eliminar la marca");
             }
-
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdateMarca_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
-            createForm = new BrandForm(id);
-            createForm.ShowDialog();
+            int id = int.Parse(dgvMarca.Rows[dgvMarca.CurrentRow.Index].Cells[0].Value.ToString());
+            brandForm = new BrandControlForm(id);
+            brandForm.ShowDialog();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnAddMarca_Click(object sender, EventArgs e)
         {
-            getList();
+            brandForm = new BrandControlForm();
+            brandForm.ShowDialog();
         }
 
-        #endregion
-
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnRefreshMarca_Click(object sender, EventArgs e)
         {
-            filter();
+            GetList();
+        }
+
+        private void btnSearchMarca_Click(object sender, EventArgs e)
+        {
+            Filter();
         }
     }
 }

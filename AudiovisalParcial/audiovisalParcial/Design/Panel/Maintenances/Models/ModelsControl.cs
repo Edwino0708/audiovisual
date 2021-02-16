@@ -13,7 +13,7 @@ namespace audiovisalParcial.Design.Panel.Models
 {
     public partial class ModelsControl : UserControl
     {
-       // private AUDIOVISUALESEntities audiovisualEntities = new AUDIOVISUALESEntities();
+       private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
         private  ModelsForm createForm;
 
         public ModelsControl()
@@ -28,9 +28,14 @@ namespace audiovisalParcial.Design.Panel.Models
 
             try
             {
-                dgvListEquipmentType.DataSource = null;
-               // dgvListEquipmentType.DataSource = audiovisualEntities.modelos.ToList();
-                dgvListEquipmentType.Refresh();
+                dgvModelo.DataSource = audiovisualEntities.Models.Where(w => w.Enabled != false).Select(s => new
+                {
+                    Id = s.Id,
+                    Estado = s.ModelsState.Description,
+                    Descripcion = s.Description,
+                    Existe = s.Enabled
+                }).ToList();
+                dgvModelo.Refresh();
             }
             catch (Exception ex)
             {
@@ -42,18 +47,16 @@ namespace audiovisalParcial.Design.Panel.Models
         {
             try
             {
+                var modelos = from data in audiovisualEntities.Models
+                              where (
+                                        data.Id == int.Parse(txtBuscarModelo.Text) ||
+                                        data.Description.Contains(txtBuscarModelo.Text) ||
+                                        data.StateId == int.Parse(txtBuscarModelo.Text)
+                                     )
+                              select data;
 
-                //var modelos = from data in audiovisualEntities.modelos
-                //              where (
-                //                        data.Id == int.Parse(txtBuscar.Text) ||
-                //                        data.Marca == int.Parse(txtBuscar.Text) ||
-                //                        data.Descripcion.Contains(txtBuscar.Text) ||
-                //                        data.Estado == int.Parse(txtBuscar.Text)
-                //                     )
-                //              select data;
-
-                //dgvListEquipmentType.DataSource = null;
-                //dgvListEquipmentType.DataSource = modelos.ToList();
+                dgvModelo.DataSource = null;
+                dgvModelo.DataSource = modelos.ToList();
             }
             catch (Exception ex)
             {
@@ -78,7 +81,7 @@ namespace audiovisalParcial.Design.Panel.Models
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
+            int id = int.Parse(dgvModelo.Rows[dgvModelo.CurrentRow.Index].Cells[0].Value.ToString());
             createForm = new ModelsForm(id);
             createForm.ShowDialog();
         }
@@ -87,24 +90,24 @@ namespace audiovisalParcial.Design.Panel.Models
         {
             try
             {
-                int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
-                //var data = audiovisualEntities.modelos.Find(id);
-                //if (data != null)
-                //{
-                //    audiovisualEntities.modelos.Remove(data);
-                //    audiovisualEntities.SaveChanges();
-                //    Utils.Utils.Message("Equipo de tipo eliminado con exito");
-                //    getList();
-                //}
-                //else
-                //    MessageBox.Show("Equipo de tipo no existe");
+                int id = int.Parse(dgvModelo.Rows[dgvModelo.CurrentRow.Index].Cells[0].Value.ToString());
+                var data = audiovisualEntities.Models.Find(id);
+                if (data != null)
+                {
+                    data.Enabled = false;
+                    audiovisualEntities.SaveChanges();
+                    Utils.Utils.Message("Modelo eliminada con exito");
+                    getList();
+                }
+                else
+                    MessageBox.Show("Modelo no existe");
             }
             catch (Exception)
             {
 
-                MessageBox.Show("No se pudo eliminar el Equipo de tipo");
+                MessageBox.Show("No se pudo eliminar el modelo");
             }
-         }
+        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {

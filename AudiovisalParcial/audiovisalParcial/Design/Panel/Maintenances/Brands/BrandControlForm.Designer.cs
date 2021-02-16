@@ -1,7 +1,7 @@
 ﻿
-namespace audiovisalParcial.Design.Panel.Brand
+namespace audiovisalParcial.Design.Panel.Maintenances.Brands
 {
-    partial class BrandForm
+    partial class BrandControlForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@ namespace audiovisalParcial.Design.Panel.Brand
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAddMarca = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbxState = new System.Windows.Forms.ComboBox();
+            this.cbxStateMarca = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtDescriptionMarca = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAddEquipmentType = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,36 +43,47 @@ namespace audiovisalParcial.Design.Panel.Brand
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Constantia", 15F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(204, 35);
+            this.label1.Location = new System.Drawing.Point(168, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 24);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Agregar marca";
+            this.label1.Text = "Agregar Marca";
+            // 
+            // btnAddMarca
+            // 
+            this.btnAddMarca.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
+            this.btnAddMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddMarca.Location = new System.Drawing.Point(207, 216);
+            this.btnAddMarca.Name = "btnAddMarca";
+            this.btnAddMarca.Size = new System.Drawing.Size(48, 35);
+            this.btnAddMarca.TabIndex = 14;
+            this.btnAddMarca.UseVisualStyleBackColor = true;
+            this.btnAddMarca.Click += new System.EventHandler(this.btnAddMarca_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbxState);
+            this.groupBox2.Controls.Add(this.cbxStateMarca);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtDescription);
+            this.groupBox2.Controls.Add(this.txtDescriptionMarca);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(116, 84);
+            this.groupBox2.Location = new System.Drawing.Point(50, 61);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(341, 144);
+            this.groupBox2.Size = new System.Drawing.Size(338, 137);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
-            // cbxState
+            // cbxStateMarca
             // 
-            this.cbxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxState.FormattingEnabled = true;
-            this.cbxState.Items.AddRange(new object[] {
+            this.cbxStateMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxStateMarca.FormattingEnabled = true;
+            this.cbxStateMarca.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.cbxState.Location = new System.Drawing.Point(100, 83);
-            this.cbxState.Name = "cbxState";
-            this.cbxState.Size = new System.Drawing.Size(184, 21);
-            this.cbxState.TabIndex = 7;
+            this.cbxStateMarca.Location = new System.Drawing.Point(100, 83);
+            this.cbxStateMarca.Name = "cbxStateMarca";
+            this.cbxStateMarca.Size = new System.Drawing.Size(184, 21);
+            this.cbxStateMarca.TabIndex = 7;
             // 
             // label4
             // 
@@ -83,12 +94,12 @@ namespace audiovisalParcial.Design.Panel.Brand
             this.label4.TabIndex = 6;
             this.label4.Text = "Estado";
             // 
-            // txtDescription
+            // txtDescriptionMarca
             // 
-            this.txtDescription.Location = new System.Drawing.Point(100, 38);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(184, 20);
-            this.txtDescription.TabIndex = 3;
+            this.txtDescriptionMarca.Location = new System.Drawing.Point(100, 38);
+            this.txtDescriptionMarca.Name = "txtDescriptionMarca";
+            this.txtDescriptionMarca.Size = new System.Drawing.Size(184, 20);
+            this.txtDescriptionMarca.TabIndex = 3;
             // 
             // label2
             // 
@@ -99,28 +110,17 @@ namespace audiovisalParcial.Design.Panel.Brand
             this.label2.TabIndex = 2;
             this.label2.Text = "Descripcion";
             // 
-            // btnAddEquipmentType
-            // 
-            this.btnAddEquipmentType.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
-            this.btnAddEquipmentType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddEquipmentType.Location = new System.Drawing.Point(258, 241);
-            this.btnAddEquipmentType.Name = "btnAddEquipmentType";
-            this.btnAddEquipmentType.Size = new System.Drawing.Size(51, 35);
-            this.btnAddEquipmentType.TabIndex = 14;
-            this.btnAddEquipmentType.UseVisualStyleBackColor = true;
-            this.btnAddEquipmentType.Click += new System.EventHandler(this.btnAddEquipmentType_Click);
-            // 
-            // BrandForm
+            // BrandControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 306);
+            this.ClientSize = new System.Drawing.Size(460, 276);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAddEquipmentType);
+            this.Controls.Add(this.btnAddMarca);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "BrandForm";
-            this.Text = "FormBrand";
+            this.MaximizeBox = false;
+            this.Name = "BrandControlForm";
+            this.Text = "BrandControlForm";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -131,11 +131,11 @@ namespace audiovisalParcial.Design.Panel.Brand
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAddEquipmentType;
+        private System.Windows.Forms.Button btnAddMarca;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cbxState;
+        private System.Windows.Forms.ComboBox cbxStateMarca;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtDescriptionMarca;
         private System.Windows.Forms.Label label2;
     }
 }
