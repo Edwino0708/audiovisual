@@ -78,7 +78,9 @@ namespace audiovisalParcial.Design.Menu.Maintances
         }
         private void btnMaintenanceOption7_Click(object sender, EventArgs e)
         {
-
+            var body = this.form.getPanelBody();
+            body.Controls.Clear();
+            body.Controls.Add(employeesControl);
         }
         private void btnMaintenanceOption8_Click(object sender, EventArgs e)
         {

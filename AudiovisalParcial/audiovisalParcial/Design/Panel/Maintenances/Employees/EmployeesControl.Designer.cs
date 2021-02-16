@@ -41,13 +41,13 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.dgvListEquipmentType = new System.Windows.Forms.DataGridView();
+            this.dgvListEmployee = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListEquipmentType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // lTitle
@@ -133,7 +133,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.dgvListEquipmentType);
+            this.panel2.Controls.Add(this.dgvListEmployee);
             this.panel2.Location = new System.Drawing.Point(2, 106);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
@@ -199,28 +199,29 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // dgvListEquipmentType
+            // dgvListEmployee
             // 
-            this.dgvListEquipmentType.AllowUserToAddRows = false;
-            this.dgvListEquipmentType.AllowUserToDeleteRows = false;
-            this.dgvListEquipmentType.AllowUserToResizeColumns = false;
-            this.dgvListEquipmentType.AllowUserToResizeRows = false;
-            this.dgvListEquipmentType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvListEmployee.AllowUserToAddRows = false;
+            this.dgvListEmployee.AllowUserToDeleteRows = false;
+            this.dgvListEmployee.AllowUserToResizeColumns = false;
+            this.dgvListEmployee.AllowUserToResizeRows = false;
+            this.dgvListEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvListEquipmentType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListEquipmentType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListEquipmentType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvListEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Descripcion,
             this.Estado});
-            this.dgvListEquipmentType.Location = new System.Drawing.Point(22, 83);
-            this.dgvListEquipmentType.Name = "dgvListEquipmentType";
-            this.dgvListEquipmentType.ReadOnly = true;
-            this.dgvListEquipmentType.RowHeadersWidth = 82;
-            this.dgvListEquipmentType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListEquipmentType.Size = new System.Drawing.Size(776, 465);
-            this.dgvListEquipmentType.TabIndex = 8;
+            this.dgvListEmployee.Location = new System.Drawing.Point(22, 83);
+            this.dgvListEmployee.Name = "dgvListEmployee";
+            this.dgvListEmployee.ReadOnly = true;
+            this.dgvListEmployee.RowHeadersWidth = 82;
+            this.dgvListEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListEmployee.Size = new System.Drawing.Size(776, 465);
+            this.dgvListEmployee.TabIndex = 8;
+            this.dgvListEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListEmployee_CellContentClick);
             // 
             // Id
             // 
@@ -253,13 +254,13 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             this.Controls.Add(this.lTitle);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EmployeesControl";
             this.Size = new System.Drawing.Size(829, 646);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListEquipmentType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,7 +280,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.DataGridView dgvListEquipmentType;
+        private System.Windows.Forms.DataGridView dgvListEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
