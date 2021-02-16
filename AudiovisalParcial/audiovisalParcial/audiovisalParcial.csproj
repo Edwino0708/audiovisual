@@ -86,11 +86,15 @@
     <Compile Include="Design\Panel\Maintenances\Brands\BrandControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\Panel\Maintenances\Brands\BrandControl.Designer.cs" />
-    <Compile Include="Design\Panel\Maintenances\Brands\BrandForm.cs">
+    <Compile Include="Design\Panel\Maintenances\Brands\BrandControl.Designer.cs">
+      <DependentUpon>BrandControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\Maintenances\Brands\BrandControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design\Panel\Maintenances\Brands\BrandForm.Designer.cs" />
+    <Compile Include="Design\Panel\Maintenances\Brands\BrandControlForm.Designer.cs">
+      <DependentUpon>BrandControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\Panel\Maintenances\Employees\EmployeesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -269,8 +273,12 @@
     <EmbeddedResource Include="Design\Panel\Home\HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Panel\Maintenances\Brands\BrandControl.resx" />
-    <EmbeddedResource Include="Design\Panel\Maintenances\Brands\BrandForm.resx" />
+    <EmbeddedResource Include="Design\Panel\Maintenances\Brands\BrandControl.resx">
+      <DependentUpon>BrandControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Maintenances\Brands\BrandControlForm.resx">
+      <DependentUpon>BrandControlForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\Panel\Maintenances\Employees\EmployeesControl.resx">
       <DependentUpon>EmployeesControl.cs</DependentUpon>
     </EmbeddedResource>
