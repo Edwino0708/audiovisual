@@ -1,4 +1,5 @@
 ﻿using audiovisalParcial.Design.Panel.EquipmentType;
+using audiovisalParcial.Design.Panel.Maintenances.Employees;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +16,13 @@ namespace audiovisalParcial.Design.Menu.Maintances
     {
         private Form1 form;
         private EquipmentTypeControl equimentType;
-
+        private EmployeesControl employeesControl;
         public MaintenanceMenuControl(Form1 form)
         {
             InitializeComponent();
             this.form = form;
             equimentType = new EquipmentTypeControl();
+            employeesControl = new EmployeesControl();
         }
 
 
@@ -52,7 +54,9 @@ namespace audiovisalParcial.Design.Menu.Maintances
         }
         private void btnMaintenanceOption7_Click(object sender, EventArgs e)
         {
-
+            var body = this.form.getPanelBody();
+            body.Controls.Clear();
+            body.Controls.Add(employeesControl);
         }
         private void btnMaintenanceOption8_Click(object sender, EventArgs e)
         {
