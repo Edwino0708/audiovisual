@@ -49,7 +49,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Serial" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ServiceTag" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="EquimentTypesId" Type="int" Nullable="false" />
@@ -141,7 +141,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="StateId" Type="int" />
           <Property Name="Enabled" Type="bit" Nullable="false" />
         </EntityType>
@@ -549,7 +549,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Serial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ServiceTag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EquimentTypesId" Type="Int32" Nullable="false" />
@@ -661,7 +661,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="StateId" Type="Int32" />
           <Property Name="Enabled" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Equiments" Relationship="Self.FK__Equiments__Techn__4BAC3F29" FromRole="TechnologiesConnection" ToRole="Equiments" />
@@ -1075,7 +1075,7 @@
             <EntityTypeMapping TypeName="AudiovisualDbModel.Equiment">
               <MappingFragment StoreEntitySet="Equiments">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Serial" ColumnName="Serial" />
                 <ScalarProperty Name="ServiceTag" ColumnName="ServiceTag" />
                 <ScalarProperty Name="EquimentTypesId" ColumnName="EquimentTypesId" />
@@ -1176,7 +1176,7 @@
             <EntityTypeMapping TypeName="AudiovisualDbModel.TechnologiesConnection">
               <MappingFragment StoreEntitySet="TechnologiesConnection">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="StateId" ColumnName="StateId" />
                 <ScalarProperty Name="Enabled" ColumnName="Enabled" />
               </MappingFragment>

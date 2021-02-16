@@ -48,7 +48,7 @@
       <EntityTypeMapping TypeName="AudiovisualDbModel.Equiment">
         <MappingFragment StoreEntitySet="Equiments">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Serial" ColumnName="Serial" />
           <ScalarProperty Name="ServiceTag" ColumnName="ServiceTag" />
           <ScalarProperty Name="EquimentTypesId" ColumnName="EquimentTypesId" />
@@ -149,7 +149,7 @@
       <EntityTypeMapping TypeName="AudiovisualDbModel.TechnologiesConnection">
         <MappingFragment StoreEntitySet="TechnologiesConnection">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="StateId" ColumnName="StateId" />
           <ScalarProperty Name="Enabled" ColumnName="Enabled" />
         </MappingFragment>

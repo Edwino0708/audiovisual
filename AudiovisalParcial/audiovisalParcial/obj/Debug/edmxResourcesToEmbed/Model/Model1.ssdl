@@ -44,7 +44,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Serial" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="ServiceTag" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="EquimentTypesId" Type="int" Nullable="false" />
@@ -136,7 +136,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="StateId" Type="int" />
     <Property Name="Enabled" Type="bit" Nullable="false" />
   </EntityType>
