@@ -13,23 +13,34 @@ namespace audiovisalParcial.Design.Panel.Equiment
 {
     public partial class EquimentControl : UserControl
     {
-        //private AUDIOVISUALESEntities audiovisualEntities = new AUDIOVISUALESEntities();
+        private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
         private EquimentForm createForm;
 
         public EquimentControl()
         {
             InitializeComponent();
-            getList();
+            GetList();
 
         }
         #region Private Methods
-        private void getList()
+        private void GetList()
         {
 
             try
             {
-                dgvListEquipmentType.DataSource = null;
-           //     dgvListEquipmentType.DataSource = audiovisualEntities.equipos.ToList();
+                dgvListEquipmentType.DataSource = audiovisualEntities.Equiments.Where(w => w.Enabled != false).Select(s => new
+                {
+                    Id = s.Id,
+                    Descripcion = s.Description,
+                    Marca = s.BrandId,
+                    Modelo = s.ModelsId,
+                    Serial = s.Serial,
+                    ServiceTag = s.ServiceTag,
+                    TechnologyConexion = s.TechnologiesConnectionId,
+                    EquipmentType = s.EquimentTypesId,
+                    Estado = s.EquimentsState.Description,
+                    Existe = s.Enabled
+                }).ToList();
                 dgvListEquipmentType.Refresh();
             }
             catch (Exception ex)
@@ -38,21 +49,20 @@ namespace audiovisalParcial.Design.Panel.Equiment
             }
         }
 
-        private void filter()
+        private void Filter()
         {
             try
             {
 
-                //var modelos = from data in audiovisualEntities.modelos
-                //              where (
-                //                        data.Id == int.Parse(txtBuscar.Text) ||
-                //                        data.Descripcion.Contains(txtBuscar.Text) ||
-                //                        data.Estado == int.Parse(txtBuscar.Text)
-                //                     )
-                //              select data;
+                var modelos = from data in audiovisualEntities.Equiments
+                              where (
+                                        data.Id == int.Parse(txtBuscar.Text) ||
+                                        data.Description.Contains(txtBuscar.Text) 
+                                     )
+                              select data;
 
-                //dgvListEquipmentType.DataSource = null;
-                //dgvListEquipmentType.DataSource = modelos.ToList();
+                dgvListEquipmentType.DataSource = null;
+                dgvListEquipmentType.DataSource = modelos.ToList();
             }
             catch (Exception ex)
             {
@@ -66,12 +76,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            filter();
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            getList();
+            Filter();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -80,40 +85,40 @@ namespace audiovisalParcial.Design.Panel.Equiment
             createForm.ShowDialog();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+
+        private void btnRefresh_Click_1(object sender, EventArgs e)
+        {
+            GetList();
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
             createForm = new EquimentForm(id);
             createForm.ShowDialog();
-
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
             try
             {
-                //int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
-                //var data = audiovisualEntities.equipos.Find(id);
-                //if (data != null)
-                //{
-                //    audiovisualEntities.equipos.Remove(data);
-                //    audiovisualEntities.SaveChanges();
-                //    Utils.Utils.Message("Equipo eliminado con exito");
-                //    getList();
-                //}
-                //else
-                //    MessageBox.Show("Equipo no existe");
+                int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
+                var data = audiovisualEntities.Equiments.Find(id);
+                if (data != null)
+                {
+                    data.Enabled = false;
+                    audiovisualEntities.SaveChanges();
+                    Utils.Utils.Message("Equipo eliminado con exito");
+                    GetList();
+                }
+                else
+                    MessageBox.Show("Equipo no existe");
             }
             catch (Exception)
             {
 
                 MessageBox.Show("No se pudo eliminar el Equipo");
             }
-        }
-
-        private void btnRefresh_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using audiovisalParcial.Model;
+using audiovisalParcial.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +14,14 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
 {
     public partial class TechnologiesConnectionForm : Form
     {
-        //private AUDIOVISUALESEntities audiovisualEntities = new AUDIOVISUALESEntities();
-        //private tecnologias_conexion data;
+        private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
+        private Model.TechnologiesConnection data;
         private int id = 0;
 
         public TechnologiesConnectionForm(int id = 0)
         {
             InitializeComponent();
+            LoadComboBox();
             this.id = id;
             if (id > 0)
             {
@@ -29,30 +31,32 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int state = int.Parse(cbxState.SelectedItem.ToString());
-                string description = txtDescription.Text;
+            try 
+            { 
+                ComboBoxItem item = (ComboBoxItem)cbxState.SelectedItem;
 
-                //if (id == 0)
-                //{
-                //    data = new tecnologias_conexion();
-                //    data.Descripcion = description;
-                //    data.Estado = state;
-                //    audiovisualEntities.tecnologias_conexion.Add(data);
-                //    audiovisualEntities.SaveChanges();
-                //    Utils.Utils.Message("Datos fueron insertados correctamente");
-                //    this.Close();
-                //}
-                //else
-                //{
-                //    var data = audiovisualEntities.tecnologias_conexion.Find(id);
-                //    data.Descripcion = description;
-                //    data.Estado = state;
-                //    audiovisualEntities.SaveChanges();
-                //    Utils.Utils.Message("Datos fueron actualizado correctamente");
-                //    this.Close();
-                //}
+                int state = item.Value;
+                string description = txtDescription.Text;
+                data = new Model.TechnologiesConnection();
+
+                if (id == 0)
+                {
+                    data.Description = description;
+                    data.StateId = state;
+                    audiovisualEntities.TechnologiesConnections.Add(data);
+                    audiovisualEntities.SaveChanges();
+                    Utils.Utils.Message("Datos fueron insertados correctamente");
+                    this.Close();
+                }
+                else
+                {
+                    var data = audiovisualEntities.TechnologiesConnections.Find(id);
+                    data.Description = description;
+                    data.StateId = state;
+                    audiovisualEntities.SaveChanges();
+                    Utils.Utils.Message("Datos fueron actualizado correctamente");
+                    this.Close();
+                }
 
             }
             catch (Exception ex)
@@ -63,16 +67,39 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
 
         private void FindData()
         {
-            //var data = audiovisualEntities.tipo_equipos.Find(id);
-            //if (data != null)
-            //{
-            //    txtDescription.Text = data.Descripcion;
-            //    cbxState.SelectedValue = data.Estado;
-            //}
-            //else
-            //{
-            //    Utils.Utils.MessageError("Error en buscar este dato");
-            //}
+            var data = audiovisualEntities.TechnologiesConnections.Find(id);
+            if (data != null)
+            {
+                txtDescription.Text = data.Description;
+                cbxState.SelectedValue = data.StateId;
+            }
+            else
+            {
+                Utils.Utils.MessageError("Error en buscar este dato");
+            }
+        }
+
+        private void LoadComboBox()
+        {
+            List<ComboBoxItem> listItem = new List<ComboBoxItem>();
+
+            try
+            {
+                List<TechnologiesConnectionState> listStates = audiovisualEntities.TechnologiesConnectionStates.Select(s => s).Where(w => w.Enabled != false).ToList();
+                foreach (var item in listStates)
+                {
+                    ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
+                    listItem.Add(comboxBoxItem);
+                }
+
+                cbxState.DataSource = listItem;
+                cbxState.DisplayMember = "Name";
+                cbxState.ValueMember = "Value";
+            }
+            catch (Exception ex)
+            {
+                Utils.Utils.MessageError(ex.Message);
+            }
         }
     }
 }

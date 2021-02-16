@@ -21,7 +21,7 @@ namespace audiovisalParcial.Model
         }
     
         public int Id { get; set; }
-        public string Descripcion { get; set; }
+        public string Description { get; set; }
         public Nullable<int> StateId { get; set; }
         public bool Enabled { get; set; }
     

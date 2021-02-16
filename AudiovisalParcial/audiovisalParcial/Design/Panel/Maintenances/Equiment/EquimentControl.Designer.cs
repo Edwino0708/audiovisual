@@ -43,29 +43,25 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvListEquipmentType = new System.Windows.Forms.DataGridView();
-            this.audiovisualdbDataSet = new audiovisalParcial.audiovisualdbDataSet();
             this.equimentTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enabledDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.audiovisualdbDataSet = new audiovisalParcial.audiovisualdbDataSet();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEquipmentType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.audiovisualdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equimentTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.audiovisualdbDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lTitle
             // 
             this.lTitle.AutoSize = true;
             this.lTitle.Font = new System.Drawing.Font("Constantia", 14F, System.Drawing.FontStyle.Bold);
-            this.lTitle.Location = new System.Drawing.Point(337, 0);
+            this.lTitle.Location = new System.Drawing.Point(304, 7);
             this.lTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lTitle.Name = "lTitle";
-            this.lTitle.Size = new System.Drawing.Size(150, 23);
+            this.lTitle.Size = new System.Drawing.Size(244, 23);
             this.lTitle.TabIndex = 21;
-            this.lTitle.Text = "Crud de equipo";
+            this.lTitle.Text = "Mantenimiento de equipo";
             // 
             // groupBox1
             // 
@@ -140,7 +136,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.dgvListEquipmentType);
             this.panel2.Location = new System.Drawing.Point(6, 106);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(820, 526);
             this.panel2.TabIndex = 23;
@@ -187,6 +183,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Actualizar";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // btnDelete
             // 
@@ -201,6 +198,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // dgvListEquipmentType
             // 
@@ -211,15 +209,8 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.dgvListEquipmentType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvListEquipmentType.AutoGenerateColumns = false;
             this.dgvListEquipmentType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListEquipmentType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListEquipmentType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.stateIdDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.enabledDataGridViewCheckBoxColumn});
-            this.dgvListEquipmentType.DataSource = this.equimentTypesBindingSource;
             this.dgvListEquipmentType.Location = new System.Drawing.Point(22, 83);
             this.dgvListEquipmentType.Name = "dgvListEquipmentType";
             this.dgvListEquipmentType.ReadOnly = true;
@@ -228,46 +219,15 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.dgvListEquipmentType.Size = new System.Drawing.Size(776, 465);
             this.dgvListEquipmentType.TabIndex = 8;
             // 
+            // equimentTypesBindingSource
+            // 
+            this.equimentTypesBindingSource.DataSource = this.audiovisualdbDataSet;
+            this.equimentTypesBindingSource.Position = 0;
+            // 
             // audiovisualdbDataSet
             // 
             this.audiovisualdbDataSet.DataSetName = "audiovisualdbDataSet";
             this.audiovisualdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // equimentTypesBindingSource
-            // 
-            this.equimentTypesBindingSource.DataMember = "EquimentTypes";
-            this.equimentTypesBindingSource.DataSource = this.audiovisualdbDataSet;
-            // 
-            // equimentTypesTableAdapter
-            // 
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stateIdDataGridViewTextBoxColumn
-            // 
-            this.stateIdDataGridViewTextBoxColumn.DataPropertyName = "StateId";
-            this.stateIdDataGridViewTextBoxColumn.HeaderText = "StateId";
-            this.stateIdDataGridViewTextBoxColumn.Name = "stateIdDataGridViewTextBoxColumn";
-            this.stateIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // enabledDataGridViewCheckBoxColumn
-            // 
-            this.enabledDataGridViewCheckBoxColumn.DataPropertyName = "Enabled";
-            this.enabledDataGridViewCheckBoxColumn.HeaderText = "Enabled";
-            this.enabledDataGridViewCheckBoxColumn.Name = "enabledDataGridViewCheckBoxColumn";
-            this.enabledDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // EquimentControl
             // 
@@ -276,15 +236,15 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.Controls.Add(this.lTitle);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EquimentControl";
             this.Size = new System.Drawing.Size(838, 636);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListEquipmentType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.audiovisualdbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.equimentTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.audiovisualdbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

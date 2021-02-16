@@ -345,10 +345,6 @@
     <None Include="audiovisualdbDataSet.xss">
       <DependentUpon>audiovisualdbDataSet.xsd</DependentUpon>
     </None>
-    <EntityDeploy Include="Model\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="audiovisualdbDataSet1.xsc">
       <DependentUpon>audiovisualdbDataSet1.xsd</DependentUpon>
     </None>
@@ -360,6 +356,10 @@
     <None Include="audiovisualdbDataSet1.xss">
       <DependentUpon>audiovisualdbDataSet1.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>

@@ -21,7 +21,7 @@ namespace audiovisalParcial.Model
         }
     
         public int Id { get; set; }
-        public string Descripcion { get; set; }
+        public string Description { get; set; }
         public string Serial { get; set; }
         public string ServiceTag { get; set; }
         public int EquimentTypesId { get; set; }

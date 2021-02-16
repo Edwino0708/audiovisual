@@ -15,8 +15,7 @@ namespace audiovisalParcial.Design.Panel.Users
     public partial class UsersForm : Form
     {
         private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
-        private User data;
-        private int id = 0;
+        private int id;
 
         public UsersForm(int id = 0)
         {
@@ -96,7 +95,7 @@ namespace audiovisalParcial.Design.Panel.Users
 
         private void Find()
         {
-            var search = audiovisualEntities.Users.Find(id);
+            var search = audiovisualEntities.Users.Find(this.id);
             if (search != null)
             {
                 txbFirstName.Text = search.FirstName;

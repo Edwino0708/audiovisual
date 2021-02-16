@@ -18,6 +18,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
         public BrandControl()
         {
             InitializeComponent();
+            GetList();
         }
 
         private void GetList()

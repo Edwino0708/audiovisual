@@ -13,24 +13,29 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
 {
     public partial class TechnologiesConnectionControl : UserControl
     {
-        //private AUDIOVISUALESEntities audiovisualEntities = new AUDIOVISUALESEntities();
+        private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
         private TechnologiesConnectionForm createForm;
 
         public TechnologiesConnectionControl()
         {
             InitializeComponent(); 
-            getList();
+            GetList();
 
         }
-      
+
         #region Private Methods
-        private void getList()
+        private void GetList()
         {
 
             try
             {
-                dgvListEquipmentType.DataSource = null;
-               // dgvListEquipmentType.DataSource = audiovisualEntities.tecnologias_conexion.ToList();
+                dgvListEquipmentType.DataSource = audiovisualEntities.TechnologiesConnections.Where(w => w.Enabled != false).Select(s => new
+                {
+                    Id = s.Id,
+                    Estado = s.TechnologiesConnectionState.Description,
+                    Descripcion = s.Description,
+                    Existe = s.Enabled
+                }).ToList();
                 dgvListEquipmentType.Refresh();
             }
             catch (Exception ex)
@@ -39,21 +44,21 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
             }
         }
 
-        private void filter()
+        private void Filter()
         {
             try
             {
 
-                //var modelos = from data in audiovisualEntities.tecnologias_conexion
-                //              where (
-                //                        data.Id == int.Parse(txtBuscar.Text) ||
-                //                        data.Descripcion.Contains(txtBuscar.Text) ||
-                //                        data.Estado == int.Parse(txtBuscar.Text)
-                //                     )
-                //              select data;
+                var modelos = from data in audiovisualEntities.TechnologiesConnections
+                              where (
+                                        data.Id == int.Parse(txtBuscar.Text) ||
+                                        data.Description.Contains(txtBuscar.Text) ||
+                                        data.StateId == int.Parse(txtBuscar.Text)
+                                     )
+                              select data;
 
-                //dgvListEquipmentType.DataSource = null;
-                //dgvListEquipmentType.DataSource = modelos.ToList();
+                dgvListEquipmentType.DataSource = null;
+                dgvListEquipmentType.DataSource = modelos.ToList();
             }
             catch (Exception ex)
             {
@@ -67,12 +72,12 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            filter();
+            Filter();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            getList();
+            GetList();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -92,17 +97,17 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
         {
             try
             {
-                //int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
-                //var data = audiovisualEntities.tecnologias_conexion.Find(id);
-                //if (data != null)
-                //{
-                //    audiovisualEntities.tecnologias_conexion.Remove(data);
-                //    audiovisualEntities.SaveChanges();
-                //    Utils.Utils.Message("Equipo de tipo eliminado con exito");
-                //    getList();
-                //}
-                //else
-                //    MessageBox.Show("Equipo de tipo no existe");
+                int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
+                var data = audiovisualEntities.TechnologiesConnections.Find(id);
+                if (data != null)
+                {
+                    data.Enabled = false;
+                    audiovisualEntities.SaveChanges();
+                    Utils.Utils.Message("Equipo de tipo eliminado con exito");
+                    GetList();
+                }
+                else
+                    MessageBox.Show("Equipo de tipo no existe");
             }
             catch (Exception)
             {
