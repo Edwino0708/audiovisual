@@ -31,6 +31,7 @@
           <ScalarProperty Name="Workshift" ColumnName="Workshift" />
           <ScalarProperty Name="HiredDate" ColumnName="HiredDate" />
           <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

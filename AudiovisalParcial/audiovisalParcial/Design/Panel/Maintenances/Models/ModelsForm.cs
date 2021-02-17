@@ -15,7 +15,7 @@ namespace audiovisalParcial.Design.Panel.Models
     public partial class ModelsForm : Form
     {
         private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
-        private Model.Model model;
+        private Model.Model data;
         private int id = 0;
 
         public ModelsForm(int id = 0)
@@ -39,24 +39,25 @@ namespace audiovisalParcial.Design.Panel.Models
                 int state = item.Value;
                 int marca = item2.Value;
                 string description = txtDescription.Text;
-                model = new Model.Model();
+                data = new Model.Model();
 
                 if (id == 0)
                 {
 
-                    model.Description = description;
-                    model.BranksId = marca;
-                    model.StateId = state;
-                    audiovisualEntities.Models.Add(model);
+                    data.Description = description;
+                    data.BranksId = marca;
+                    data.StateId = state;
+                    data.Enabled = true;
+                    audiovisualEntities.Models.Add(data);
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron insertados correctamente");
                     this.Close();
                 }
                 else
                 {
-                    model = audiovisualEntities.Models.Find(id);
-                    model.Description = description;
-                    model.StateId = state;
+                    data = audiovisualEntities.Models.Find(id);
+                    data.Description = description;
+                    data.StateId = state;
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron actualizado correctamente");
                     this.Close();
@@ -71,12 +72,12 @@ namespace audiovisalParcial.Design.Panel.Models
 
         private void FindModel()
         {
-            var model = audiovisualEntities.Models.Find(id);
-            if (model != null)
+            var data = audiovisualEntities.Models.Find(id);
+            if (data != null)
             {
-                txtDescription.Text = model.Description;
-                cbxState.SelectedValue = model.StateId;
-                cbxMarca.SelectedValue = model.BranksId;
+                txtDescription.Text = data.Description;
+                cbxState.SelectedValue = data.StateId;
+                cbxMarca.SelectedValue = data.BranksId;
             }
             else
             {
@@ -106,11 +107,11 @@ namespace audiovisalParcial.Design.Panel.Models
                     listMarcas.Add(comboxBoxItem);
                 }
 
-                cbxMarca.DataSource = listMarcas;
-                cbxMarca.DisplayMember = "Name";
-                cbxMarca.ValueMember = "Value";
+                cbxState.DataSource = listItem;
+                cbxState.DisplayMember = "Name";
+                cbxState.ValueMember = "Value";
 
-                cbxMarca.DataSource = listItem;
+                cbxMarca.DataSource = listMarcas ;
                 cbxMarca.DisplayMember = "Name";
                 cbxMarca.ValueMember = "Value";
             }

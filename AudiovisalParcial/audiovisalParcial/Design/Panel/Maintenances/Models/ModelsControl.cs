@@ -47,15 +47,13 @@ namespace audiovisalParcial.Design.Panel.Models
         {
             try
             {
+                dgvModelo.DataSource = null;
                 var modelos = from data in audiovisualEntities.Models
                               where (
-                                        data.Id == int.Parse(txtBuscarModelo.Text) ||
-                                        data.Description.Contains(txtBuscarModelo.Text) ||
-                                        data.StateId == int.Parse(txtBuscarModelo.Text)
-                                     )
+                                        data.Description.Contains(txtBuscarModelo.Text)
+                                      )
                               select data;
 
-                dgvModelo.DataSource = null;
                 dgvModelo.DataSource = modelos.ToList();
             }
             catch (Exception ex)
@@ -66,7 +64,6 @@ namespace audiovisalParcial.Design.Panel.Models
 
         }
         #endregion
-
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {

@@ -55,16 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="audiovisualdbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>audiovisualdbDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="audiovisualdbDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>audiovisualdbDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Design\Menu\Maintances\MaintenanceMenuControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -334,28 +324,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="audiovisualdbDataSet.xsc">
-      <DependentUpon>audiovisualdbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="audiovisualdbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>audiovisualdbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="audiovisualdbDataSet.xss">
-      <DependentUpon>audiovisualdbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="audiovisualdbDataSet1.xsc">
-      <DependentUpon>audiovisualdbDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="audiovisualdbDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>audiovisualdbDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="audiovisualdbDataSet1.xss">
-      <DependentUpon>audiovisualdbDataSet1.xsd</DependentUpon>
-    </None>
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>

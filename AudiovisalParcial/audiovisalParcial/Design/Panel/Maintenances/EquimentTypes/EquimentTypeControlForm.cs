@@ -43,6 +43,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
                     
                     data.Description = description;
                     data.StateId = state;
+                    data.Enabled = true;
                     audiovisualEntities.EquimentTypes.Add(data);
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron insertados correctamente");
@@ -85,7 +86,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
 
             try
             {
-                List<EquimentType> listStates = audiovisualEntities.EquimentTypes.Select(s => s).Where(w => w.Enabled != false).ToList();
+                List<EquimentTypesState> listStates = audiovisualEntities.EquimentTypesStates.Select(s => s).Where(w => w.Enabled != false).ToList();
                 foreach (var item in listStates)
                 {
                     ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);

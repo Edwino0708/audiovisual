@@ -43,6 +43,7 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
                 {
                     data.Description = description;
                     data.StateId = state;
+                    data.Enabled = true;
                     audiovisualEntities.TechnologiesConnections.Add(data);
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron insertados correctamente");
@@ -53,6 +54,7 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
                     var data = audiovisualEntities.TechnologiesConnections.Find(id);
                     data.Description = description;
                     data.StateId = state;
+                    data.Enabled = true;
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron actualizado correctamente");
                     this.Close();

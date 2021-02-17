@@ -19,12 +19,12 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
         #region Private Methods
         private void GetList()
         {
-            var state = audiovisualEntities.EmployeesStates.Where(w => w.Description == "Desactivado").ToList();
-            var stateId = state == null ? 0L : state[0].Id;
+            var state = audiovisualEntities.EmployeesStates.Where(w => w.Enabled != false ).ToList();
+            //var stateId = state == null ? 0L : state[0].Id;
 
             try
             {
-                dgvListEmployee.DataSource = audiovisualEntities.Employees.Where(w => w.StateId != stateId).Select(s => new
+                dgvListEmployee.DataSource = audiovisualEntities.Employees.Where(w => w.Enabled != false).Select(s => new
                 {
                     Id = s.Id,
                     Nombre = s.FirstName,
@@ -48,11 +48,9 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             {
                 var modelos = from data in audiovisualEntities.Employees
                               where (
-                                        data.Id == int.Parse(txtBuscar.Text) ||
                                         data.FirstName.Contains(txtBuscar.Text) ||
                                         data.LastName.Contains(txtBuscar.Text) ||
-                                        data.IdentificationCard.Contains(txtBuscar.Text) ||
-                                        data.StateId == long.Parse(txtBuscar.Text)
+                                        data.IdentificationCard.Contains(txtBuscar.Text)
                                      )
                               select data;
 

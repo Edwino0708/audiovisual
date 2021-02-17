@@ -62,7 +62,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
                 var fecha = dtFecha.Value;
                 var cedula = txtCedula.Text;
                 var state = item.Value;
-                Employee employees = new Employee();
+                Employee data = new Employee();
                 if (!validaCedula(cedula))
                 {
                     Utils.Utils.MessageError("Cedula Invalida");
@@ -70,25 +70,26 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
                 }
                 if (id == 0)
                 {
-                    employees.FirstName = nombre;
-                    employees.LastName = apellido;
-                    employees.IdentificationCard = cedula;
-                    employees.StateId = state;
-                    employees.HiredDate = fecha;
-                    employees.Workshift = "-";
-                    audiovisualEntities.Employees.Add(employees);
+                    data.FirstName = nombre;
+                    data.LastName = apellido;
+                    data.IdentificationCard = cedula;
+                    data.StateId = state;
+                    data.HiredDate = fecha;
+                    data.Workshift = "-";
+                    data.Enabled = true;
+                    audiovisualEntities.Employees.Add(data);
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron insertados correctamente");
                     this.Close();
                 }
                 else
                 {
-                    employees = audiovisualEntities.Employees.Find(id);
-                    employees.FirstName = nombre;
-                    employees.LastName = apellido;
-                    employees.IdentificationCard = cedula;
-                    employees.StateId = state;
-                    employees.HiredDate = fecha;
+                    data = audiovisualEntities.Employees.Find(id);
+                    data.FirstName = nombre;
+                    data.LastName = apellido;
+                    data.IdentificationCard = cedula;
+                    data.StateId = state;
+                    data.HiredDate = fecha;
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron actualizado correctamente");
                     this.Close();

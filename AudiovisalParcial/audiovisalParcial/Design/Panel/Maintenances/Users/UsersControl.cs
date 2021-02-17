@@ -57,10 +57,8 @@ namespace audiovisalParcial.Design.Panel.Users
                 dgvListEquipmentType.DataSource = null;
                 var search = from data in audiovisualEntities.Users
                               where (
-                                        data.Id == int.Parse(txtBuscar.Text) ||
                                         data.FirstName.Contains(txtBuscar.Text) ||
                                         data.LastName.Contains(txtBuscar.Text) 
-                                        //data.StateId == int.Parse(txtBuscar.Text)
                                      )
                               select data;
                 dgvListEquipmentType.DataSource = search.ToList();

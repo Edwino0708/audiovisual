@@ -56,7 +56,6 @@ namespace audiovisalParcial.Design.Panel.Equiment
 
                 var modelos = from data in audiovisualEntities.Equiments
                               where (
-                                        data.Id == int.Parse(txtBuscar.Text) ||
                                         data.Description.Contains(txtBuscar.Text) 
                                      )
                               select data;

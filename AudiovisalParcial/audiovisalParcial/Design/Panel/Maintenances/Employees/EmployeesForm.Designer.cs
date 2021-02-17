@@ -32,6 +32,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,27 +59,35 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 72);
+            this.groupBox1.Location = new System.Drawing.Point(26, 98);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(581, 163);
+            this.groupBox1.Size = new System.Drawing.Size(815, 272);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // dtFecha
+            // 
+            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecha.Location = new System.Drawing.Point(482, 135);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(233, 31);
+            this.dtFecha.TabIndex = 17;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(10, 105);
+            this.label12.Location = new System.Drawing.Point(20, 216);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 13);
+            this.label12.Size = new System.Drawing.Size(79, 25);
             this.label12.TabIndex = 16;
             this.label12.Text = "Estado";
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(65, 71);
+            this.txtCedula.Location = new System.Drawing.Point(118, 137);
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(184, 20);
+            this.txtCedula.Size = new System.Drawing.Size(257, 31);
             this.txtCedula.TabIndex = 14;
             this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
@@ -87,50 +95,50 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(275, 71);
+            this.label10.Location = new System.Drawing.Point(387, 135);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.Size = new System.Drawing.Size(72, 25);
             this.label10.TabIndex = 13;
             this.label10.Text = "Fecha";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 71);
+            this.label11.Location = new System.Drawing.Point(19, 143);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.Size = new System.Drawing.Size(80, 25);
             this.label11.TabIndex = 12;
             this.label11.Text = "Cedula";
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(325, 34);
+            this.txtApellido.Location = new System.Drawing.Point(482, 52);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(204, 20);
+            this.txtApellido.Size = new System.Drawing.Size(233, 31);
             this.txtApellido.TabIndex = 11;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(65, 34);
+            this.txtNombre.Location = new System.Drawing.Point(118, 46);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(184, 20);
+            this.txtNombre.Size = new System.Drawing.Size(257, 31);
             this.txtNombre.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(275, 34);
+            this.label9.Location = new System.Drawing.Point(387, 55);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.Size = new System.Drawing.Size(89, 25);
             this.label9.TabIndex = 9;
             this.label9.Text = "Apellido";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 34);
+            this.label8.Location = new System.Drawing.Point(16, 52);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.Size = new System.Drawing.Size(87, 25);
             this.label8.TabIndex = 8;
             this.label8.Text = "Nombre";
             // 
@@ -141,18 +149,18 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             this.comboBox1.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.comboBox1.Location = new System.Drawing.Point(65, 105);
+            this.comboBox1.Location = new System.Drawing.Point(118, 216);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(184, 21);
+            this.comboBox1.Size = new System.Drawing.Size(257, 33);
             this.comboBox1.TabIndex = 7;
             // 
             // button1
             // 
             this.button1.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(283, 260);
+            this.button1.Location = new System.Drawing.Point(393, 388);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 35);
+            this.button1.Size = new System.Drawing.Size(123, 62);
             this.button1.TabIndex = 18;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -161,24 +169,16 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Constantia", 15F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(229, 30);
+            this.label7.Location = new System.Drawing.Point(210, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(185, 24);
+            this.label7.Size = new System.Drawing.Size(368, 49);
             this.label7.TabIndex = 8;
             this.label7.Text = "Agregar Empleado";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // dtFecha
-            // 
-            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha.Location = new System.Drawing.Point(325, 71);
-            this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Size = new System.Drawing.Size(89, 20);
-            this.dtFecha.TabIndex = 17;
-            // 
             // EmployeesForm
             // 
-            this.ClientSize = new System.Drawing.Size(610, 328);
+            this.ClientSize = new System.Drawing.Size(842, 503);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);

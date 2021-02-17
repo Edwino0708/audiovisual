@@ -29,13 +29,15 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
 
             try
             {
-                dgvListEquipmentType.DataSource = audiovisualEntities.TechnologiesConnections.Where(w => w.Enabled != false).Select(s => new
+                dgvListEquipmentType.DataSource = null;
+               var list = audiovisualEntities.TechnologiesConnections.Where(w => w.Enabled != false).Select(s => new
                 {
                     Id = s.Id,
                     Estado = s.TechnologiesConnectionState.Description,
                     Descripcion = s.Description,
                     Existe = s.Enabled
                 }).ToList();
+                dgvListEquipmentType.DataSource = list;
                 dgvListEquipmentType.Refresh();
             }
             catch (Exception ex)
@@ -48,12 +50,9 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
         {
             try
             {
-
                 var modelos = from data in audiovisualEntities.TechnologiesConnections
                               where (
-                                        data.Id == int.Parse(txtBuscar.Text) ||
-                                        data.Description.Contains(txtBuscar.Text) ||
-                                        data.StateId == int.Parse(txtBuscar.Text)
+                                        data.Description.Contains(txtBuscar.Text) 
                                      )
                               select data;
 

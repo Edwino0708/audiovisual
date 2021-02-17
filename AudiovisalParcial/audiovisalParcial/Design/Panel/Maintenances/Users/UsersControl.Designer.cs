@@ -112,7 +112,6 @@ namespace audiovisalParcial.Design.Panel.Users
             // 
             this.cbxCriterio.FormattingEnabled = true;
             this.cbxCriterio.Items.AddRange(new object[] {
-            "Id",
             "Descripcion"});
             this.cbxCriterio.Location = new System.Drawing.Point(300, 57);
             this.cbxCriterio.Margin = new System.Windows.Forms.Padding(6);

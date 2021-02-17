@@ -52,7 +52,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             try
             {
                 listItem = new List<ComboBoxItem>();
-                List<BrandsState> listBrand = audiovisualEntities.BrandsStates.Select(s => s).Where(w => w.Enabled != false).ToList();
+                List<Brand> listBrand = audiovisualEntities.Brands.Select(s => s).Where(w => w.Enabled != false).ToList();
                 foreach (var item in listBrand)
                 {
                     ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
@@ -64,7 +64,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
                 cbxMarca.ValueMember = "Value";
 
                 listItem = new List<ComboBoxItem>();
-                List<Model.ModelsState> listModel = audiovisualEntities.ModelsStates.Select(s => s).Where(w => w.Enabled != false).ToList();
+                List<Model.Model> listModel = audiovisualEntities.Models.Select(s => s).Where(w => w.Enabled != false).ToList();
                 foreach (var item in listModel)
                 {
                     ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
@@ -76,7 +76,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
                 cbxModel.ValueMember = "Value";
 
                 listItem = new List<ComboBoxItem>();
-                List<Model.TechnologiesConnectionState> listTech = audiovisualEntities.TechnologiesConnectionStates.Select(s => s).Where(w => w.Enabled != false).ToList();
+                List<Model.TechnologiesConnection> listTech = audiovisualEntities.TechnologiesConnections.Select(s => s).Where(w => w.Enabled != false).ToList();
                 foreach (var item in listTech)
                 {
                     ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
@@ -88,7 +88,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
                 cbxTypeTecnology.ValueMember = "Value";
 
                 listItem = new List<ComboBoxItem>();
-                List<Model.EquimentTypesState> listTypes = audiovisualEntities.EquimentTypesStates.Select(s => s).Where(w => w.Enabled != false).ToList();
+                List<Model.EquimentType> listTypes = audiovisualEntities.EquimentTypes.Select(s => s).Where(w => w.Enabled != false).ToList();
                 foreach (var item in listTypes)
                 {
                     ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
@@ -100,8 +100,8 @@ namespace audiovisalParcial.Design.Panel.Equiment
                 cbxType.ValueMember = "Value";
 
                 listItem = new List<ComboBoxItem>();
-                List<Model.EquimentsState> listStates = audiovisualEntities.EquimentsStates.Select(s => s).Where(w => w.Enabled != false).ToList();
-                foreach (var item in listStates)
+                List<Model.EquimentsState> listEquiments = audiovisualEntities.EquimentsStates.Select(s => s).Where(w => w.Enabled != false).ToList();
+                foreach (var item in listEquiments)
                 {
                     ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
                     listItem.Add(comboxBoxItem);
@@ -110,6 +110,18 @@ namespace audiovisalParcial.Design.Panel.Equiment
                 cbxState.DataSource = listItem;
                 cbxState.DisplayMember = "Name";
                 cbxState.ValueMember = "Value";
+
+                //listItem = new List<ComboBoxItem>();
+                //List<Model.EmployeesState> listStates = audiovisualEntities.EmployeesStates.Select(s => s).Where(w => w.Enabled != false).ToList();
+                //foreach (var item in listStates)
+                //{
+                //    ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
+                //    listItem.Add(comboxBoxItem);
+                //}
+
+                //cbxState.DataSource = listItem;
+                //cbxState.DisplayMember = "Name";
+                //cbxState.ValueMember = "Value";
 
 
             }

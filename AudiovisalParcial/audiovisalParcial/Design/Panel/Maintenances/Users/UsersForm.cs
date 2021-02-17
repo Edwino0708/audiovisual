@@ -65,6 +65,7 @@ namespace audiovisalParcial.Design.Panel.Users
                     data.UsersTypesId = userTypeId;
                     data.PersonalTypesID = personalTypeId;
                     data.StateId = stateId;
+                    data.Enabled = true;
                     audiovisualEntities.Users.Add(data);
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron insertados correctamente");

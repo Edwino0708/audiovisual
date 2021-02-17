@@ -47,9 +47,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             {
                 var modelos = from data in audiovisualEntities.Brands
                               where (
-                                        data.Id == int.Parse(txtBuscarMarca.Text) ||
-                                        data.Description.Contains(txtBuscarMarca.Text) ||
-                                        data.StateId == int.Parse(txtBuscarMarca.Text)
+                                        data.Description.Contains(txtBuscarMarca.Text)
                                      )
                               select data;
 

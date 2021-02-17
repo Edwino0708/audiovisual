@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using audiovisalParcial.Model;
 using audiovisalParcial.Design.Panel.Equiment;
+using audiovisalParcial.Design.Panel.Maintenances.Employees;
 
 namespace audiovisalParcial.Design.Menu.Maintances
 {
@@ -26,7 +27,7 @@ namespace audiovisalParcial.Design.Menu.Maintances
         private ModelsControl model;
         private TechnologiesConnectionControl technologies;
         private EquimentControl equipo;
-
+        private EmployeesControl employeesControl;
         public MaintenanceMenuControl(Form1 form)
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace audiovisalParcial.Design.Menu.Maintances
             model = new ModelsControl();
             technologies = new TechnologiesConnectionControl();
             equipo = new EquimentControl();
+            employeesControl = new EmployeesControl();
         }
 
 

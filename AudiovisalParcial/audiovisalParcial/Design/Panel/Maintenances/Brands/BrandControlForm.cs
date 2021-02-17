@@ -15,7 +15,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
     public partial class BrandControlForm : Form
     {
         private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
-        private Brand brand;
+        private Brand data;
         private int id = 0;
         public BrandControlForm(int id = 0)
         {
@@ -30,11 +30,11 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
 
         private void FindBrand()
         {
-            var brand = audiovisualEntities.Brands.Find(id);
-            if (brand != null)
+            var data = audiovisualEntities.Brands.Find(id);
+            if (data != null)
             {
-                txtDescriptionMarca.Text = brand.Description;
-                cbxStateMarca.SelectedValue = brand.StateId;
+                txtDescriptionMarca.Text = data.Description;
+                cbxStateMarca.SelectedValue = data.StateId;
             }
             else
             {
@@ -73,23 +73,24 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
 
                 int state = item.Value;
                 string description = txtDescriptionMarca.Text;
-                brand = new Brand();
+                data = new Brand();
 
                 if (id == 0)
                 {
 
-                    brand.Description = description;
-                    brand.StateId = state;
-                    audiovisualEntities.Brands.Add(brand);
+                    data.Description = description;
+                    data.StateId = state;
+                    data.Enabled = true;
+                    audiovisualEntities.Brands.Add(data);
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron insertados correctamente");
                     this.Close();
                 }
                 else
                 {
-                    brand = audiovisualEntities.Brands.Find(id);
-                    brand.Description = description;
-                    brand.StateId = state;
+                    data = audiovisualEntities.Brands.Find(id);
+                    data.Description = description;
+                    data.StateId = state;
                     audiovisualEntities.SaveChanges();
                     Utils.Utils.Message("Datos fueron actualizado correctamente");
                     this.Close();

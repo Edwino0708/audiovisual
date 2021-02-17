@@ -41,11 +41,11 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
         {
             try
             {
+
+
                 var modelos = from data in audiovisualEntities.EquimentTypes
                               where (
-                                        data.Id == int.Parse(txtBuscar.Text) ||
-                                        data.Description.Contains(txtBuscar.Text) ||
-                                        data.StateId == int.Parse(txtBuscar.Text)
+                                        data.Description.Contains(txtBuscar.Text) 
                                      )
                               select data;
 
