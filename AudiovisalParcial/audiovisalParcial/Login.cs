@@ -30,7 +30,7 @@ namespace audiovisalParcial
             {
                 MessageBox.Show("Credenciales incorrectas");
             }
-            else if (usuario.Enabled.Equals("0"))
+            else if (usuario.Enabled.Equals("0") && usuario.UsersType.Equals(1))
             {
                 MessageBox.Show("Credenciales incorrectas");
             }
