@@ -59,6 +59,7 @@ namespace audiovisalParcial
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(267, 20);
             this.txtClave.TabIndex = 8;
+            this.txtClave.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 
