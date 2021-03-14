@@ -38,7 +38,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             }
             catch (Exception ex)
             {
-                Utils.Utils.MessageError("Error al cargar datos: " + ex.Message);
+                Common.Util.MessageError("Error al cargar datos: " + ex.Message);
             }
         }
 
@@ -60,7 +60,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             catch (Exception ex)
             {
 
-                Utils.Utils.MessageError("No pudimos ejecutar la consulta " + ex.Message);
+                Common.Util.MessageError("No pudimos ejecutar la consulta " + ex.Message);
             }
 
         }
@@ -78,7 +78,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
                 {
                     data.StateId = state[0].Id;
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Empleado de tipo eliminado con exito");
+                    Common.Util.Message("Empleado de tipo eliminado con exito");
                     GetList();
                 }
                 else

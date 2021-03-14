@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AudiovisualDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="audiovisualdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Brands">
           <Key>
             <PropertyRef Name="Id" />
@@ -114,7 +114,7 @@
           <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Enabled" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="RentReturn">
+        <EntityType Name="RentReturns">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -137,7 +137,7 @@
           <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Enabled" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="TechnologiesConnection">
+        <EntityType Name="TechnologiesConnections">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -154,6 +154,20 @@
           <Property Name="State" Type="varchar" MaxLength="10" />
           <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Enabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserLogins">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="role" />
+            <PropertyRef Name="isActive" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -259,10 +273,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Equiments__Techn__4BAC3F29">
-          <End Role="TechnologiesConnection" Type="Self.TechnologiesConnection" Multiplicity="1" />
+          <End Role="TechnologiesConnections" Type="Self.TechnologiesConnections" Multiplicity="1" />
           <End Role="Equiments" Type="Self.Equiments" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TechnologiesConnection">
+            <Principal Role="TechnologiesConnections">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Equiments">
@@ -308,60 +322,60 @@
         </Association>
         <Association Name="FK__RentRetur__Emplo__68487DD7">
           <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
-          <End Role="RentReturn" Type="Self.RentReturn" Multiplicity="*" />
+          <End Role="RentReturns" Type="Self.RentReturns" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="RentReturn">
+            <Dependent Role="RentReturns">
               <PropertyRef Name="EmployeeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__RentRetur__Equim__6D0D32F4">
           <End Role="Equiments" Type="Self.Equiments" Multiplicity="1" />
-          <End Role="RentReturn" Type="Self.RentReturn" Multiplicity="*" />
+          <End Role="RentReturns" Type="Self.RentReturns" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Equiments">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="RentReturn">
+            <Dependent Role="RentReturns">
               <PropertyRef Name="EquimentId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__RentRetur__State__6A30C649">
           <End Role="RentReturnStates" Type="Self.RentReturnStates" Multiplicity="0..1" />
-          <End Role="RentReturn" Type="Self.RentReturn" Multiplicity="*" />
+          <End Role="RentReturns" Type="Self.RentReturns" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RentReturnStates">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="RentReturn">
+            <Dependent Role="RentReturns">
               <PropertyRef Name="StateId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__RentRetur__UserI__6B24EA82">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="RentReturn" Type="Self.RentReturn" Multiplicity="*" />
+          <End Role="RentReturns" Type="Self.RentReturns" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="RentReturn">
+            <Dependent Role="RentReturns">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Technolog__State__6C190EBB">
           <End Role="TechnologiesConnectionStates" Type="Self.TechnologiesConnectionStates" Multiplicity="0..1" />
-          <End Role="TechnologiesConnection" Type="Self.TechnologiesConnection" Multiplicity="*" />
+          <End Role="TechnologiesConnections" Type="Self.TechnologiesConnections" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TechnologiesConnectionStates">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="TechnologiesConnection">
+            <Dependent Role="TechnologiesConnections">
               <PropertyRef Name="StateId" />
             </Dependent>
           </ReferentialConstraint>
@@ -402,7 +416,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AudiovisualDbModelStoreContainer">
+        <EntityContainer Name="audiovisualdbModelStoreContainer">
           <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BrandsStates" EntityType="Self.BrandsStates" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
@@ -414,10 +428,11 @@
           <EntitySet Name="Models" EntityType="Self.Models" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ModelsStates" EntityType="Self.ModelsStates" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PersonalTypes" EntityType="Self.PersonalTypes" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RentReturn" EntityType="Self.RentReturn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RentReturns" EntityType="Self.RentReturns" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RentReturnStates" EntityType="Self.RentReturnStates" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TechnologiesConnection" EntityType="Self.TechnologiesConnection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TechnologiesConnections" EntityType="Self.TechnologiesConnections" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TechnologiesConnectionStates" EntityType="Self.TechnologiesConnectionStates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserLogins" EntityType="Self.UserLogins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UsersStates" EntityType="Self.UsersStates" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UsersTypes" EntityType="Self.UsersTypes" Schema="dbo" store:Type="Tables" />
@@ -446,7 +461,7 @@
             <End Role="Equiments" EntitySet="Equiments" />
           </AssociationSet>
           <AssociationSet Name="FK__Equiments__Techn__4BAC3F29" Association="Self.FK__Equiments__Techn__4BAC3F29">
-            <End Role="TechnologiesConnection" EntitySet="TechnologiesConnection" />
+            <End Role="TechnologiesConnections" EntitySet="TechnologiesConnections" />
             <End Role="Equiments" EntitySet="Equiments" />
           </AssociationSet>
           <AssociationSet Name="FK__EquimentT__State__656C112C" Association="Self.FK__EquimentT__State__656C112C">
@@ -463,23 +478,23 @@
           </AssociationSet>
           <AssociationSet Name="FK__RentRetur__Emplo__68487DD7" Association="Self.FK__RentRetur__Emplo__68487DD7">
             <End Role="Employees" EntitySet="Employees" />
-            <End Role="RentReturn" EntitySet="RentReturn" />
+            <End Role="RentReturns" EntitySet="RentReturns" />
           </AssociationSet>
           <AssociationSet Name="FK__RentRetur__Equim__6D0D32F4" Association="Self.FK__RentRetur__Equim__6D0D32F4">
             <End Role="Equiments" EntitySet="Equiments" />
-            <End Role="RentReturn" EntitySet="RentReturn" />
+            <End Role="RentReturns" EntitySet="RentReturns" />
           </AssociationSet>
           <AssociationSet Name="FK__RentRetur__State__6A30C649" Association="Self.FK__RentRetur__State__6A30C649">
             <End Role="RentReturnStates" EntitySet="RentReturnStates" />
-            <End Role="RentReturn" EntitySet="RentReturn" />
+            <End Role="RentReturns" EntitySet="RentReturns" />
           </AssociationSet>
           <AssociationSet Name="FK__RentRetur__UserI__6B24EA82" Association="Self.FK__RentRetur__UserI__6B24EA82">
             <End Role="Users" EntitySet="Users" />
-            <End Role="RentReturn" EntitySet="RentReturn" />
+            <End Role="RentReturns" EntitySet="RentReturns" />
           </AssociationSet>
           <AssociationSet Name="FK__Technolog__State__6C190EBB" Association="Self.FK__Technolog__State__6C190EBB">
             <End Role="TechnologiesConnectionStates" EntitySet="TechnologiesConnectionStates" />
-            <End Role="TechnologiesConnection" EntitySet="TechnologiesConnection" />
+            <End Role="TechnologiesConnections" EntitySet="TechnologiesConnections" />
           </AssociationSet>
           <AssociationSet Name="FK__Users__PersonalT__6D0D32F4" Association="Self.FK__Users__PersonalT__6D0D32F4">
             <End Role="PersonalTypes" EntitySet="PersonalTypes" />
@@ -498,7 +513,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AudiovisualDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="audiovisualdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Brand">
           <Key>
             <PropertyRef Name="Id" />
@@ -534,7 +549,7 @@
           <Property Name="StateId" Type="Int32" />
           <Property Name="Enabled" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="EmployeesState" Relationship="Self.FK__Employees__State__5FB337D6" FromRole="Employees" ToRole="EmployeesStates" />
-          <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__Emplo__68487DD7" FromRole="Employees" ToRole="RentReturn" />
+          <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__Emplo__68487DD7" FromRole="Employees" ToRole="RentReturns" />
         </EntityType>
         <EntityType Name="EmployeesState">
           <Key>
@@ -564,8 +579,8 @@
           <NavigationProperty Name="EquimentType" Relationship="Self.FK__Equiments__Equim__48CFD27E" FromRole="Equiments" ToRole="EquimentTypes" />
           <NavigationProperty Name="Model" Relationship="Self.FK__Equiments__Model__4AB81AF0" FromRole="Equiments" ToRole="Models" />
           <NavigationProperty Name="EquimentsState" Relationship="Self.FK__Equiments__State__4CA06362" FromRole="Equiments" ToRole="EquimentsStates" />
-          <NavigationProperty Name="TechnologiesConnection" Relationship="Self.FK__Equiments__Techn__4BAC3F29" FromRole="Equiments" ToRole="TechnologiesConnection" />
-          <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__Equim__6D0D32F4" FromRole="Equiments" ToRole="RentReturn" />
+          <NavigationProperty Name="TechnologiesConnection" Relationship="Self.FK__Equiments__Techn__4BAC3F29" FromRole="Equiments" ToRole="TechnologiesConnections" />
+          <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__Equim__6D0D32F4" FromRole="Equiments" ToRole="RentReturns" />
         </EntityType>
         <EntityType Name="EquimentsState">
           <Key>
@@ -643,10 +658,10 @@
           <Property Name="ReturnDate" Type="DateTime" Precision="3" />
           <Property Name="Comentary" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="StateId" Type="Int32" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK__RentRetur__Emplo__68487DD7" FromRole="RentReturn" ToRole="Employees" />
-          <NavigationProperty Name="Equiment" Relationship="Self.FK__RentRetur__Equim__6D0D32F4" FromRole="RentReturn" ToRole="Equiments" />
-          <NavigationProperty Name="RentReturnState" Relationship="Self.FK__RentRetur__State__6A30C649" FromRole="RentReturn" ToRole="RentReturnStates" />
-          <NavigationProperty Name="User" Relationship="Self.FK__RentRetur__UserI__6B24EA82" FromRole="RentReturn" ToRole="Users" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__RentRetur__Emplo__68487DD7" FromRole="RentReturns" ToRole="Employees" />
+          <NavigationProperty Name="Equiment" Relationship="Self.FK__RentRetur__Equim__6D0D32F4" FromRole="RentReturns" ToRole="Equiments" />
+          <NavigationProperty Name="RentReturnState" Relationship="Self.FK__RentRetur__State__6A30C649" FromRole="RentReturns" ToRole="RentReturnStates" />
+          <NavigationProperty Name="User" Relationship="Self.FK__RentRetur__UserI__6B24EA82" FromRole="RentReturns" ToRole="Users" />
         </EntityType>
         <EntityType Name="RentReturnState">
           <Key>
@@ -656,7 +671,7 @@
           <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Enabled" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__State__6A30C649" FromRole="RentReturnStates" ToRole="RentReturn" />
+          <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__State__6A30C649" FromRole="RentReturnStates" ToRole="RentReturns" />
         </EntityType>
         <EntityType Name="TechnologiesConnection">
           <Key>
@@ -666,8 +681,8 @@
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="StateId" Type="Int32" />
           <Property Name="Enabled" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Equiments" Relationship="Self.FK__Equiments__Techn__4BAC3F29" FromRole="TechnologiesConnection" ToRole="Equiments" />
-          <NavigationProperty Name="TechnologiesConnectionState" Relationship="Self.FK__Technolog__State__6C190EBB" FromRole="TechnologiesConnection" ToRole="TechnologiesConnectionStates" />
+          <NavigationProperty Name="Equiments" Relationship="Self.FK__Equiments__Techn__4BAC3F29" FromRole="TechnologiesConnections" ToRole="Equiments" />
+          <NavigationProperty Name="TechnologiesConnectionState" Relationship="Self.FK__Technolog__State__6C190EBB" FromRole="TechnologiesConnections" ToRole="TechnologiesConnectionStates" />
         </EntityType>
         <EntityType Name="TechnologiesConnectionState">
           <Key>
@@ -677,7 +692,21 @@
           <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Enabled" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="TechnologiesConnections" Relationship="Self.FK__Technolog__State__6C190EBB" FromRole="TechnologiesConnectionStates" ToRole="TechnologiesConnection" />
+          <NavigationProperty Name="TechnologiesConnections" Relationship="Self.FK__Technolog__State__6C190EBB" FromRole="TechnologiesConnectionStates" ToRole="TechnologiesConnections" />
+        </EntityType>
+        <EntityType Name="UserLogin">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="role" />
+            <PropertyRef Name="isActive" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -693,7 +722,7 @@
           <Property Name="StateId" Type="Int32" />
           <Property Name="Enabled" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="PersonalType" Relationship="Self.FK__Users__PersonalT__6D0D32F4" FromRole="Users" ToRole="PersonalTypes" />
-          <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__UserI__6B24EA82" FromRole="Users" ToRole="RentReturn" />
+          <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__UserI__6B24EA82" FromRole="Users" ToRole="RentReturns" />
           <NavigationProperty Name="UsersState" Relationship="Self.FK__Users__StateId__6E01572D" FromRole="Users" ToRole="UsersStates" />
           <NavigationProperty Name="UsersType" Relationship="Self.FK__Users__UsersType__6EF57B66" FromRole="Users" ToRole="UsersTypes" />
         </EntityType>
@@ -766,12 +795,12 @@
         </Association>
         <Association Name="FK__RentRetur__Emplo__68487DD7">
           <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
-          <End Role="RentReturn" Type="Self.RentReturn" Multiplicity="*" />
+          <End Role="RentReturns" Type="Self.RentReturn" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="RentReturn">
+            <Dependent Role="RentReturns">
               <PropertyRef Name="EmployeeId" />
             </Dependent>
           </ReferentialConstraint>
@@ -813,10 +842,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Equiments__Techn__4BAC3F29">
-          <End Role="TechnologiesConnection" Type="Self.TechnologiesConnection" Multiplicity="1" />
+          <End Role="TechnologiesConnections" Type="Self.TechnologiesConnection" Multiplicity="1" />
           <End Role="Equiments" Type="Self.Equiment" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TechnologiesConnection">
+            <Principal Role="TechnologiesConnections">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Equiments">
@@ -826,12 +855,12 @@
         </Association>
         <Association Name="FK__RentRetur__Equim__6D0D32F4">
           <End Role="Equiments" Type="Self.Equiment" Multiplicity="1" />
-          <End Role="RentReturn" Type="Self.RentReturn" Multiplicity="*" />
+          <End Role="RentReturns" Type="Self.RentReturn" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Equiments">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="RentReturn">
+            <Dependent Role="RentReturns">
               <PropertyRef Name="EquimentId" />
             </Dependent>
           </ReferentialConstraint>
@@ -874,36 +903,36 @@
         </Association>
         <Association Name="FK__RentRetur__State__6A30C649">
           <End Role="RentReturnStates" Type="Self.RentReturnState" Multiplicity="0..1" />
-          <End Role="RentReturn" Type="Self.RentReturn" Multiplicity="*" />
+          <End Role="RentReturns" Type="Self.RentReturn" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RentReturnStates">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="RentReturn">
+            <Dependent Role="RentReturns">
               <PropertyRef Name="StateId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__RentRetur__UserI__6B24EA82">
           <End Role="Users" Type="Self.User" Multiplicity="1" />
-          <End Role="RentReturn" Type="Self.RentReturn" Multiplicity="*" />
+          <End Role="RentReturns" Type="Self.RentReturn" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="RentReturn">
+            <Dependent Role="RentReturns">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Technolog__State__6C190EBB">
           <End Role="TechnologiesConnectionStates" Type="Self.TechnologiesConnectionState" Multiplicity="0..1" />
-          <End Role="TechnologiesConnection" Type="Self.TechnologiesConnection" Multiplicity="*" />
+          <End Role="TechnologiesConnections" Type="Self.TechnologiesConnection" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TechnologiesConnectionStates">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="TechnologiesConnection">
+            <Dependent Role="TechnologiesConnections">
               <PropertyRef Name="StateId" />
             </Dependent>
           </ReferentialConstraint>
@@ -948,6 +977,7 @@
           <EntitySet Name="RentReturnStates" EntityType="Self.RentReturnState" />
           <EntitySet Name="TechnologiesConnections" EntityType="Self.TechnologiesConnection" />
           <EntitySet Name="TechnologiesConnectionStates" EntityType="Self.TechnologiesConnectionState" />
+          <EntitySet Name="UserLogins" EntityType="Self.UserLogin" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="UsersStates" EntityType="Self.UsersState" />
           <EntitySet Name="UsersTypes" EntityType="Self.UsersType" />
@@ -969,7 +999,7 @@
           </AssociationSet>
           <AssociationSet Name="FK__RentRetur__Emplo__68487DD7" Association="Self.FK__RentRetur__Emplo__68487DD7">
             <End Role="Employees" EntitySet="Employees" />
-            <End Role="RentReturn" EntitySet="RentReturns" />
+            <End Role="RentReturns" EntitySet="RentReturns" />
           </AssociationSet>
           <AssociationSet Name="FK__Equiments__Equim__48CFD27E" Association="Self.FK__Equiments__Equim__48CFD27E">
             <End Role="EquimentTypes" EntitySet="EquimentTypes" />
@@ -984,12 +1014,12 @@
             <End Role="Equiments" EntitySet="Equiments" />
           </AssociationSet>
           <AssociationSet Name="FK__Equiments__Techn__4BAC3F29" Association="Self.FK__Equiments__Techn__4BAC3F29">
-            <End Role="TechnologiesConnection" EntitySet="TechnologiesConnections" />
+            <End Role="TechnologiesConnections" EntitySet="TechnologiesConnections" />
             <End Role="Equiments" EntitySet="Equiments" />
           </AssociationSet>
           <AssociationSet Name="FK__RentRetur__Equim__6D0D32F4" Association="Self.FK__RentRetur__Equim__6D0D32F4">
             <End Role="Equiments" EntitySet="Equiments" />
-            <End Role="RentReturn" EntitySet="RentReturns" />
+            <End Role="RentReturns" EntitySet="RentReturns" />
           </AssociationSet>
           <AssociationSet Name="FK__EquimentT__State__656C112C" Association="Self.FK__EquimentT__State__656C112C">
             <End Role="EquimentTypesStates" EntitySet="EquimentTypesStates" />
@@ -1005,15 +1035,15 @@
           </AssociationSet>
           <AssociationSet Name="FK__RentRetur__State__6A30C649" Association="Self.FK__RentRetur__State__6A30C649">
             <End Role="RentReturnStates" EntitySet="RentReturnStates" />
-            <End Role="RentReturn" EntitySet="RentReturns" />
+            <End Role="RentReturns" EntitySet="RentReturns" />
           </AssociationSet>
           <AssociationSet Name="FK__RentRetur__UserI__6B24EA82" Association="Self.FK__RentRetur__UserI__6B24EA82">
             <End Role="Users" EntitySet="Users" />
-            <End Role="RentReturn" EntitySet="RentReturns" />
+            <End Role="RentReturns" EntitySet="RentReturns" />
           </AssociationSet>
           <AssociationSet Name="FK__Technolog__State__6C190EBB" Association="Self.FK__Technolog__State__6C190EBB">
             <End Role="TechnologiesConnectionStates" EntitySet="TechnologiesConnectionStates" />
-            <End Role="TechnologiesConnection" EntitySet="TechnologiesConnections" />
+            <End Role="TechnologiesConnections" EntitySet="TechnologiesConnections" />
           </AssociationSet>
           <AssociationSet Name="FK__Users__StateId__6E01572D" Association="Self.FK__Users__StateId__6E01572D">
             <End Role="UsersStates" EntitySet="UsersStates" />
@@ -1029,9 +1059,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AudiovisualDbModelStoreContainer" CdmEntityContainer="AudiovisualDbEntities">
+        <EntityContainerMapping StorageEntityContainer="audiovisualdbModelStoreContainer" CdmEntityContainer="AudiovisualDbEntities">
           <EntitySetMapping Name="Brands">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.Brand">
+            <EntityTypeMapping TypeName="audiovisualdbModel.Brand">
               <MappingFragment StoreEntitySet="Brands">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -1041,7 +1071,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BrandsStates">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.BrandsState">
+            <EntityTypeMapping TypeName="audiovisualdbModel.BrandsState">
               <MappingFragment StoreEntitySet="BrandsStates">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="State" ColumnName="State" />
@@ -1051,7 +1081,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.Employee">
+            <EntityTypeMapping TypeName="audiovisualdbModel.Employee">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -1065,7 +1095,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EmployeesStates">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.EmployeesState">
+            <EntityTypeMapping TypeName="audiovisualdbModel.EmployeesState">
               <MappingFragment StoreEntitySet="EmployeesStates">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="State" ColumnName="State" />
@@ -1075,7 +1105,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Equiments">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.Equiment">
+            <EntityTypeMapping TypeName="audiovisualdbModel.Equiment">
               <MappingFragment StoreEntitySet="Equiments">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -1091,7 +1121,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EquimentsStates">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.EquimentsState">
+            <EntityTypeMapping TypeName="audiovisualdbModel.EquimentsState">
               <MappingFragment StoreEntitySet="EquimentsStates">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="State" ColumnName="State" />
@@ -1101,7 +1131,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EquimentTypes">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.EquimentType">
+            <EntityTypeMapping TypeName="audiovisualdbModel.EquimentType">
               <MappingFragment StoreEntitySet="EquimentTypes">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="StateId" ColumnName="StateId" />
@@ -1111,7 +1141,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="EquimentTypesStates">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.EquimentTypesState">
+            <EntityTypeMapping TypeName="audiovisualdbModel.EquimentTypesState">
               <MappingFragment StoreEntitySet="EquimentTypesStates">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="State" ColumnName="State" />
@@ -1121,7 +1151,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Models">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.Model">
+            <EntityTypeMapping TypeName="audiovisualdbModel.Model">
               <MappingFragment StoreEntitySet="Models">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="BranksId" ColumnName="BranksId" />
@@ -1132,7 +1162,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ModelsStates">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.ModelsState">
+            <EntityTypeMapping TypeName="audiovisualdbModel.ModelsState">
               <MappingFragment StoreEntitySet="ModelsStates">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="State" ColumnName="State" />
@@ -1142,7 +1172,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PersonalTypes">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.PersonalType">
+            <EntityTypeMapping TypeName="audiovisualdbModel.PersonalType">
               <MappingFragment StoreEntitySet="PersonalTypes">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -1151,8 +1181,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RentReturns">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.RentReturn">
-              <MappingFragment StoreEntitySet="RentReturn">
+            <EntityTypeMapping TypeName="audiovisualdbModel.RentReturn">
+              <MappingFragment StoreEntitySet="RentReturns">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="NoPay" ColumnName="NoPay" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
@@ -1166,7 +1196,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RentReturnStates">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.RentReturnState">
+            <EntityTypeMapping TypeName="audiovisualdbModel.RentReturnState">
               <MappingFragment StoreEntitySet="RentReturnStates">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="State" ColumnName="State" />
@@ -1176,8 +1206,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TechnologiesConnections">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.TechnologiesConnection">
-              <MappingFragment StoreEntitySet="TechnologiesConnection">
+            <EntityTypeMapping TypeName="audiovisualdbModel.TechnologiesConnection">
+              <MappingFragment StoreEntitySet="TechnologiesConnections">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="StateId" ColumnName="StateId" />
@@ -1186,7 +1216,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TechnologiesConnectionStates">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.TechnologiesConnectionState">
+            <EntityTypeMapping TypeName="audiovisualdbModel.TechnologiesConnectionState">
               <MappingFragment StoreEntitySet="TechnologiesConnectionStates">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="State" ColumnName="State" />
@@ -1195,8 +1225,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="UserLogins">
+            <EntityTypeMapping TypeName="audiovisualdbModel.UserLogin">
+              <MappingFragment StoreEntitySet="UserLogins">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.User">
+            <EntityTypeMapping TypeName="audiovisualdbModel.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -1211,7 +1252,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UsersStates">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.UsersState">
+            <EntityTypeMapping TypeName="audiovisualdbModel.UsersState">
               <MappingFragment StoreEntitySet="UsersStates">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="State" ColumnName="State" />
@@ -1221,7 +1262,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UsersTypes">
-            <EntityTypeMapping TypeName="AudiovisualDbModel.UsersType">
+            <EntityTypeMapping TypeName="audiovisualdbModel.UsersType">
               <MappingFragment StoreEntitySet="UsersTypes">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />

@@ -156,7 +156,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             // 
             this.button1.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(393, 388);
+            this.button1.Location = new System.Drawing.Point(345, 403);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 62);
             this.button1.TabIndex = 18;

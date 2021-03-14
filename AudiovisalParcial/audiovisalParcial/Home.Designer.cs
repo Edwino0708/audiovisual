@@ -1,7 +1,7 @@
 ﻿
 namespace audiovisalParcial
 {
-    partial class Form1
+    partial class HomeControl
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@ namespace audiovisalParcial
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeControl));
             this.pMenu = new System.Windows.Forms.Panel();
             this.pMenuOptions = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.btnMenuService = new System.Windows.Forms.Button();
+            this.btnMenuMantinance = new System.Windows.Forms.Button();
             this.pMenuHeader = new System.Windows.Forms.Panel();
             this.lMenuTitle = new System.Windows.Forms.Label();
             this.lLogo = new System.Windows.Forms.Label();
@@ -62,65 +62,68 @@ namespace audiovisalParcial
             this.pMenu.Controls.Add(this.splitter2);
             this.pMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenu.Location = new System.Drawing.Point(0, 0);
-            this.pMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pMenu.Name = "pMenu";
             this.pMenu.Size = new System.Drawing.Size(518, 1279);
             this.pMenu.TabIndex = 0;
             // 
             // pMenuOptions
             // 
-            this.pMenuOptions.Controls.Add(this.button3);
-            this.pMenuOptions.Controls.Add(this.button2);
-            this.pMenuOptions.Controls.Add(this.button1);
+            this.pMenuOptions.Controls.Add(this.btnReport);
+            this.pMenuOptions.Controls.Add(this.btnMenuService);
+            this.pMenuOptions.Controls.Add(this.btnMenuMantinance);
             this.pMenuOptions.Location = new System.Drawing.Point(4, 300);
-            this.pMenuOptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pMenuOptions.Margin = new System.Windows.Forms.Padding(4);
             this.pMenuOptions.Name = "pMenuOptions";
             this.pMenuOptions.Size = new System.Drawing.Size(512, 462);
             this.pMenuOptions.TabIndex = 8;
             // 
-            // button3
+            // btnReport
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button3.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(4, 329);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(506, 104);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Reportes";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnReport.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReport.Location = new System.Drawing.Point(4, 329);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(506, 104);
+            this.btnReport.TabIndex = 3;
+            this.btnReport.Text = "Reportes";
+            this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Visible = false;
+            this.btnReport.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnMenuService
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button2.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(6, 183);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(506, 104);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Servicios";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnMenuService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMenuService.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
+            this.btnMenuService.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuService.Image")));
+            this.btnMenuService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuService.Location = new System.Drawing.Point(6, 183);
+            this.btnMenuService.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenuService.Name = "btnMenuService";
+            this.btnMenuService.Size = new System.Drawing.Size(506, 104);
+            this.btnMenuService.TabIndex = 2;
+            this.btnMenuService.Text = "Servicios";
+            this.btnMenuService.UseVisualStyleBackColor = false;
+            this.btnMenuService.Visible = false;
             // 
-            // button1
+            // btnMenuMantinance
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(2, 35);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(506, 104);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Mantenimientos";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnMenuMantinance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMenuMantinance.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
+            this.btnMenuMantinance.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuMantinance.Image")));
+            this.btnMenuMantinance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuMantinance.Location = new System.Drawing.Point(2, 35);
+            this.btnMenuMantinance.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenuMantinance.Name = "btnMenuMantinance";
+            this.btnMenuMantinance.Size = new System.Drawing.Size(506, 104);
+            this.btnMenuMantinance.TabIndex = 1;
+            this.btnMenuMantinance.Text = "Mantenimientos";
+            this.btnMenuMantinance.UseVisualStyleBackColor = false;
+            this.btnMenuMantinance.Visible = false;
+            this.btnMenuMantinance.Click += new System.EventHandler(this.button1_Click);
             // 
             // pMenuHeader
             // 
@@ -128,7 +131,7 @@ namespace audiovisalParcial
             this.pMenuHeader.Controls.Add(this.lMenuTitle);
             this.pMenuHeader.Controls.Add(this.lLogo);
             this.pMenuHeader.Location = new System.Drawing.Point(0, 0);
-            this.pMenuHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pMenuHeader.Margin = new System.Windows.Forms.Padding(4);
             this.pMenuHeader.Name = "pMenuHeader";
             this.pMenuHeader.Size = new System.Drawing.Size(518, 292);
             this.pMenuHeader.TabIndex = 5;
@@ -163,19 +166,19 @@ namespace audiovisalParcial
             this.btnExit.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold);
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(164, 906);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnExit.Location = new System.Drawing.Point(74, 913);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(6);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(186, 77);
+            this.btnExit.Size = new System.Drawing.Size(364, 112);
             this.btnExit.TabIndex = 7;
-            this.btnExit.Text = "Salir";
+            this.btnExit.Text = "Cerrar Sección";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // splitter2
             // 
             this.splitter2.Location = new System.Drawing.Point(0, 0);
-            this.splitter2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(4);
             this.splitter2.Name = "splitter2";
             this.splitter2.Size = new System.Drawing.Size(4, 1279);
             this.splitter2.TabIndex = 4;
@@ -184,7 +187,7 @@ namespace audiovisalParcial
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(518, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(4);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(4, 1279);
             this.splitter1.TabIndex = 1;
@@ -198,7 +201,7 @@ namespace audiovisalParcial
             this.pBody.Controls.Add(this.panel1);
             this.pBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pBody.Location = new System.Drawing.Point(522, 0);
-            this.pBody.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pBody.Margin = new System.Windows.Forms.Padding(6);
             this.pBody.Name = "pBody";
             this.pBody.Size = new System.Drawing.Size(1474, 1279);
             this.pBody.TabIndex = 3;
@@ -206,10 +209,9 @@ namespace audiovisalParcial
             // pSubBody
             // 
             this.pSubBody.AutoScroll = true;
-            this.pSubBody.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pSubBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pSubBody.Location = new System.Drawing.Point(0, 187);
-            this.pSubBody.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pSubBody.Margin = new System.Windows.Forms.Padding(6);
             this.pSubBody.Name = "pSubBody";
             this.pSubBody.Size = new System.Drawing.Size(1474, 1092);
             this.pSubBody.TabIndex = 2;
@@ -221,7 +223,7 @@ namespace audiovisalParcial
             this.pHeader.Controls.Add(this.pHeaderMenu);
             this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pHeader.Location = new System.Drawing.Point(0, 0);
-            this.pHeader.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pHeader.Margin = new System.Windows.Forms.Padding(6);
             this.pHeader.Name = "pHeader";
             this.pHeader.Size = new System.Drawing.Size(1474, 187);
             this.pHeader.TabIndex = 1;
@@ -233,7 +235,7 @@ namespace audiovisalParcial
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pHeaderMenu.AutoSize = true;
             this.pHeaderMenu.Location = new System.Drawing.Point(108, 23);
-            this.pHeaderMenu.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pHeaderMenu.Margin = new System.Windows.Forms.Padding(6);
             this.pHeaderMenu.Name = "pHeaderMenu";
             this.pHeaderMenu.Size = new System.Drawing.Size(1238, 135);
             this.pHeaderMenu.TabIndex = 0;
@@ -244,12 +246,12 @@ namespace audiovisalParcial
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1474, 0);
             this.panel1.TabIndex = 0;
             // 
-            // Form1
+            // HomeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -260,9 +262,9 @@ namespace audiovisalParcial
             this.Controls.Add(this.pBody);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.pMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "HomeControl";
             this.Text = "I";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.pMenu.ResumeLayout(false);
@@ -286,9 +288,9 @@ namespace audiovisalParcial
         private System.Windows.Forms.Label lLogo;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel pMenuOptions;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnMenuService;
+        private System.Windows.Forms.Button btnMenuMantinance;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pHeader;
         private System.Windows.Forms.Panel pHeaderMenu;

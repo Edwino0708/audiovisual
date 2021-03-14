@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.Home
 {
-    public partial class HomeControl : UserControl
+    public partial class HomeAdminControl : UserControl
     {
-        public HomeControl()
+        public HomeAdminControl()
         {
             InitializeComponent();
         }

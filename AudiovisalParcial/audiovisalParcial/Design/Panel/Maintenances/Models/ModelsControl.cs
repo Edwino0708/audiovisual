@@ -39,7 +39,7 @@ namespace audiovisalParcial.Design.Panel.Models
             }
             catch (Exception ex)
             {
-                Utils.Utils.MessageError("Error al cargar datos: " + ex.Message);
+                Common.Util.MessageError("Error al cargar datos: " + ex.Message);
             }
         }
 
@@ -59,7 +59,7 @@ namespace audiovisalParcial.Design.Panel.Models
             catch (Exception ex)
             {
 
-                Utils.Utils.MessageError("No pudimos ejecutar la consulta " + ex.Message);
+                Common.Util.MessageError("No pudimos ejecutar la consulta " + ex.Message);
             }
 
         }
@@ -93,7 +93,7 @@ namespace audiovisalParcial.Design.Panel.Models
                 {
                     data.Enabled = false;
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Modelo eliminada con exito");
+                    Common.Util.Message("Modelo eliminada con exito");
                     getList();
                 }
                 else

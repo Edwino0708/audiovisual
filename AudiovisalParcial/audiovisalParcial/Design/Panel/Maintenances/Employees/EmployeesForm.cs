@@ -1,5 +1,5 @@
 ﻿using audiovisalParcial.Model;
-using audiovisalParcial.Utils;
+using audiovisalParcial.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,9 +39,9 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
                 var cedula = txtCedula.Text;
                 var state = item.Value;
                 Employee data = new Employee();
-                if (!Utils.Utils.ValideIdentificactionCard(cedula))
+                if (!Common.Util.ValideIdentificactionCard(cedula))
                 {
-                    Utils.Utils.MessageError("Cedula Invalida");
+                    Common.Util.MessageError("Cedula Invalida");
                     return;
                 }
                 if (id == 0)
@@ -55,7 +55,16 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
                     data.Enabled = true;
                     audiovisualEntities.Employees.Add(data);
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Datos fueron insertados correctamente");
+
+                    UserLogin login = new UserLogin();
+                    login.username = data.FirstName;
+                    login.password = Util.EncryptionPassowrd(data.IdentificationCard);
+                    login.isActive = true;
+                    login.role = "empleado";
+                    audiovisualEntities.UserLogins.Add(login);
+                    audiovisualEntities.SaveChanges();
+
+                    Common.Util.Message("Datos fueron insertados correctamente");
                     this.Close();
                 }
                 else
@@ -67,13 +76,13 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
                     data.StateId = state;
                     data.HiredDate = fecha;
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Datos fueron actualizado correctamente");
+                    Common.Util.Message("Datos fueron actualizado correctamente");
                     this.Close();
                 }
             }
             catch (Exception ex)
             {
-                Utils.Utils.MessageError(ex.Message);
+                Common.Util.MessageError(ex.Message);
             }
 
         }
@@ -90,7 +99,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             }
             else
             {
-                Utils.Utils.MessageError("Error en buscar este dato");
+                Common.Util.MessageError("Error en buscar este dato");
             }
         }
 
@@ -113,7 +122,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             }
             catch (Exception ex)
             {
-                Utils.Utils.MessageError(ex.Message);
+                Common.Util.MessageError(ex.Message);
             }
         }
 

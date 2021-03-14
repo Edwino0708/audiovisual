@@ -1,5 +1,5 @@
 ﻿using audiovisalParcial.Model;
-using audiovisalParcial.Utils;
+using audiovisalParcial.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +46,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
                     data.Enabled = true;
                     audiovisualEntities.EquimentTypes.Add(data);
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Datos fueron insertados correctamente");
+                    Common.Util.Message("Datos fueron insertados correctamente");
                     this.Close();
                 }
                 else
@@ -55,14 +55,14 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
                     data.Description = description;
                     data.StateId = state;
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Datos fueron actualizado correctamente");
+                    Common.Util.Message("Datos fueron actualizado correctamente");
                     this.Close();
                 }
 
             }
             catch (Exception ex) 
             {
-                Utils.Utils.MessageError(ex.Message);
+                Common.Util.MessageError(ex.Message);
             }
         }
 
@@ -76,7 +76,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             }
             else
             {
-                Utils.Utils.MessageError("Error en buscar este dato");
+                Common.Util.MessageError("Error en buscar este dato");
             }
         }
 
@@ -99,7 +99,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             }
             catch (Exception ex)
             {
-                Utils.Utils.MessageError(ex.Message);
+                Common.Util.MessageError(ex.Message);
             }
         }
 

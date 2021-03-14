@@ -64,7 +64,7 @@ namespace audiovisalParcial.Design.Panel.Users
             // 
             this.btnAddEquipmentType.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
             this.btnAddEquipmentType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddEquipmentType.Location = new System.Drawing.Point(558, 588);
+            this.btnAddEquipmentType.Location = new System.Drawing.Point(557, 565);
             this.btnAddEquipmentType.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddEquipmentType.Name = "btnAddEquipmentType";
             this.btnAddEquipmentType.Size = new System.Drawing.Size(96, 67);

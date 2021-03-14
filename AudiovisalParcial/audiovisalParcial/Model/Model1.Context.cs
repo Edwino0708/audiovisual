@@ -40,6 +40,7 @@ namespace audiovisalParcial.Model
         public virtual DbSet<RentReturnState> RentReturnStates { get; set; }
         public virtual DbSet<TechnologiesConnection> TechnologiesConnections { get; set; }
         public virtual DbSet<TechnologiesConnectionState> TechnologiesConnectionStates { get; set; }
+        public virtual DbSet<UserLogin> UserLogins { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UsersState> UsersStates { get; set; }
         public virtual DbSet<UsersType> UsersTypes { get; set; }

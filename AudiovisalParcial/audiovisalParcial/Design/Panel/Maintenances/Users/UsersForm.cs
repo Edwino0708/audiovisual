@@ -1,5 +1,5 @@
 ﻿using audiovisalParcial.Model;
-using audiovisalParcial.Utils;
+using audiovisalParcial.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,26 +32,26 @@ namespace audiovisalParcial.Design.Panel.Users
         {
             try
             {
-                ComboBoxItem item;
+                ComboBoxItem item, itemState, itemUserType, itemPersonalTtype;
                 string firstName = txbFirstName.Text;
                 string lastName = txbLastName.Text;
                 string identificactionCard = string.Empty;
-                if (Utils.Utils.ValideIdentificactionCard(txbIdentificationCard.Text) != false)
+                if (Common.Util.ValideIdentificactionCard(txbIdentificationCard.Text) != false)
                 {
                     identificactionCard = txbIdentificationCard.Text;
                 }
                 else 
                 {
-                    Utils.Utils.MessageError("La cedula esta incorrecta");
+                    Common.Util.MessageError("La cedula esta incorrecta");
                     return;
                 }
                 string carnet = txbCarnet.Text;
-                item = (ComboBoxItem)cbxState.SelectedItem;
-                int stateId = item.Value;
-                item = (ComboBoxItem)cbxUserType.SelectedItem;
-                int userTypeId = item.Value;
-                item = (ComboBoxItem)cbxPersonalTtype.SelectedItem;
-                int personalTypeId = item.Value;
+                itemState = (ComboBoxItem)cbxState.SelectedItem;
+                int stateId = itemState.Value;
+                itemUserType = (ComboBoxItem)cbxUserType.SelectedItem;
+                int userTypeId = itemUserType.Value;
+                itemPersonalTtype = (ComboBoxItem)cbxPersonalTtype.SelectedItem;
+                int personalTypeId = itemPersonalTtype.Value;
                 User data = new User();
 
                 if (id == 0)
@@ -68,7 +68,16 @@ namespace audiovisalParcial.Design.Panel.Users
                     data.Enabled = true;
                     audiovisualEntities.Users.Add(data);
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Datos fueron insertados correctamente");
+
+                    UserLogin login = new UserLogin();
+                    login.username = data.FirstName;
+                    login.password = Util.EncryptionPassowrd(data.IdentificationCard);
+                    login.isActive = true;
+                    login.role = itemUserType.Name;
+                    audiovisualEntities.UserLogins.Add(login);
+                    audiovisualEntities.SaveChanges();
+
+                    Common.Util.Message("Datos fueron insertados correctamente");
                     this.Close();
                 }
                 else
@@ -83,14 +92,14 @@ namespace audiovisalParcial.Design.Panel.Users
                     data.PersonalTypesID = personalTypeId;
                     data.StateId = stateId;
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Datos fueron actualizado correctamente");
+                    Common.Util.Message("Datos fueron actualizado correctamente");
                     this.Close();
                 }
 
             }
             catch (Exception ex)
             {
-                Utils.Utils.MessageError(ex.Message);
+                Common.Util.MessageError(ex.Message);
             }
         }
 
@@ -109,7 +118,7 @@ namespace audiovisalParcial.Design.Panel.Users
             }
             else
             {
-                Utils.Utils.MessageError("Error en buscar este dato");
+                Common.Util.MessageError("Error en buscar este dato");
             }
         }
 
@@ -156,7 +165,7 @@ namespace audiovisalParcial.Design.Panel.Users
             }
             catch (Exception ex)
             {
-                Utils.Utils.MessageError(ex.Message);
+                Common.Util.MessageError(ex.Message);
             }
         }
 

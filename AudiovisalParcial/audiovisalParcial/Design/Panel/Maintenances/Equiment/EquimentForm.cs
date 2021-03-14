@@ -1,5 +1,5 @@
 ﻿using audiovisalParcial.Model;
-using audiovisalParcial.Utils;
+using audiovisalParcial.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +44,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             }
             else
             {
-                Utils.Utils.MessageError("Error en buscar este dato");
+                Common.Util.MessageError("Error en buscar este dato");
             }
         }
 
@@ -117,7 +117,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             }
             catch (Exception ex)
             {
-                Utils.Utils.MessageError(ex.Message);
+                Common.Util.MessageError(ex.Message);
             }
         }
 
@@ -156,7 +156,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
                     data.Enabled = true;
                     audiovisualEntities.Equiments.Add(data);
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Datos fueron insertados correctamente");
+                    Common.Util.Message("Datos fueron insertados correctamente");
                     this.Close();
                 }
                 else
@@ -171,20 +171,20 @@ namespace audiovisalParcial.Design.Panel.Equiment
                     data.ServiceTag = serviceTag;
                     data.StateId = state;
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Datos fueron actualizado correctamente");
+                    Common.Util.Message("Datos fueron actualizado correctamente");
                     this.Close();
                 }
 
             }
             catch (Exception ex)
             {
-                Utils.Utils.MessageError(ex.Message);
+                Common.Util.MessageError(ex.Message);
             }
         }
 
         private void cbxMarca_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            int brandBoxId = cbxMarca.SelectedIndex;
+            int brandBoxId = int.Parse(cbxMarca.SelectedValue.ToString());
 
             List<ComboBoxItem> listItem = new List<ComboBoxItem>();
             List<Model.Model> listModel = audiovisualEntities.Models.Select(s => s).Where(w => w.Enabled != false && w.BranksId == brandBoxId).ToList();

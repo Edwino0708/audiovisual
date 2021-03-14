@@ -20,7 +20,7 @@ namespace audiovisalParcial.Design.Menu.Maintances
 {
     public partial class MaintenanceMenuControl : UserControl
     {
-        private Form1 form;
+        private HomeControl form;
         private EquipmentTypeControl equimentType;
         private UsersControl user;
         private BrandControl brand;
@@ -28,7 +28,7 @@ namespace audiovisalParcial.Design.Menu.Maintances
         private TechnologiesConnectionControl technologies;
         private EquimentControl equipo;
         private EmployeesControl employeesControl;
-        public MaintenanceMenuControl(Form1 form)
+        public MaintenanceMenuControl(HomeControl form)
         {
             InitializeComponent();
             this.form = form; 

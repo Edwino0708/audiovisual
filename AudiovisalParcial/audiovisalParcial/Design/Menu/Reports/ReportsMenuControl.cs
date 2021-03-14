@@ -15,9 +15,9 @@ namespace audiovisalParcial.Design.Menu.Maintances
 {
     public partial class ReportMenuControl : UserControl
     {
-        private Form1 form;
+        private HomeControl form;
         EquimentTypeReportControl equimentTypeReportControl;
-        public ReportMenuControl(Form1 form)
+        public ReportMenuControl(HomeControl form)
         {
             InitializeComponent(); 
             this.form = form;

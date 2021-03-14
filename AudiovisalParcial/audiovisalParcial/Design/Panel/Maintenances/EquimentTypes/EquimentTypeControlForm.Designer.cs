@@ -120,7 +120,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EquipmentTypeControlForm";
-            this.Text = "Form1";
+            this.Text = "HomeControl";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

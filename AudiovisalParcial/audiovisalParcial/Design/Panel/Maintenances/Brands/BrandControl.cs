@@ -37,7 +37,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             }
             catch (Exception ex)
             {
-                Utils.Utils.MessageError("Error al cargar datos: " + ex.Message);
+                Common.Util.MessageError("Error al cargar datos: " + ex.Message);
             }
         }
 
@@ -57,7 +57,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             catch (Exception ex)
             {
 
-                Utils.Utils.MessageError("No pudimos ejecutar la consulta " + ex.Message);
+                Common.Util.MessageError("No pudimos ejecutar la consulta " + ex.Message);
             }
 
         }
@@ -72,7 +72,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
                 {
                     data.Enabled = false;
                     audiovisualEntities.SaveChanges();
-                    Utils.Utils.Message("Marca eliminada con exito");
+                    Common.Util.Message("Marca eliminada con exito");
                     GetList();
                 }
                 else

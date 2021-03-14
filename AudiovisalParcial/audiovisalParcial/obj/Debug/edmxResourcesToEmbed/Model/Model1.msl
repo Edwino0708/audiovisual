@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="AudiovisualDbModelStoreContainer" CdmEntityContainer="AudiovisualDbEntities">
+  <EntityContainerMapping StorageEntityContainer="audiovisualdbModelStoreContainer" CdmEntityContainer="AudiovisualDbEntities">
     <EntitySetMapping Name="Brands">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.Brand">
+      <EntityTypeMapping TypeName="audiovisualdbModel.Brand">
         <MappingFragment StoreEntitySet="Brands">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Description" ColumnName="Description" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="BrandsStates">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.BrandsState">
+      <EntityTypeMapping TypeName="audiovisualdbModel.BrandsState">
         <MappingFragment StoreEntitySet="BrandsStates">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="State" ColumnName="State" />
@@ -22,7 +22,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Employees">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.Employee">
+      <EntityTypeMapping TypeName="audiovisualdbModel.Employee">
         <MappingFragment StoreEntitySet="Employees">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -36,7 +36,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EmployeesStates">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.EmployeesState">
+      <EntityTypeMapping TypeName="audiovisualdbModel.EmployeesState">
         <MappingFragment StoreEntitySet="EmployeesStates">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="State" ColumnName="State" />
@@ -46,7 +46,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Equiments">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.Equiment">
+      <EntityTypeMapping TypeName="audiovisualdbModel.Equiment">
         <MappingFragment StoreEntitySet="Equiments">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Description" ColumnName="Description" />
@@ -62,7 +62,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EquimentsStates">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.EquimentsState">
+      <EntityTypeMapping TypeName="audiovisualdbModel.EquimentsState">
         <MappingFragment StoreEntitySet="EquimentsStates">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="State" ColumnName="State" />
@@ -72,7 +72,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EquimentTypes">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.EquimentType">
+      <EntityTypeMapping TypeName="audiovisualdbModel.EquimentType">
         <MappingFragment StoreEntitySet="EquimentTypes">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="StateId" ColumnName="StateId" />
@@ -82,7 +82,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EquimentTypesStates">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.EquimentTypesState">
+      <EntityTypeMapping TypeName="audiovisualdbModel.EquimentTypesState">
         <MappingFragment StoreEntitySet="EquimentTypesStates">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="State" ColumnName="State" />
@@ -92,7 +92,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Models">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.Model">
+      <EntityTypeMapping TypeName="audiovisualdbModel.Model">
         <MappingFragment StoreEntitySet="Models">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="BranksId" ColumnName="BranksId" />
@@ -103,7 +103,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ModelsStates">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.ModelsState">
+      <EntityTypeMapping TypeName="audiovisualdbModel.ModelsState">
         <MappingFragment StoreEntitySet="ModelsStates">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="State" ColumnName="State" />
@@ -113,7 +113,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PersonalTypes">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.PersonalType">
+      <EntityTypeMapping TypeName="audiovisualdbModel.PersonalType">
         <MappingFragment StoreEntitySet="PersonalTypes">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Description" ColumnName="Description" />
@@ -122,8 +122,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="RentReturns">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.RentReturn">
-        <MappingFragment StoreEntitySet="RentReturn">
+      <EntityTypeMapping TypeName="audiovisualdbModel.RentReturn">
+        <MappingFragment StoreEntitySet="RentReturns">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="NoPay" ColumnName="NoPay" />
           <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
@@ -137,7 +137,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="RentReturnStates">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.RentReturnState">
+      <EntityTypeMapping TypeName="audiovisualdbModel.RentReturnState">
         <MappingFragment StoreEntitySet="RentReturnStates">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="State" ColumnName="State" />
@@ -147,8 +147,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TechnologiesConnections">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.TechnologiesConnection">
-        <MappingFragment StoreEntitySet="TechnologiesConnection">
+      <EntityTypeMapping TypeName="audiovisualdbModel.TechnologiesConnection">
+        <MappingFragment StoreEntitySet="TechnologiesConnections">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="StateId" ColumnName="StateId" />
@@ -157,7 +157,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TechnologiesConnectionStates">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.TechnologiesConnectionState">
+      <EntityTypeMapping TypeName="audiovisualdbModel.TechnologiesConnectionState">
         <MappingFragment StoreEntitySet="TechnologiesConnectionStates">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="State" ColumnName="State" />
@@ -166,8 +166,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UserLogins">
+      <EntityTypeMapping TypeName="audiovisualdbModel.UserLogin">
+        <MappingFragment StoreEntitySet="UserLogins">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.User">
+      <EntityTypeMapping TypeName="audiovisualdbModel.User">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -182,7 +193,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="UsersStates">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.UsersState">
+      <EntityTypeMapping TypeName="audiovisualdbModel.UsersState">
         <MappingFragment StoreEntitySet="UsersStates">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="State" ColumnName="State" />
@@ -192,7 +203,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="UsersTypes">
-      <EntityTypeMapping TypeName="AudiovisualDbModel.UsersType">
+      <EntityTypeMapping TypeName="audiovisualdbModel.UsersType">
         <MappingFragment StoreEntitySet="UsersTypes">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Description" ColumnName="Description" />
