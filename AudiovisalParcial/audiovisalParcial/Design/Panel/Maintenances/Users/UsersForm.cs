@@ -42,7 +42,7 @@ namespace audiovisalParcial.Design.Panel.Users
                 }
                 else 
                 {
-                    Utils.Utils.MessageError("La cedula no se cuentra en el formato correcto, por favor vuelva intentarlo");
+                    Utils.Utils.MessageError("La cedula esta incorrecta");
                     return;
                 }
                 string carnet = txbCarnet.Text;

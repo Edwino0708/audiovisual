@@ -22,33 +22,9 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             InitializeComponent();
             LoadComboBox();
             this.id = id;
-            FindEmployee();
-        }
 
-        public static bool validaCedula(string pCedula)
-
-        {
-            int vnTotal = 0;
-            string vcCedula = pCedula.Replace("-", "");
-            int pLongCed = vcCedula.Trim().Length;
-            int[] digitoMult = new int[11] { 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1 };
-
-            if (pLongCed < 11 || pLongCed > 11)
-                return false;
-
-            for (int vDig = 1; vDig <= pLongCed; vDig++)
-            {
-                int vCalculo = Int32.Parse(vcCedula.Substring(vDig - 1, 1)) * digitoMult[vDig - 1];
-                if (vCalculo < 10)
-                    vnTotal += vCalculo;
-                else
-                    vnTotal += Int32.Parse(vCalculo.ToString().Substring(0, 1)) + Int32.Parse(vCalculo.ToString().Substring(1, 1));
-            }
-
-            if (vnTotal % 10 == 0)
-                return true;
-            else
-                return false;
+            if (this.id != 0)  
+                FindEmployee(); 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,7 +39,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
                 var cedula = txtCedula.Text;
                 var state = item.Value;
                 Employee data = new Employee();
-                if (!validaCedula(cedula))
+                if (!Utils.Utils.ValideIdentificactionCard(cedula))
                 {
                     Utils.Utils.MessageError("Cedula Invalida");
                     return;
@@ -99,16 +75,6 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             {
                 Utils.Utils.MessageError(ex.Message);
             }
-
-        }
-
-    private void EmployeesForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
         }
 
@@ -149,11 +115,6 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             {
                 Utils.Utils.MessageError(ex.Message);
             }
-        }
-
-        private void txtCedula_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)

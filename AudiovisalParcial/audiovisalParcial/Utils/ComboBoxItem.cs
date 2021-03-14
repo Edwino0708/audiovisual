@@ -19,7 +19,6 @@ namespace audiovisalParcial.Utils
         public override string ToString()
         {
             return Name;
-            
         }
 
     }

@@ -64,7 +64,6 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             this.groupBox1.Size = new System.Drawing.Size(815, 272);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // dtFecha
             // 
@@ -89,7 +88,6 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(257, 31);
             this.txtCedula.TabIndex = 14;
-            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // label10
@@ -183,7 +181,6 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Name = "EmployeesForm";
-            this.Load += new System.EventHandler(this.EmployeesForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

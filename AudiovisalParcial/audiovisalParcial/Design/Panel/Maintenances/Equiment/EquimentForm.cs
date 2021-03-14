@@ -27,6 +27,8 @@ namespace audiovisalParcial.Design.Panel.Equiment
             {
                 Find();
             }
+
+            cbxModel.Enabled = false;
         }
 
 
@@ -62,18 +64,6 @@ namespace audiovisalParcial.Design.Panel.Equiment
                 cbxMarca.DataSource = listItem;
                 cbxMarca.DisplayMember = "Name";
                 cbxMarca.ValueMember = "Value";
-
-                listItem = new List<ComboBoxItem>();
-                List<Model.Model> listModel = audiovisualEntities.Models.Select(s => s).Where(w => w.Enabled != false).ToList();
-                foreach (var item in listModel)
-                {
-                    ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
-                    listItem.Add(comboxBoxItem);
-                }
-
-                cbxModel.DataSource = listItem;
-                cbxModel.DisplayMember = "Name";
-                cbxModel.ValueMember = "Value";
 
                 listItem = new List<ComboBoxItem>();
                 List<Model.TechnologiesConnection> listTech = audiovisualEntities.TechnologiesConnections.Select(s => s).Where(w => w.Enabled != false).ToList();
@@ -190,6 +180,24 @@ namespace audiovisalParcial.Design.Panel.Equiment
             {
                 Utils.Utils.MessageError(ex.Message);
             }
+        }
+
+        private void cbxMarca_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            int brandBoxId = cbxMarca.SelectedIndex;
+
+            List<ComboBoxItem> listItem = new List<ComboBoxItem>();
+            List<Model.Model> listModel = audiovisualEntities.Models.Select(s => s).Where(w => w.Enabled != false && w.BranksId == brandBoxId).ToList();
+            foreach (var item in listModel)
+            {
+                ComboBoxItem comboxBoxItem = new ComboBoxItem(item.Description, item.Id);
+                listItem.Add(comboxBoxItem);
+            }
+
+            cbxModel.DataSource = listItem;
+            cbxModel.DisplayMember = "Name";
+            cbxModel.ValueMember = "Value";
+            cbxModel.Enabled = true;
         }
     }
 }
