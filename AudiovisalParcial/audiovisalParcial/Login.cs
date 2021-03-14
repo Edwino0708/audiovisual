@@ -30,7 +30,7 @@ namespace audiovisalParcial
             {
                 MessageBox.Show("Credenciales incorrectas");
             }//COLOCAR EL ID DEL USERTYPE QUE SE ESTUDIANTE - JUNIOR MENA
-            else if (usuario.Enabled.Equals("0") && usuario.UsersType.Equals(1))
+            else if (usuario.Enabled.Equals("0") || usuario.UsersType.Equals(1))
             {
                 MessageBox.Show("Credenciales incorrectas");
             }
