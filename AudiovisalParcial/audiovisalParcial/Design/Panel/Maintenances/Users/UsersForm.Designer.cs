@@ -64,10 +64,11 @@ namespace audiovisalParcial.Design.Panel.Users
             // 
             this.btnAddEquipmentType.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
             this.btnAddEquipmentType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddEquipmentType.Enabled = false;
             this.btnAddEquipmentType.Location = new System.Drawing.Point(557, 565);
             this.btnAddEquipmentType.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddEquipmentType.Name = "btnAddEquipmentType";
-            this.btnAddEquipmentType.Size = new System.Drawing.Size(96, 67);
+            this.btnAddEquipmentType.Size = new System.Drawing.Size(112, 90);
             this.btnAddEquipmentType.TabIndex = 14;
             this.btnAddEquipmentType.UseVisualStyleBackColor = true;
             this.btnAddEquipmentType.Click += new System.EventHandler(this.btnAddEquipmentType_Click);
@@ -88,11 +89,11 @@ namespace audiovisalParcial.Design.Panel.Users
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txbFirstName);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(42, 100);
+            this.groupBox2.Location = new System.Drawing.Point(55, 108);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox2.Size = new System.Drawing.Size(1140, 436);
+            this.groupBox2.Size = new System.Drawing.Size(1127, 428);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
@@ -108,6 +109,7 @@ namespace audiovisalParcial.Design.Panel.Users
             this.cbxState.Name = "cbxState";
             this.cbxState.Size = new System.Drawing.Size(364, 33);
             this.cbxState.TabIndex = 17;
+            this.cbxState.SelectedIndexChanged += new System.EventHandler(this.cbxState_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -131,6 +133,7 @@ namespace audiovisalParcial.Design.Panel.Users
             this.cbxPersonalTtype.Name = "cbxPersonalTtype";
             this.cbxPersonalTtype.Size = new System.Drawing.Size(364, 33);
             this.cbxPersonalTtype.TabIndex = 15;
+            this.cbxPersonalTtype.SelectedIndexChanged += new System.EventHandler(this.cbxPersonalTtype_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -149,6 +152,7 @@ namespace audiovisalParcial.Design.Panel.Users
             this.txbCarnet.Name = "txbCarnet";
             this.txbCarnet.Size = new System.Drawing.Size(364, 31);
             this.txbCarnet.TabIndex = 13;
+            this.txbCarnet.TextChanged += new System.EventHandler(this.txbCarnet_TextChanged);
             // 
             // label6
             // 
@@ -167,6 +171,7 @@ namespace audiovisalParcial.Design.Panel.Users
             this.txbIdentificationCard.Name = "txbIdentificationCard";
             this.txbIdentificationCard.Size = new System.Drawing.Size(364, 31);
             this.txbIdentificationCard.TabIndex = 11;
+            this.txbIdentificationCard.TextChanged += new System.EventHandler(this.txbIdentificationCard_TextChanged);
             // 
             // label5
             // 
@@ -185,6 +190,7 @@ namespace audiovisalParcial.Design.Panel.Users
             this.txbLastName.Name = "txbLastName";
             this.txbLastName.Size = new System.Drawing.Size(364, 31);
             this.txbLastName.TabIndex = 9;
+            this.txbLastName.TextChanged += new System.EventHandler(this.txbLastName_TextChanged);
             // 
             // label3
             // 
@@ -208,6 +214,7 @@ namespace audiovisalParcial.Design.Panel.Users
             this.cbxUserType.Name = "cbxUserType";
             this.cbxUserType.Size = new System.Drawing.Size(364, 33);
             this.cbxUserType.TabIndex = 7;
+            this.cbxUserType.SelectedIndexChanged += new System.EventHandler(this.cbxUserType_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -226,6 +233,7 @@ namespace audiovisalParcial.Design.Panel.Users
             this.txbFirstName.Name = "txbFirstName";
             this.txbFirstName.Size = new System.Drawing.Size(364, 31);
             this.txbFirstName.TabIndex = 3;
+            this.txbFirstName.TextChanged += new System.EventHandler(this.txbFirstName_TextChanged);
             // 
             // label2
             // 

@@ -169,5 +169,58 @@ namespace audiovisalParcial.Design.Panel.Users
             }
         }
 
+        private void txbFirstName_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txbFirstName.Text.ToString()) &&
+                !string.IsNullOrEmpty(txbLastName.Text.ToString()) &&
+                !string.IsNullOrEmpty(txbCarnet.Text.ToString()) &&
+                !string.IsNullOrEmpty(txbIdentificationCard.Text.ToString()) &&
+                !string.IsNullOrEmpty(cbxState.SelectedValue.ToString()) &&
+                !string.IsNullOrEmpty(cbxUserType.SelectedValue.ToString()) &&
+                !string.IsNullOrEmpty(cbxPersonalTtype.SelectedValue.ToString()))
+                btnAddEquipmentType.Enabled = true;
+        }
+
+        private void txbLastName_TextChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void txbIdentificationCard_TextChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void txbCarnet_TextChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void cbxUserType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void cbxPersonalTtype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void cbxState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void ValidForm()
+        {
+            if (!string.IsNullOrEmpty(txbFirstName.Text.ToString()) &&
+                !string.IsNullOrEmpty(txbLastName.Text.ToString()) &&
+                !string.IsNullOrEmpty(txbCarnet.Text.ToString()) &&
+                !string.IsNullOrEmpty(txbIdentificationCard.Text.ToString()) &&
+                !string.IsNullOrEmpty(cbxState.SelectedValue.ToString()) &&
+                !string.IsNullOrEmpty(cbxUserType.SelectedValue.ToString()) &&
+                !string.IsNullOrEmpty(cbxPersonalTtype.SelectedValue.ToString()))
+                btnAddEquipmentType.Enabled = true;
+        }
     }
 }

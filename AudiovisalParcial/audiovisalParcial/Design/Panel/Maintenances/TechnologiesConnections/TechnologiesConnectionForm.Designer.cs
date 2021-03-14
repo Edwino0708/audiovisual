@@ -53,6 +53,7 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
             // 
             this.btnSave.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Enabled = false;
             this.btnSave.Location = new System.Drawing.Point(529, 463);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
@@ -87,6 +88,7 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
             this.cbxState.Name = "cbxState";
             this.cbxState.Size = new System.Drawing.Size(364, 33);
             this.cbxState.TabIndex = 7;
+            this.cbxState.SelectedIndexChanged += new System.EventHandler(this.cbxState_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -105,6 +107,7 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(364, 31);
             this.txtDescription.TabIndex = 3;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // label2
             // 

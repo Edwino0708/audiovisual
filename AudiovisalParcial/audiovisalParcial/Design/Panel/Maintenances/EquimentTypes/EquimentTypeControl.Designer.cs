@@ -53,7 +53,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             // 
             this.panel1.Controls.Add(this.lTitle);
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1440, 129);
             this.panel1.TabIndex = 7;
@@ -77,7 +77,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.dgvListEquipmentType);
             this.panel2.Location = new System.Drawing.Point(4, 281);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1440, 1012);
             this.panel2.TabIndex = 8;
@@ -89,7 +89,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.btnRefresh.Image = global::audiovisalParcial.Properties.Resources.refresh;
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRefresh.Location = new System.Drawing.Point(-2, 50);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(6);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(182, 69);
             this.btnRefresh.TabIndex = 5;
@@ -106,7 +106,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.btnAdd.Image = global::audiovisalParcial.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.Location = new System.Drawing.Point(838, 50);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(186, 69);
             this.btnAdd.TabIndex = 10;
@@ -123,7 +123,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.btnUpdate.Image = global::audiovisalParcial.Properties.Resources.update;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdate.Location = new System.Drawing.Point(1034, 50);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(204, 69);
             this.btnUpdate.TabIndex = 9;
@@ -140,7 +140,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.btnDelete.Image = global::audiovisalParcial.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelete.Location = new System.Drawing.Point(1252, 50);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(188, 69);
             this.btnDelete.TabIndex = 5;
@@ -160,13 +160,13 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListEquipmentType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListEquipmentType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListEquipmentType.Location = new System.Drawing.Point(6, 131);
-            this.dgvListEquipmentType.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvListEquipmentType.Location = new System.Drawing.Point(61, 167);
+            this.dgvListEquipmentType.Margin = new System.Windows.Forms.Padding(6);
             this.dgvListEquipmentType.Name = "dgvListEquipmentType";
             this.dgvListEquipmentType.ReadOnly = true;
             this.dgvListEquipmentType.RowHeadersWidth = 82;
             this.dgvListEquipmentType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListEquipmentType.Size = new System.Drawing.Size(1428, 894);
+            this.dgvListEquipmentType.Size = new System.Drawing.Size(1322, 760);
             this.dgvListEquipmentType.TabIndex = 8;
             // 
             // groupBox1
@@ -179,9 +179,9 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.groupBox1.Controls.Add(this.cbxCriterio);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(0, 140);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox1.Size = new System.Drawing.Size(1448, 131);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
@@ -194,7 +194,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.btnSearch.Image = global::audiovisalParcial.Properties.Resources.search;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.Location = new System.Drawing.Point(1310, 50);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(134, 69);
             this.btnSearch.TabIndex = 4;
@@ -206,7 +206,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(824, 54);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(6);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(368, 31);
             this.txtBuscar.TabIndex = 3;
@@ -227,7 +227,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.cbxCriterio.Items.AddRange(new object[] {
             "Descripcion"});
             this.cbxCriterio.Location = new System.Drawing.Point(300, 58);
-            this.cbxCriterio.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbxCriterio.Margin = new System.Windows.Forms.Padding(6);
             this.cbxCriterio.Name = "cbxCriterio";
             this.cbxCriterio.Size = new System.Drawing.Size(238, 33);
             this.cbxCriterio.TabIndex = 1;
@@ -249,7 +249,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EquipmentTypeControl";
             this.Size = new System.Drawing.Size(1448, 1296);
             this.panel1.ResumeLayout(false);

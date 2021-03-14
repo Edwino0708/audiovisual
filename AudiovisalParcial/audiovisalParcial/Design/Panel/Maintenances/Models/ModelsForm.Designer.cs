@@ -45,10 +45,10 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Constantia", 15F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(144, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(288, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 24);
+            this.label1.Size = new System.Drawing.Size(341, 49);
             this.label1.TabIndex = 13;
             this.label1.Text = "Agregar modelos";
             // 
@@ -56,9 +56,11 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             this.btnCreate.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
             this.btnCreate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCreate.Location = new System.Drawing.Point(211, 250);
+            this.btnCreate.Enabled = false;
+            this.btnCreate.Location = new System.Drawing.Point(422, 481);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(48, 35);
+            this.btnCreate.Size = new System.Drawing.Size(96, 67);
             this.btnCreate.TabIndex = 14;
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
@@ -71,9 +73,11 @@ namespace audiovisalParcial.Design.Panel.Models
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtDescription);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(63, 65);
+            this.groupBox2.Location = new System.Drawing.Point(126, 125);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(338, 169);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Size = new System.Drawing.Size(676, 325);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
@@ -84,17 +88,20 @@ namespace audiovisalParcial.Design.Panel.Models
             this.cbxMarca.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.cbxMarca.Location = new System.Drawing.Point(100, 28);
+            this.cbxMarca.Location = new System.Drawing.Point(200, 54);
+            this.cbxMarca.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbxMarca.Name = "cbxMarca";
-            this.cbxMarca.Size = new System.Drawing.Size(184, 21);
+            this.cbxMarca.Size = new System.Drawing.Size(364, 33);
             this.cbxMarca.TabIndex = 11;
+            this.cbxMarca.SelectedIndexChanged += new System.EventHandler(this.cbxMarca_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 32);
+            this.label3.Location = new System.Drawing.Point(48, 62);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(72, 25);
             this.label3.TabIndex = 10;
             this.label3.Text = "Marca";
             // 
@@ -105,45 +112,51 @@ namespace audiovisalParcial.Design.Panel.Models
             this.cbxState.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.cbxState.Location = new System.Drawing.Point(100, 137);
+            this.cbxState.Location = new System.Drawing.Point(200, 263);
+            this.cbxState.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbxState.Name = "cbxState";
-            this.cbxState.Size = new System.Drawing.Size(184, 21);
+            this.cbxState.Size = new System.Drawing.Size(364, 33);
             this.cbxState.TabIndex = 7;
+            this.cbxState.SelectedIndexChanged += new System.EventHandler(this.cbxState_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 141);
+            this.label4.Location = new System.Drawing.Point(48, 271);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.Size = new System.Drawing.Size(79, 25);
             this.label4.TabIndex = 6;
             this.label4.Text = "Estado";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(100, 82);
+            this.txtDescription.Location = new System.Drawing.Point(200, 158);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(184, 20);
+            this.txtDescription.Size = new System.Drawing.Size(364, 31);
             this.txtDescription.TabIndex = 3;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 85);
+            this.label2.Location = new System.Drawing.Point(48, 163);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(125, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Descripcion";
             // 
             // ModelsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 321);
+            this.ClientSize = new System.Drawing.Size(946, 617);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ModelsForm";
             this.Text = "FormModels";
             this.groupBox2.ResumeLayout(false);

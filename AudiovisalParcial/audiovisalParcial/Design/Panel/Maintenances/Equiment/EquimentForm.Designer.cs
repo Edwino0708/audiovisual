@@ -30,9 +30,8 @@ namespace audiovisalParcial.Design.Panel.Equiment
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAddEquipmentType = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.cbxTypeTecnology = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxState = new System.Windows.Forms.ComboBox();
@@ -63,20 +62,9 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.label1.TabIndex = 16;
             this.label1.Text = "Agregar equipo";
             // 
-            // btnAddEquipmentType
-            // 
-            this.btnAddEquipmentType.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
-            this.btnAddEquipmentType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddEquipmentType.Location = new System.Drawing.Point(548, 873);
-            this.btnAddEquipmentType.Margin = new System.Windows.Forms.Padding(6);
-            this.btnAddEquipmentType.Name = "btnAddEquipmentType";
-            this.btnAddEquipmentType.Size = new System.Drawing.Size(96, 67);
-            this.btnAddEquipmentType.TabIndex = 17;
-            this.btnAddEquipmentType.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnSave);
             this.groupBox2.Controls.Add(this.cbxTypeTecnology);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.cbxState);
@@ -101,17 +89,18 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(572, 529);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 67);
-            this.button1.TabIndex = 22;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.BackgroundImage = global::audiovisalParcial.Properties.Resources.save;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(550, 518);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(96, 67);
+            this.btnSave.TabIndex = 22;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // cbxTypeTecnology
             // 
@@ -125,6 +114,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.cbxTypeTecnology.Name = "cbxTypeTecnology";
             this.cbxTypeTecnology.Size = new System.Drawing.Size(286, 33);
             this.cbxTypeTecnology.TabIndex = 21;
+            this.cbxTypeTecnology.SelectedIndexChanged += new System.EventHandler(this.cbxTypeTecnology_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -148,6 +138,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.cbxState.Name = "cbxState";
             this.cbxState.Size = new System.Drawing.Size(364, 33);
             this.cbxState.TabIndex = 19;
+            this.cbxState.SelectedIndexChanged += new System.EventHandler(this.cbxState_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -171,6 +162,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(364, 33);
             this.cbxType.TabIndex = 17;
+            this.cbxType.SelectedIndexChanged += new System.EventHandler(this.cbxType_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -194,6 +186,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.cbxModel.Name = "cbxModel";
             this.cbxModel.Size = new System.Drawing.Size(364, 33);
             this.cbxModel.TabIndex = 15;
+            this.cbxModel.SelectedIndexChanged += new System.EventHandler(this.cbxModel_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -212,6 +205,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.txtServiceTag.Name = "txtServiceTag";
             this.txtServiceTag.Size = new System.Drawing.Size(364, 31);
             this.txtServiceTag.TabIndex = 13;
+            this.txtServiceTag.TextChanged += new System.EventHandler(this.txtServiceTag_TextChanged);
             // 
             // label3
             // 
@@ -230,6 +224,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.txtSerial.Name = "txtSerial";
             this.txtSerial.Size = new System.Drawing.Size(364, 31);
             this.txtSerial.TabIndex = 11;
+            this.txtSerial.TextChanged += new System.EventHandler(this.txtSerial_TextChanged);
             // 
             // lSerial
             // 
@@ -248,6 +243,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(364, 31);
             this.txtDescription.TabIndex = 9;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // label2
             // 
@@ -271,6 +267,7 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(364, 33);
             this.cbxMarca.TabIndex = 7;
+            this.cbxMarca.SelectedIndexChanged += new System.EventHandler(this.cbxMarca_SelectedIndexChanged);
             this.cbxMarca.SelectionChangeCommitted += new System.EventHandler(this.cbxMarca_SelectionChangeCommitted);
             // 
             // cxbMarca
@@ -289,7 +286,6 @@ namespace audiovisalParcial.Design.Panel.Equiment
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 748);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAddEquipmentType);
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EquimentForm";
@@ -304,7 +300,6 @@ namespace audiovisalParcial.Design.Panel.Equiment
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAddEquipmentType;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbxTypeTecnology;
         private System.Windows.Forms.Label label4;
@@ -322,6 +317,6 @@ namespace audiovisalParcial.Design.Panel.Equiment
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxMarca;
         private System.Windows.Forms.Label cxbMarca;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
     }
 }

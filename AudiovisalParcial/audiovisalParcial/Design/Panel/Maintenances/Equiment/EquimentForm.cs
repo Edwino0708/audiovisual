@@ -199,5 +199,58 @@ namespace audiovisalParcial.Design.Panel.Equiment
             cbxModel.ValueMember = "Value";
             cbxModel.Enabled = true;
         }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void txtSerial_TextChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void txtServiceTag_TextChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void cbxState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void cbxMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void cbxModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void cbxType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void cbxTypeTecnology_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidForm();
+        }
+
+        private void ValidForm()
+        {
+            if (!string.IsNullOrEmpty(txtDescription.Text.ToString()) &&
+                !string.IsNullOrEmpty(txtSerial.Text.ToString()) &&
+                !string.IsNullOrEmpty(txtServiceTag.Text.ToString()) &&
+                !string.IsNullOrEmpty(cbxMarca.SelectedValue.ToString()) &&
+                !string.IsNullOrEmpty(cbxState.SelectedValue.ToString()) &&
+                !string.IsNullOrEmpty(cbxModel.SelectedValue.ToString()) &&
+                !string.IsNullOrEmpty(cbxTypeTecnology.SelectedValue.ToString()))
+                btnSave.Enabled = true;
+
+        }
     }
 }

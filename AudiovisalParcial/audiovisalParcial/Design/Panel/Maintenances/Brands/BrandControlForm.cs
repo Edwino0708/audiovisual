@@ -102,5 +102,11 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
                 Common.Util.MessageError(ex.Message);
             }
         }
+
+        private void txtDescriptionMarca_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDescriptionMarca.Text.ToString()) && !string.IsNullOrEmpty(cbxStateMarca.SelectedValue.ToString()))
+                btnAddMarca.Enabled = true;
+        }
     }
 }

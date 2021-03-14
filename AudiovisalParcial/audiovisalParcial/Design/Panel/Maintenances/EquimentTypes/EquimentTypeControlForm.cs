@@ -103,5 +103,10 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             }
         }
 
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDescription.Text.ToString()) && !string.IsNullOrEmpty(cbxState.SelectedValue.ToString()))
+                btnAddEquipmentType.Enabled = true;
+        }
     }
 }

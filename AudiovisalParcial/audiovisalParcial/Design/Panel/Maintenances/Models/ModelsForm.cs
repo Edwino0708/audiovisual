@@ -120,5 +120,24 @@ namespace audiovisalParcial.Design.Panel.Models
                 Common.Util.MessageError(ex.Message);
             }
         }
+
+        private void cbxMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {  
+            if (!string.IsNullOrEmpty(txtDescription.Text.ToString()) && !string.IsNullOrEmpty(cbxMarca.Text.ToString()) && !string.IsNullOrEmpty(cbxState.SelectedValue.ToString()))
+                btnCreate.Enabled = true;
+            
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDescription.Text.ToString()) && !string.IsNullOrEmpty(cbxMarca.Text.ToString()) && !string.IsNullOrEmpty(cbxState.SelectedValue.ToString()))
+                btnCreate.Enabled = true;
+        }
+
+        private void cbxState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDescription.Text.ToString()) && !string.IsNullOrEmpty(cbxMarca.Text.ToString()) && !string.IsNullOrEmpty(cbxState.SelectedValue.ToString()))
+                btnCreate.Enabled = true;
+        }
     }
 }
