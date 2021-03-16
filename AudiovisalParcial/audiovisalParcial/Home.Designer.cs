@@ -62,9 +62,9 @@ namespace audiovisalParcial
             this.pMenu.Controls.Add(this.splitter2);
             this.pMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenu.Location = new System.Drawing.Point(0, 0);
-            this.pMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.pMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pMenu.Name = "pMenu";
-            this.pMenu.Size = new System.Drawing.Size(518, 1279);
+            this.pMenu.Size = new System.Drawing.Size(259, 389);
             this.pMenu.TabIndex = 0;
             // 
             // pMenuOptions
@@ -72,10 +72,10 @@ namespace audiovisalParcial
             this.pMenuOptions.Controls.Add(this.btnReport);
             this.pMenuOptions.Controls.Add(this.btnMenuService);
             this.pMenuOptions.Controls.Add(this.btnMenuMantinance);
-            this.pMenuOptions.Location = new System.Drawing.Point(4, 300);
-            this.pMenuOptions.Margin = new System.Windows.Forms.Padding(4);
+            this.pMenuOptions.Location = new System.Drawing.Point(2, 156);
+            this.pMenuOptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pMenuOptions.Name = "pMenuOptions";
-            this.pMenuOptions.Size = new System.Drawing.Size(512, 462);
+            this.pMenuOptions.Size = new System.Drawing.Size(256, 240);
             this.pMenuOptions.TabIndex = 8;
             // 
             // btnReport
@@ -84,10 +84,10 @@ namespace audiovisalParcial
             this.btnReport.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(4, 329);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReport.Location = new System.Drawing.Point(2, 171);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(506, 104);
+            this.btnReport.Size = new System.Drawing.Size(253, 54);
             this.btnReport.TabIndex = 3;
             this.btnReport.Text = "Reportes";
             this.btnReport.UseVisualStyleBackColor = false;
@@ -100,10 +100,10 @@ namespace audiovisalParcial
             this.btnMenuService.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
             this.btnMenuService.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuService.Image")));
             this.btnMenuService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuService.Location = new System.Drawing.Point(6, 183);
-            this.btnMenuService.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenuService.Location = new System.Drawing.Point(3, 95);
+            this.btnMenuService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMenuService.Name = "btnMenuService";
-            this.btnMenuService.Size = new System.Drawing.Size(506, 104);
+            this.btnMenuService.Size = new System.Drawing.Size(253, 54);
             this.btnMenuService.TabIndex = 2;
             this.btnMenuService.Text = "Servicios";
             this.btnMenuService.UseVisualStyleBackColor = false;
@@ -115,10 +115,10 @@ namespace audiovisalParcial
             this.btnMenuMantinance.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold);
             this.btnMenuMantinance.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuMantinance.Image")));
             this.btnMenuMantinance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuMantinance.Location = new System.Drawing.Point(2, 35);
-            this.btnMenuMantinance.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenuMantinance.Location = new System.Drawing.Point(1, 18);
+            this.btnMenuMantinance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMenuMantinance.Name = "btnMenuMantinance";
-            this.btnMenuMantinance.Size = new System.Drawing.Size(506, 104);
+            this.btnMenuMantinance.Size = new System.Drawing.Size(253, 54);
             this.btnMenuMantinance.TabIndex = 1;
             this.btnMenuMantinance.Text = "Mantenimientos";
             this.btnMenuMantinance.UseVisualStyleBackColor = false;
@@ -131,9 +131,9 @@ namespace audiovisalParcial
             this.pMenuHeader.Controls.Add(this.lMenuTitle);
             this.pMenuHeader.Controls.Add(this.lLogo);
             this.pMenuHeader.Location = new System.Drawing.Point(0, 0);
-            this.pMenuHeader.Margin = new System.Windows.Forms.Padding(4);
+            this.pMenuHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pMenuHeader.Name = "pMenuHeader";
-            this.pMenuHeader.Size = new System.Drawing.Size(518, 292);
+            this.pMenuHeader.Size = new System.Drawing.Size(259, 152);
             this.pMenuHeader.TabIndex = 5;
             // 
             // lMenuTitle
@@ -142,10 +142,10 @@ namespace audiovisalParcial
             this.lMenuTitle.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMenuTitle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lMenuTitle.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lMenuTitle.Location = new System.Drawing.Point(76, 192);
-            this.lMenuTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lMenuTitle.Location = new System.Drawing.Point(38, 100);
+            this.lMenuTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lMenuTitle.Name = "lMenuTitle";
-            this.lMenuTitle.Size = new System.Drawing.Size(381, 39);
+            this.lMenuTitle.Size = new System.Drawing.Size(191, 19);
             this.lMenuTitle.TabIndex = 6;
             this.lMenuTitle.Text = "Sistema de Audivisuales";
             this.lMenuTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,10 +154,10 @@ namespace audiovisalParcial
             // 
             this.lLogo.Image = ((System.Drawing.Image)(resources.GetObject("lLogo.Image")));
             this.lLogo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lLogo.Location = new System.Drawing.Point(224, 69);
-            this.lLogo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lLogo.Location = new System.Drawing.Point(112, 36);
+            this.lLogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lLogo.Name = "lLogo";
-            this.lLogo.Size = new System.Drawing.Size(116, 88);
+            this.lLogo.Size = new System.Drawing.Size(58, 46);
             this.lLogo.TabIndex = 5;
             // 
             // btnExit
@@ -166,10 +166,9 @@ namespace audiovisalParcial
             this.btnExit.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold);
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(74, 913);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(6);
+            this.btnExit.Location = new System.Drawing.Point(37, 475);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(364, 112);
+            this.btnExit.Size = new System.Drawing.Size(182, 58);
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Cerrar Sección";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -178,18 +177,18 @@ namespace audiovisalParcial
             // splitter2
             // 
             this.splitter2.Location = new System.Drawing.Point(0, 0);
-            this.splitter2.Margin = new System.Windows.Forms.Padding(4);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(4, 1279);
+            this.splitter2.Size = new System.Drawing.Size(2, 389);
             this.splitter2.TabIndex = 4;
             this.splitter2.TabStop = false;
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(518, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(4);
+            this.splitter1.Location = new System.Drawing.Point(259, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(4, 1279);
+            this.splitter1.Size = new System.Drawing.Size(2, 389);
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
@@ -200,20 +199,18 @@ namespace audiovisalParcial
             this.pBody.Controls.Add(this.pHeader);
             this.pBody.Controls.Add(this.panel1);
             this.pBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pBody.Location = new System.Drawing.Point(522, 0);
-            this.pBody.Margin = new System.Windows.Forms.Padding(6);
+            this.pBody.Location = new System.Drawing.Point(261, 0);
             this.pBody.Name = "pBody";
-            this.pBody.Size = new System.Drawing.Size(1474, 1279);
+            this.pBody.Size = new System.Drawing.Size(424, 389);
             this.pBody.TabIndex = 3;
             // 
             // pSubBody
             // 
             this.pSubBody.AutoScroll = true;
             this.pSubBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pSubBody.Location = new System.Drawing.Point(0, 187);
-            this.pSubBody.Margin = new System.Windows.Forms.Padding(6);
+            this.pSubBody.Location = new System.Drawing.Point(0, 97);
             this.pSubBody.Name = "pSubBody";
-            this.pSubBody.Size = new System.Drawing.Size(1474, 1092);
+            this.pSubBody.Size = new System.Drawing.Size(424, 292);
             this.pSubBody.TabIndex = 2;
             // 
             // pHeader
@@ -223,9 +220,8 @@ namespace audiovisalParcial
             this.pHeader.Controls.Add(this.pHeaderMenu);
             this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pHeader.Location = new System.Drawing.Point(0, 0);
-            this.pHeader.Margin = new System.Windows.Forms.Padding(6);
             this.pHeader.Name = "pHeader";
-            this.pHeader.Size = new System.Drawing.Size(1474, 187);
+            this.pHeader.Size = new System.Drawing.Size(424, 97);
             this.pHeader.TabIndex = 1;
             // 
             // pHeaderMenu
@@ -234,10 +230,9 @@ namespace audiovisalParcial
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pHeaderMenu.AutoSize = true;
-            this.pHeaderMenu.Location = new System.Drawing.Point(108, 23);
-            this.pHeaderMenu.Margin = new System.Windows.Forms.Padding(6);
+            this.pHeaderMenu.Location = new System.Drawing.Point(54, 12);
             this.pHeaderMenu.Name = "pHeaderMenu";
-            this.pHeaderMenu.Size = new System.Drawing.Size(1238, 135);
+            this.pHeaderMenu.Size = new System.Drawing.Size(306, 70);
             this.pHeaderMenu.TabIndex = 0;
             // 
             // panel1
@@ -246,26 +241,24 @@ namespace audiovisalParcial
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1474, 0);
+            this.panel1.Size = new System.Drawing.Size(424, 0);
             this.panel1.TabIndex = 0;
             // 
             // HomeControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1996, 1279);
+            this.ClientSize = new System.Drawing.Size(685, 389);
             this.Controls.Add(this.pBody);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.pMenu);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "HomeControl";
-            this.Text = "I";
+            this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.pMenu.ResumeLayout(false);
             this.pMenuOptions.ResumeLayout(false);

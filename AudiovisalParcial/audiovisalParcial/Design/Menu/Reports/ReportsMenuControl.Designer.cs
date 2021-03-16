@@ -45,10 +45,10 @@ namespace audiovisalParcial.Design.Menu.Maintances
             this.btnReportOption8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReportOption8.Font = new System.Drawing.Font("Constantia", 7F, System.Drawing.FontStyle.Bold);
             this.btnReportOption8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportOption8.Location = new System.Drawing.Point(1130, 62);
-            this.btnReportOption8.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportOption8.Location = new System.Drawing.Point(565, 32);
+            this.btnReportOption8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReportOption8.Name = "btnReportOption8";
-            this.btnReportOption8.Size = new System.Drawing.Size(152, 73);
+            this.btnReportOption8.Size = new System.Drawing.Size(76, 38);
             this.btnReportOption8.TabIndex = 32;
             this.btnReportOption8.Text = "Prestamos y Devolucion";
             this.btnReportOption8.UseVisualStyleBackColor = false;
@@ -59,10 +59,10 @@ namespace audiovisalParcial.Design.Menu.Maintances
             this.btnReportOption7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReportOption7.Font = new System.Drawing.Font("Constantia", 7F, System.Drawing.FontStyle.Bold);
             this.btnReportOption7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportOption7.Location = new System.Drawing.Point(970, 62);
-            this.btnReportOption7.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportOption7.Location = new System.Drawing.Point(485, 32);
+            this.btnReportOption7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReportOption7.Name = "btnReportOption7";
-            this.btnReportOption7.Size = new System.Drawing.Size(152, 73);
+            this.btnReportOption7.Size = new System.Drawing.Size(76, 38);
             this.btnReportOption7.TabIndex = 31;
             this.btnReportOption7.Text = "Empleado";
             this.btnReportOption7.UseVisualStyleBackColor = false;
@@ -72,10 +72,10 @@ namespace audiovisalParcial.Design.Menu.Maintances
             // 
             this.btnReportOption6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReportOption6.Font = new System.Drawing.Font("Constantia", 7F, System.Drawing.FontStyle.Bold);
-            this.btnReportOption6.Location = new System.Drawing.Point(810, 62);
-            this.btnReportOption6.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportOption6.Location = new System.Drawing.Point(405, 32);
+            this.btnReportOption6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReportOption6.Name = "btnReportOption6";
-            this.btnReportOption6.Size = new System.Drawing.Size(152, 73);
+            this.btnReportOption6.Size = new System.Drawing.Size(76, 38);
             this.btnReportOption6.TabIndex = 30;
             this.btnReportOption6.Text = "Usuario";
             this.btnReportOption6.UseVisualStyleBackColor = false;
@@ -86,10 +86,10 @@ namespace audiovisalParcial.Design.Menu.Maintances
             this.btnReportOption5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReportOption5.Font = new System.Drawing.Font("Constantia", 7F, System.Drawing.FontStyle.Bold);
             this.btnReportOption5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportOption5.Location = new System.Drawing.Point(650, 62);
-            this.btnReportOption5.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportOption5.Location = new System.Drawing.Point(325, 32);
+            this.btnReportOption5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReportOption5.Name = "btnReportOption5";
-            this.btnReportOption5.Size = new System.Drawing.Size(152, 73);
+            this.btnReportOption5.Size = new System.Drawing.Size(76, 38);
             this.btnReportOption5.TabIndex = 29;
             this.btnReportOption5.Text = "Equipo";
             this.btnReportOption5.UseVisualStyleBackColor = false;
@@ -100,10 +100,10 @@ namespace audiovisalParcial.Design.Menu.Maintances
             this.btnReportOption4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReportOption4.Font = new System.Drawing.Font("Constantia", 7F, System.Drawing.FontStyle.Bold);
             this.btnReportOption4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportOption4.Location = new System.Drawing.Point(490, 62);
-            this.btnReportOption4.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportOption4.Location = new System.Drawing.Point(245, 32);
+            this.btnReportOption4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReportOption4.Name = "btnReportOption4";
-            this.btnReportOption4.Size = new System.Drawing.Size(152, 73);
+            this.btnReportOption4.Size = new System.Drawing.Size(76, 38);
             this.btnReportOption4.TabIndex = 28;
             this.btnReportOption4.Text = "Tecnologias Conexión";
             this.btnReportOption4.UseVisualStyleBackColor = false;
@@ -114,10 +114,10 @@ namespace audiovisalParcial.Design.Menu.Maintances
             this.btnReportOption3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReportOption3.Font = new System.Drawing.Font("Constantia", 7F, System.Drawing.FontStyle.Bold);
             this.btnReportOption3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportOption3.Location = new System.Drawing.Point(330, 62);
-            this.btnReportOption3.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportOption3.Location = new System.Drawing.Point(165, 32);
+            this.btnReportOption3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReportOption3.Name = "btnReportOption3";
-            this.btnReportOption3.Size = new System.Drawing.Size(152, 73);
+            this.btnReportOption3.Size = new System.Drawing.Size(76, 38);
             this.btnReportOption3.TabIndex = 27;
             this.btnReportOption3.Text = "Modelo";
             this.btnReportOption3.UseVisualStyleBackColor = false;
@@ -128,10 +128,10 @@ namespace audiovisalParcial.Design.Menu.Maintances
             this.btnReportOption2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReportOption2.Font = new System.Drawing.Font("Constantia", 7F, System.Drawing.FontStyle.Bold);
             this.btnReportOption2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportOption2.Location = new System.Drawing.Point(170, 62);
-            this.btnReportOption2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportOption2.Location = new System.Drawing.Point(85, 32);
+            this.btnReportOption2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReportOption2.Name = "btnReportOption2";
-            this.btnReportOption2.Size = new System.Drawing.Size(152, 73);
+            this.btnReportOption2.Size = new System.Drawing.Size(76, 38);
             this.btnReportOption2.TabIndex = 26;
             this.btnReportOption2.Text = "Marca";
             this.btnReportOption2.UseVisualStyleBackColor = false;
@@ -141,22 +141,21 @@ namespace audiovisalParcial.Design.Menu.Maintances
             // 
             this.lTitleMenu.AutoSize = true;
             this.lTitleMenu.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold);
-            this.lTitleMenu.Location = new System.Drawing.Point(470, 0);
-            this.lTitleMenu.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lTitleMenu.Location = new System.Drawing.Point(235, 0);
             this.lTitleMenu.Name = "lTitleMenu";
-            this.lTitleMenu.Size = new System.Drawing.Size(423, 39);
+            this.lTitleMenu.Size = new System.Drawing.Size(231, 19);
             this.lTitleMenu.TabIndex = 25;
-            this.lTitleMenu.Text = "Reportes de carecteristicas";
+            this.lTitleMenu.Text = "Reportes de mantenimientos";
             // 
             // btnReportOption1
             // 
             this.btnReportOption1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnReportOption1.Font = new System.Drawing.Font("Constantia", 7F, System.Drawing.FontStyle.Bold);
             this.btnReportOption1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportOption1.Location = new System.Drawing.Point(10, 62);
-            this.btnReportOption1.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReportOption1.Location = new System.Drawing.Point(5, 32);
+            this.btnReportOption1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReportOption1.Name = "btnReportOption1";
-            this.btnReportOption1.Size = new System.Drawing.Size(152, 73);
+            this.btnReportOption1.Size = new System.Drawing.Size(76, 38);
             this.btnReportOption1.TabIndex = 24;
             this.btnReportOption1.Text = "Tipos de Equipos";
             this.btnReportOption1.UseVisualStyleBackColor = false;
@@ -164,7 +163,7 @@ namespace audiovisalParcial.Design.Menu.Maintances
             // 
             // ReportMenuControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.Controls.Add(this.btnReportOption8);
@@ -176,9 +175,9 @@ namespace audiovisalParcial.Design.Menu.Maintances
             this.Controls.Add(this.btnReportOption2);
             this.Controls.Add(this.lTitleMenu);
             this.Controls.Add(this.btnReportOption1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ReportMenuControl";
-            this.Size = new System.Drawing.Size(1315, 148);
+            this.Size = new System.Drawing.Size(658, 77);
             this.ResumeLayout(false);
             this.PerformLayout();
 

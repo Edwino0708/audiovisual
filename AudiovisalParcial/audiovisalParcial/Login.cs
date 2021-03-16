@@ -30,7 +30,7 @@ namespace audiovisalParcial
             try
             {
                 username = $@"" + txbUsername.Text.ToString();
-                password = Common.Util.EncryptionPassowrd($@""+txbPassword.Text.ToString());
+                password = $@""+txbPassword.Text.ToString();
 
                 UserLogin userLogin = audiovisualEntities.UserLogins.Where(w =>
                 w.username.Equals(this.username) &&

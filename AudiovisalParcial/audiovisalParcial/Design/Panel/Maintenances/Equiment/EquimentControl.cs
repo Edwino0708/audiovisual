@@ -54,14 +54,16 @@ namespace audiovisalParcial.Design.Panel.Equiment
             try
             {
 
-                var modelos = from data in audiovisualEntities.Equiments
+                var equipos = from data in audiovisualEntities.Equiments
                               where (
-                                        data.Description.Contains(txtBuscar.Text) 
+                                        data.Description.Contains(txtBuscar.Text) ||
+                                        data.Serial.Contains(txtBuscar.Text) ||
+                                        data.ServiceTag.Contains(txtBuscar.Text)
                                      )
                               select data;
 
                 dgvListEquipmentType.DataSource = null;
-                dgvListEquipmentType.DataSource = modelos.ToList();
+                dgvListEquipmentType.DataSource = equipos.ToList();
             }
             catch (Exception ex)
             {

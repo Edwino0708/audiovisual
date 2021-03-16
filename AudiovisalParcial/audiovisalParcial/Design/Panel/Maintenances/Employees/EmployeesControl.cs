@@ -46,7 +46,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
         {
             try
             {
-                var modelos = from data in audiovisualEntities.Employees
+                var empleados = from data in audiovisualEntities.Employees
                               where (
                                         data.FirstName.Contains(txtBuscar.Text) ||
                                         data.LastName.Contains(txtBuscar.Text) ||
@@ -55,7 +55,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
                               select data;
 
                 dgvListEmployee.DataSource = null;
-                dgvListEmployee.DataSource = modelos.ToList();
+                dgvListEmployee.DataSource = empleados.ToList();
             }
             catch (Exception ex)
             {
