@@ -45,14 +45,14 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
         {
             try
             {
-                var modelos = from data in audiovisualEntities.Brands
+                var marcas = from data in audiovisualEntities.Brands
                               where (
                                         data.Description.Contains(txtBuscarMarca.Text)
                                      )
                               select data;
 
                 dgvMarca.DataSource = null;
-                dgvMarca.DataSource = modelos.ToList();
+                dgvMarca.DataSource = marcas.ToList();
             }
             catch (Exception ex)
             {

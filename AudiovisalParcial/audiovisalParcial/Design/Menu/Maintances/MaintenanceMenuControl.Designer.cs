@@ -141,11 +141,11 @@ namespace audiovisalParcial.Design.Menu.Maintances
             // 
             this.lTitleMenu.AutoSize = true;
             this.lTitleMenu.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Bold);
-            this.lTitleMenu.Location = new System.Drawing.Point(194, 0);
+            this.lTitleMenu.Location = new System.Drawing.Point(241, 0);
             this.lTitleMenu.Name = "lTitleMenu";
-            this.lTitleMenu.Size = new System.Drawing.Size(272, 19);
+            this.lTitleMenu.Size = new System.Drawing.Size(206, 19);
             this.lTitleMenu.TabIndex = 25;
-            this.lTitleMenu.Text = "Mantenimientos de carecteristicas";
+            this.lTitleMenu.Text = "Menu de Mantenimientos";
             // 
             // btnMaintenanceOption1
             // 

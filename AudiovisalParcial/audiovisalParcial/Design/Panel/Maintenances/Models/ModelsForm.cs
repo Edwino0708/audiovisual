@@ -37,7 +37,7 @@ namespace audiovisalParcial.Design.Panel.Models
                 ComboBoxItem item2 = (ComboBoxItem)cbxMarca.SelectedItem;
 
                 int state = item.Value;
-                int marca = item2.Value;
+                int modelo = item2.Value;
                 string description = txtDescription.Text;
                 data = new Model.Model();
 
@@ -45,7 +45,7 @@ namespace audiovisalParcial.Design.Panel.Models
                 {
 
                     data.Description = description;
-                    data.BranksId = marca;
+                    data.BranksId = modelo;
                     data.StateId = state;
                     data.Enabled = true;
                     audiovisualEntities.Models.Add(data);
