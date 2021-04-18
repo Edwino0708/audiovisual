@@ -35,7 +35,6 @@ namespace audiovisalParcial.Design.Panel.Equiment
                     TechnologyConexion = s.TechnologiesConnectionId,
                     EquipmentType = s.EquimentTypesId,
                     Estado = s.EquimentsState.Description,
-                    Existe = s.Enabled
                 }).ToList();
                 dgvListEquipmentType.Refresh();
             }

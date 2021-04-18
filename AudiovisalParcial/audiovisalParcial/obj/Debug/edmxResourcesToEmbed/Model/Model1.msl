@@ -124,6 +124,7 @@
     <EntitySetMapping Name="RentReturns">
       <EntityTypeMapping TypeName="audiovisualdbModel.RentReturn">
         <MappingFragment StoreEntitySet="RentReturns">
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="NoPay" ColumnName="NoPay" />
           <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="audiovisualdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="audiovisualdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Brands">
           <Key>
             <PropertyRef Name="Id" />
@@ -127,6 +127,7 @@
           <Property Name="ReturnDate" Type="datetime" />
           <Property Name="Comentary" Type="varchar" MaxLength="100" />
           <Property Name="StateId" Type="int" />
+          <Property Name="Enabled" Type="bit" />
         </EntityType>
         <EntityType Name="RentReturnStates">
           <Key>
@@ -509,8 +510,7 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="audiovisualdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -662,6 +662,7 @@
           <NavigationProperty Name="Equiment" Relationship="Self.FK__RentRetur__Equim__6D0D32F4" FromRole="RentReturns" ToRole="Equiments" />
           <NavigationProperty Name="RentReturnState" Relationship="Self.FK__RentRetur__State__6A30C649" FromRole="RentReturns" ToRole="RentReturnStates" />
           <NavigationProperty Name="User" Relationship="Self.FK__RentRetur__UserI__6B24EA82" FromRole="RentReturns" ToRole="Users" />
+          <Property Name="Enabled" Type="Boolean" />
         </EntityType>
         <EntityType Name="RentReturnState">
           <Key>
@@ -1183,6 +1184,7 @@
           <EntitySetMapping Name="RentReturns">
             <EntityTypeMapping TypeName="audiovisualdbModel.RentReturn">
               <MappingFragment StoreEntitySet="RentReturns">
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="NoPay" ColumnName="NoPay" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />

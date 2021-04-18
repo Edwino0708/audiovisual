@@ -122,6 +122,7 @@
     <Property Name="ReturnDate" Type="datetime" />
     <Property Name="Comentary" Type="varchar" MaxLength="100" />
     <Property Name="StateId" Type="int" />
+    <Property Name="Enabled" Type="bit" />
   </EntityType>
   <EntityType Name="RentReturnStates">
     <Key>

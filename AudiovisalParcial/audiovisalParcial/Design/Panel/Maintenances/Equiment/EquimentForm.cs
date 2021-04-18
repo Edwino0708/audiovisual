@@ -97,6 +97,8 @@ namespace audiovisalParcial.Design.Panel.Equiment
                 cbxState.DisplayMember = "Name";
                 cbxState.ValueMember = "Value";
 
+                
+
                 //listItem = new List<ComboBoxItem>();
                 //List<Model.EmployeesState> listStates = audiovisualEntities.EmployeesStates.Select(s => s).Where(w => w.Enabled != false).ToList();
                 //foreach (var item in listStates)

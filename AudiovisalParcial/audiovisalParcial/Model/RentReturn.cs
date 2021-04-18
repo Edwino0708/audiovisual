@@ -23,6 +23,7 @@ namespace audiovisalParcial.Model
         public Nullable<System.DateTime> ReturnDate { get; set; }
         public string Comentary { get; set; }
         public Nullable<int> StateId { get; set; }
+        public Nullable<bool> Enabled { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Equiment Equiment { get; set; }

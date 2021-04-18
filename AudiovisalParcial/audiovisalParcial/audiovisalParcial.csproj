@@ -352,6 +352,9 @@
     <EmbeddedResource Include="Design\Panel\Maintenances\RentReturns\RentReturnsControl.resx">
       <DependentUpon>RentReturnsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Maintenances\RentReturns\RentReturnsForm.resx">
+      <DependentUpon>RentReturnsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\Panel\Maintenances\TechnologiesConnections\TechnologiesConnectionControl.resx">
       <DependentUpon>TechnologiesConnectionControl.cs</DependentUpon>
     </EmbeddedResource>

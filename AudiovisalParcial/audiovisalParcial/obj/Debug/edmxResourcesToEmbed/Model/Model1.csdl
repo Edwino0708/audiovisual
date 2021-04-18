@@ -148,6 +148,7 @@
     <NavigationProperty Name="Equiment" Relationship="Self.FK__RentRetur__Equim__6D0D32F4" FromRole="RentReturns" ToRole="Equiments" />
     <NavigationProperty Name="RentReturnState" Relationship="Self.FK__RentRetur__State__6A30C649" FromRole="RentReturns" ToRole="RentReturnStates" />
     <NavigationProperty Name="User" Relationship="Self.FK__RentRetur__UserI__6B24EA82" FromRole="RentReturns" ToRole="Users" />
+    <Property Name="Enabled" Type="Boolean" />
   </EntityType>
   <EntityType Name="RentReturnState">
     <Key>
