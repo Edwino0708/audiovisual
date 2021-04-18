@@ -1,13 +1,9 @@
-﻿using audiovisalParcial.Model;
-using audiovisalParcial.Common;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.Equiment
@@ -126,8 +122,8 @@ namespace audiovisalParcial.Design.Panel.Equiment
             try
             {
                 ComboBoxItem item;
-                
-                item =(ComboBoxItem)cbxState.SelectedItem;
+
+                item = (ComboBoxItem)cbxState.SelectedItem;
                 int state = item.Value;
                 item = (ComboBoxItem)cbxMarca.SelectedItem;
                 int marca = item.Value;

@@ -9,7 +9,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
     public partial class EquipmentTypeControl : UserControl
     {
         private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
-        private EquipmentTypeControlForm createForm; 
+        private EquipmentTypeControlForm createForm;
 
         public EquipmentTypeControl()
         {
@@ -19,8 +19,8 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
 
         #region Private Methods
         private void GetList()
-         {
-    
+        {
+
             try
             {
                 dgvListEquipmentType.DataSource = audiovisualEntities.EquimentTypes.Where(w => w.Enabled != false).Select(s => new
@@ -30,7 +30,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
                     Descripcion = s.Description,
                     Existe = s.Enabled
                 }).ToList();
-               dgvListEquipmentType.Refresh();
+                dgvListEquipmentType.Refresh();
             }
             catch (Exception ex)
             {
@@ -46,7 +46,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
 
                 var modelos = from data in audiovisualEntities.EquimentTypes
                               where (
-                                        data.Description.Contains(txtBuscar.Text) 
+                                        data.Description.Contains(txtBuscar.Text)
                                      )
                               select data;
 

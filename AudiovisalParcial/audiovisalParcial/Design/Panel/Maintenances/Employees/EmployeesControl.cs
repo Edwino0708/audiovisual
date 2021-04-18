@@ -20,7 +20,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
         #region Private Methods
         private void GetList()
         {
-            var state = audiovisualEntities.EmployeesStates.Where(w => w.Enabled != false ).ToList();
+            var state = audiovisualEntities.EmployeesStates.Where(w => w.Enabled != false).ToList();
             //var stateId = state == null ? 0L : state[0].Id;
 
             try
@@ -48,12 +48,12 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             try
             {
                 var empleados = from data in audiovisualEntities.Employees
-                              where (
-                                        data.FirstName.Contains(txtBuscar.Text) ||
-                                        data.LastName.Contains(txtBuscar.Text) ||
-                                        data.IdentificationCard.Contains(txtBuscar.Text)
-                                     )
-                              select data;
+                                where (
+                                          data.FirstName.Contains(txtBuscar.Text) ||
+                                          data.LastName.Contains(txtBuscar.Text) ||
+                                          data.IdentificationCard.Contains(txtBuscar.Text)
+                                       )
+                                select data;
 
                 dgvListEmployee.DataSource = null;
                 dgvListEmployee.DataSource = empleados.ToList();
@@ -99,8 +99,8 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-         EmployeesForm createForm = new EmployeesForm();
-         createForm.ShowDialog();
+            EmployeesForm createForm = new EmployeesForm();
+            createForm.ShowDialog();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

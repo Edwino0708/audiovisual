@@ -1,13 +1,9 @@
-﻿using audiovisalParcial.Model;
-using audiovisalParcial.Common;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.EquipmentType
@@ -22,7 +18,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             InitializeComponent();
             LoadComboBox();
             this.id = id;
-            if (id > 0) 
+            if (id > 0)
             {
                 Find();
             }
@@ -33,14 +29,14 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             try
             {
                 ComboBoxItem item = (ComboBoxItem)cbxState.SelectedItem;
-                
+
                 int state = item.Value;
                 string description = txtDescription.Text;
                 data = new EquimentType();
 
                 if (id == 0)
                 {
-                    
+
                     data.Description = description;
                     data.StateId = state;
                     data.Enabled = true;
@@ -60,13 +56,13 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
                 }
 
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Common.Util.MessageError(ex.Message);
             }
         }
 
-        private void Find() 
+        private void Find()
         {
             var search = audiovisualEntities.EquimentTypes.Find(id);
             if (search != null)
@@ -80,7 +76,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             }
         }
 
-        private void LoadComboBox() 
+        private void LoadComboBox()
         {
             List<ComboBoxItem> listItem = new List<ComboBoxItem>();
 

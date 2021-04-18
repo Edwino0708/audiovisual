@@ -1,13 +1,8 @@
 ﻿using audiovisalParcial.Common;
 using audiovisalParcial.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.Maintenances.Brands
@@ -47,10 +42,10 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             try
             {
                 var marcas = from data in audiovisualEntities.Brands
-                              where (
-                                        data.Description.Contains(txtBuscarMarca.Text)
-                                     )
-                              select data;
+                             where (
+                                       data.Description.Contains(txtBuscarMarca.Text)
+                                    )
+                             select data;
 
                 dgvMarca.DataSource = null;
                 dgvMarca.DataSource = marcas.ToList();
@@ -118,7 +113,7 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             //open dialog and get pathDirectory
             path = Util.OpenSaveFileDialog();
 
-            if (path != null && !string.IsNullOrWhiteSpace(path)) 
+            if (path != null && !string.IsNullOrWhiteSpace(path))
             {
                 ExportCsv exportCsv = new ExportCsv(path);
                 exportCsv.WriteFileHeader(headerCsv);

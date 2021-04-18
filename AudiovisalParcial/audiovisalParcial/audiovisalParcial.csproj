@@ -73,6 +73,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Common\EquimentReportModel.cs" />
     <Compile Include="Common\ExportCsv.cs" />
     <Compile Include="Common\Storage.cs" />
     <Compile Include="Design\Menu\Maintances\MaintenanceMenuControl.cs">
@@ -80,12 +82,6 @@
     </Compile>
     <Compile Include="Design\Menu\Maintances\MaintenanceMenuControl.Designer.cs">
       <DependentUpon>MaintenanceMenuControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Design\Menu\Reports\ReportsMenuControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Design\Menu\Reports\ReportsMenuControl.Designer.cs">
-      <DependentUpon>ReportsMenuControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\Panel\Home\HomeAdminControl.cs">
       <SubType>UserControl</SubType>
@@ -207,11 +203,17 @@
     <Compile Include="Design\Panel\Maintenances\Users\UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\Panel\Reports\EquimentTypeReportControl.cs">
+    <Compile Include="Design\Panel\Reports\EquimentReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\Panel\Reports\EquimentReport.Designer.cs">
+      <DependentUpon>EquimentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Panel\Reports\ReportControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Design\Panel\Reports\EquimentTypeReportControl.Designer.cs">
-      <DependentUpon>EquimentTypeReportControl.cs</DependentUpon>
+    <Compile Include="Design\Panel\Reports\ReportControl.Designer.cs">
+      <DependentUpon>ReportControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -305,9 +307,6 @@
     <EmbeddedResource Include="Design\Menu\Maintances\MaintenanceMenuControl.resx">
       <DependentUpon>MaintenanceMenuControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Menu\Reports\ReportsMenuControl.resx">
-      <DependentUpon>ReportsMenuControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Design\Panel\Home\HomeAdminControl.resx">
       <DependentUpon>HomeAdminControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -365,8 +364,14 @@
     <EmbeddedResource Include="Design\Panel\Maintenances\Users\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Panel\Reports\EquimentTypeReportControl.resx">
-      <DependentUpon>EquimentTypeReportControl.cs</DependentUpon>
+    <EmbeddedResource Include="Design\Panel\Reports\EquimentReport.resx">
+      <DependentUpon>EquimentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Reports\ReportControl.resx">
+      <DependentUpon>ReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Reports\ReportEquiment.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -408,6 +413,7 @@
   <ItemGroup>
     <Folder Include="Design\Menu\Services\" />
     <Folder Include="Design\Panel\Services\" />
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Design\Icon\search.png" />

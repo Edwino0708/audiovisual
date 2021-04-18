@@ -1,13 +1,9 @@
-﻿using audiovisalParcial.Model;
-using audiovisalParcial.Common;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.Models
@@ -111,7 +107,7 @@ namespace audiovisalParcial.Design.Panel.Models
                 cbxState.DisplayMember = "Name";
                 cbxState.ValueMember = "Value";
 
-                cbxMarca.DataSource = listMarcas ;
+                cbxMarca.DataSource = listMarcas;
                 cbxMarca.DisplayMember = "Name";
                 cbxMarca.ValueMember = "Value";
             }
@@ -122,10 +118,10 @@ namespace audiovisalParcial.Design.Panel.Models
         }
 
         private void cbxMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {  
+        {
             if (!string.IsNullOrEmpty(txtDescription.Text.ToString()) && !string.IsNullOrEmpty(cbxMarca.Text.ToString()) && !string.IsNullOrEmpty(cbxState.SelectedValue.ToString()))
                 btnCreate.Enabled = true;
-            
+
         }
 
         private void txtDescription_TextChanged(object sender, EventArgs e)

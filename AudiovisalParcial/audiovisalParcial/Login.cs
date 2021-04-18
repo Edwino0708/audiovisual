@@ -1,14 +1,9 @@
-﻿using audiovisalParcial.Model;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using audiovisalParcial.Common;
 
 namespace audiovisalParcial
 {
@@ -19,10 +14,10 @@ namespace audiovisalParcial
         private string role;
         private HomeControl home;
         private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
-        
+
         public Login()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         private void cmdLogin_Click(object sender, EventArgs e)
@@ -30,14 +25,14 @@ namespace audiovisalParcial
             try
             {
                 username = $@"" + txbUsername.Text.ToString();
-                password = Util.EncryptionPassowrd($@""+txbPassword.Text.ToString());
+                password = Util.EncryptionPassowrd($@"" + txbPassword.Text.ToString());
 
                 UserLogin userLogin = audiovisualEntities.UserLogins.Where(w =>
                 w.username.Equals(this.username) &&
                 w.password.Equals(password) &&
                 w.isActive == true
                 ).Select(s => s).FirstOrDefault();
-                
+
                 if (userLogin == null)
                 {
                     MessageBox.Show("Credenciales incorrectas");
@@ -52,8 +47,8 @@ namespace audiovisalParcial
                     this.Hide();
                 }
 
-            } 
-            catch(Exception ex) 
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error interno, por favor comunicase con los administrados");
             }
@@ -77,13 +72,13 @@ namespace audiovisalParcial
             {
                 btnLogin.Enabled = true;
             }
-            else 
+            else
             {
                 btnLogin.Enabled = false;
             }
 
         }
 
-      
+
     }
 }

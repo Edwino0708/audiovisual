@@ -1,20 +1,12 @@
-﻿using audiovisalParcial.Design.Panel.EquipmentType;
+﻿using audiovisalParcial.Design.Panel.Equiment;
+using audiovisalParcial.Design.Panel.EquipmentType;
 using audiovisalParcial.Design.Panel.Maintenances.Brands;
-using audiovisalParcial.Design.Panel.Models;
-using audiovisalParcial.Design.Panel.Users;
-using audiovisalParcial.Design.Panel.TechnologiesConnection;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using audiovisalParcial.Model;
-using audiovisalParcial.Design.Panel.Equiment;
 using audiovisalParcial.Design.Panel.Maintenances.Employees;
+using audiovisalParcial.Design.Panel.Models;
+using audiovisalParcial.Design.Panel.TechnologiesConnection;
+using audiovisalParcial.Design.Panel.Users;
+using System;
+using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Menu.Maintances
 {
@@ -31,7 +23,7 @@ namespace audiovisalParcial.Design.Menu.Maintances
         public MaintenanceMenuControl(HomeControl form)
         {
             InitializeComponent();
-            this.form = form; 
+            this.form = form;
             equimentType = new EquipmentTypeControl();
             user = new UsersControl();
             brand = new BrandControl();

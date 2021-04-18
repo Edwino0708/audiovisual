@@ -1,13 +1,8 @@
 ﻿using audiovisalParcial.Common;
 using audiovisalParcial.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.Users
@@ -30,7 +25,7 @@ namespace audiovisalParcial.Design.Panel.Users
             try
             {
                 dgvListEquipmentType.DataSource = null;
-                dgvListEquipmentType.DataSource = audiovisualEntities.Users.Where(w => w.Enabled == true).Select(s => new 
+                dgvListEquipmentType.DataSource = audiovisualEntities.Users.Where(w => w.Enabled == true).Select(s => new
                 {
                     Id = s.Id,
                     Nombre = s.FirstName,
@@ -57,12 +52,12 @@ namespace audiovisalParcial.Design.Panel.Users
 
                 dgvListEquipmentType.DataSource = null;
                 var search = from data in audiovisualEntities.Users
-                              where (
-                                        data.FirstName.Contains(txtBuscar.Text) ||
-                                        data.LastName.Contains(txtBuscar.Text) ||
-                                        data.IdentificationCard.Contains(txtBuscar.Text)
-                                     )
-                              select data;
+                             where (
+                                       data.FirstName.Contains(txtBuscar.Text) ||
+                                       data.LastName.Contains(txtBuscar.Text) ||
+                                       data.IdentificationCard.Contains(txtBuscar.Text)
+                                    )
+                             select data;
                 dgvListEquipmentType.DataSource = search.ToList();
             }
             catch (Exception ex)

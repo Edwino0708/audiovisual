@@ -1,6 +1,7 @@
 ﻿using audiovisalParcial.Common;
 using audiovisalParcial.Design.Menu.Maintances;
 using audiovisalParcial.Design.Panel.Home;
+using audiovisalParcial.Design.Panel.Reports;
 using System;
 using System.Windows.Forms;
 
@@ -9,15 +10,15 @@ namespace audiovisalParcial
     public partial class HomeControl : Form
     {
         private MaintenanceMenuControl maintenanceMenu;
-        private ReportMenuControl resportMenu;
-        
+        private ReportControl resportMenu;
+
         public HomeControl()
         {
             InitializeComponent();
             HideByRole();
             maintenanceMenu = new MaintenanceMenuControl(this);
-            resportMenu = new ReportMenuControl(this);
-           
+            resportMenu = new ReportControl();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -31,25 +32,25 @@ namespace audiovisalParcial
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             pHeaderMenu.Controls.Clear();
             pHeaderMenu.Controls.Add(maintenanceMenu);
         }
 
-        public Panel getPanelBody() 
+        public Panel getPanelBody()
         {
             return pSubBody;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            pHeaderMenu.Controls.Clear();
-            pHeaderMenu.Controls.Add(resportMenu);
+            pBody.Controls.Clear();
+            pBody.Controls.Add(resportMenu);
         }
 
-        private void HideByRole() 
+        private void HideByRole()
         {
-            switch (Storage.Role) 
+            switch (Storage.Role)
             {
                 case "admin":
                     btnMenuMantinance.Visible = true;
@@ -66,7 +67,7 @@ namespace audiovisalParcial
                     pSubBody.Controls.Clear();
                     pSubBody.Controls.Add(homeStudent);
                     break;
-                
+
                 case "profesor":
                     btnMenuService.Visible = true;
                     HomeTeacherControl homeTeacher = new HomeTeacherControl();

@@ -1,13 +1,9 @@
-﻿using audiovisalParcial.Model;
-using audiovisalParcial.Common;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.Users
@@ -19,7 +15,7 @@ namespace audiovisalParcial.Design.Panel.Users
 
         public UsersForm(int id = 0)
         {
-            InitializeComponent(); 
+            InitializeComponent();
             LoadComboBox();
             this.id = id;
             if (id > 0)
@@ -40,7 +36,7 @@ namespace audiovisalParcial.Design.Panel.Users
                 {
                     identificactionCard = txbIdentificationCard.Text;
                 }
-                else 
+                else
                 {
                     Common.Util.MessageError("La cedula esta incorrecta");
                     return;

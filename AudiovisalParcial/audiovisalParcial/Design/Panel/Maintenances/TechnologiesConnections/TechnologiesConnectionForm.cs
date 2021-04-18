@@ -1,13 +1,9 @@
-﻿using audiovisalParcial.Model;
-using audiovisalParcial.Common;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.TechnologiesConnection
@@ -31,8 +27,8 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try 
-            { 
+            try
+            {
                 ComboBoxItem item = (ComboBoxItem)cbxState.SelectedItem;
 
                 int state = item.Value;

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Common
@@ -61,16 +57,16 @@ namespace audiovisalParcial.Common
                 encryptdata.Append(encrypt[i].ToString());
             }
             return encryptdata.ToString();
-            
+
         }
 
-        public static string OpenSaveFileDialog() 
+        public static string OpenSaveFileDialog()
         {
             string path = string.Empty;
-            try 
+            try
             {
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.InitialDirectory = @"C:\";      
+                saveFileDialog1.InitialDirectory = @"C:\";
                 saveFileDialog1.Title = "Save text Files";
                 saveFileDialog1.DefaultExt = "csv";
                 saveFileDialog1.Filter = "Csv file (*.csv)|*.csv|Text file (*.txt)|*.txt|All files (*.*)|*.*";
@@ -82,7 +78,7 @@ namespace audiovisalParcial.Common
                 }
 
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Message("Hubo un incoveniente al selecional la ubicacion para el guardado del archivo");
             }

@@ -1,13 +1,8 @@
 ﻿using audiovisalParcial.Common;
 using audiovisalParcial.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.TechnologiesConnection
@@ -19,7 +14,7 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
 
         public TechnologiesConnectionControl()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             GetList();
 
         }
@@ -31,7 +26,7 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
             try
             {
                 dgvListEquipmentType.DataSource = null;
-               var list = audiovisualEntities.TechnologiesConnections.Where(w => w.Enabled != false).Select(s => new
+                var list = audiovisualEntities.TechnologiesConnections.Where(w => w.Enabled != false).Select(s => new
                 {
                     Id = s.Id,
                     Estado = s.TechnologiesConnectionState.Description,
@@ -53,7 +48,7 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
             {
                 var modelos = from data in audiovisualEntities.TechnologiesConnections
                               where (
-                                        data.Description.Contains(txtBuscar.Text) 
+                                        data.Description.Contains(txtBuscar.Text)
                                      )
                               select data;
 

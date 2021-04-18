@@ -1,13 +1,9 @@
-﻿using audiovisalParcial.Model;
-using audiovisalParcial.Common;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.Maintenances.Employees
@@ -16,20 +12,20 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
     {
         private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
         private int id = 0;
-     
+
         public EmployeesForm(int id = 0)
         {
             InitializeComponent();
             LoadComboBox();
             this.id = id;
 
-            if (this.id != 0)  
-                FindEmployee(); 
+            if (this.id != 0)
+                FindEmployee();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 var apellido = txtApellido.Text;

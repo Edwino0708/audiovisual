@@ -1,21 +1,16 @@
 ﻿using audiovisalParcial.Common;
 using audiovisalParcial.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace audiovisalParcial.Design.Panel.Models
 {
     public partial class ModelsControl : UserControl
     {
-       private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
-        private  ModelsForm createForm;
+        private AudiovisualDbEntities audiovisualEntities = new AudiovisualDbEntities();
+        private ModelsForm createForm;
 
         public ModelsControl()
         {
