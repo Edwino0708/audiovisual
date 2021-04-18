@@ -370,9 +370,9 @@
     <EmbeddedResource Include="Design\Panel\Reports\ReportControl.resx">
       <DependentUpon>ReportControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\Panel\Reports\ReportEquiment.rdlc">
+    <Resource Include="Design\Panel\Reports\ReportEquiment.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Resource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,6 +397,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\audiovisalParcial.Common.EquimentReportModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -413,7 +414,6 @@
   <ItemGroup>
     <Folder Include="Design\Menu\Services\" />
     <Folder Include="Design\Panel\Services\" />
-    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Design\Icon\search.png" />

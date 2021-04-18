@@ -1,4 +1,5 @@
-﻿using audiovisalParcial.Model;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace audiovisalParcial.Design.Panel.Reports
                 equiment.Enabled = item.Enabled;
                 dataSource.Add(equiment);
             }
-            ReportDataSource rds = new ReportDataSource("ReportEquiment", dataSource);
+            ReportDataSource rds = new ReportDataSource("ReportEquimentDataSet", dataSource);
             this.reportViewer1.LocalReport.DataSources.Add(rds);
             this.reportViewer1.RefreshReport();
 
