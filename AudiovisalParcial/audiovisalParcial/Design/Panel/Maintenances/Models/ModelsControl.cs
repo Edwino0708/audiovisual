@@ -135,5 +135,10 @@ namespace audiovisalParcial.Design.Panel.Models
             };
 
         }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

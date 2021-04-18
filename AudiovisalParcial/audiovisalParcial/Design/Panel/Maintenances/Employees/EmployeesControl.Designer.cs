@@ -1,5 +1,5 @@
 ﻿
-namespace audiovisalParcial.Design.Panel.Maintenances.Employees
+namespace audiovisalParcial.Design.Panel.Maintenances.Employee
 {
     partial class EmployeesControl
     {

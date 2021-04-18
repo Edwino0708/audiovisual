@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5495fbcb54084b259bc3a9cb60f323d7" Name="Diagram1">
-        <EntityTypeShape EntityType="audiovisualdbModel.Brand" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.BrandsState" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.Employee" Width="1.5" PointX="8.25" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.EmployeesState" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.Equiment" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.EquimentsState" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.EquimentType" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.EquimentTypesState" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.Model" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.ModelsState" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.PersonalType" Width="1.5" PointX="6" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.RentReturn" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.RentReturnState" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.TechnologiesConnection" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.TechnologiesConnectionState" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.UserLogin" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.User" Width="1.5" PointX="8.25" PointY="17.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.UsersState" Width="1.5" PointX="6" PointY="18.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="audiovisualdbModel.UsersType" Width="1.5" PointX="6" PointY="21.125" IsExpanded="true" />
+      <Diagram DiagramId="750af666e4304058a21eea3c139eea84" Name="Diagram1">
+        <EntityTypeShape EntityType="audiovisualdbModel.Brands" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.BrandsStates" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.Employees" Width="1.5" PointX="8.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.EmployeesStates" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.Equiments" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.EquimentsStates" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.EquimentTypes" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.EquimentTypesStates" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.Models" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.ModelsStates" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.PersonalTypes" Width="1.5" PointX="6" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.RentReturns" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.RentReturnStates" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.TechnologiesConnections" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.TechnologiesConnectionStates" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.UserLogins" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.Users" Width="1.5" PointX="8.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.UsersStates" Width="1.5" PointX="6" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="audiovisualdbModel.UsersTypes" Width="1.5" PointX="6" PointY="21.125" IsExpanded="true" />
         <AssociationConnector Association="audiovisualdbModel.FK__Brands__StateId__5EBF139D" ManuallyRouted="false" />
         <AssociationConnector Association="audiovisualdbModel.FK__Equiments__Brand__49C3F6B7" ManuallyRouted="false" />
         <AssociationConnector Association="audiovisualdbModel.FK__Models__BranksId__66603565" ManuallyRouted="false" />

@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="audiovisualdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Brands">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BrandsStates" Relationship="Self.FK__Brands__StateId__5EBF139D" FromRole="Brands" ToRole="BrandsStates" />
+    <NavigationProperty Name="Equiments" Relationship="Self.FK__Equiments__Brand__49C3F6B7" FromRole="Brands" ToRole="Equiments" />
+    <NavigationProperty Name="Models" Relationship="Self.FK__Models__BranksId__66603565" FromRole="Brands" ToRole="Models" />
+  </EntityType>
+  <EntityType Name="BrandsStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Brands" Relationship="Self.FK__Brands__StateId__5EBF139D" FromRole="BrandsStates" ToRole="Brands" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdentificationCard" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Workshift" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HiredDate" Type="DateTime" Precision="3" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="EmployeesStates" Relationship="Self.FK__Employees__State__5FB337D6" FromRole="Employees" ToRole="EmployeesStates" />
+    <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__Emplo__68487DD7" FromRole="Employees" ToRole="RentReturns" />
+  </EntityType>
+  <EntityType Name="EmployeesStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__State__5FB337D6" FromRole="EmployeesStates" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Equiments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Serial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ServiceTag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EquimentTypesId" Type="Int32" Nullable="false" />
+    <Property Name="BrandId" Type="Int32" Nullable="false" />
+    <Property Name="ModelsId" Type="Int32" Nullable="false" />
+    <Property Name="TechnologiesConnectionId" Type="Int32" Nullable="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Brands" Relationship="Self.FK__Equiments__Brand__49C3F6B7" FromRole="Equiments" ToRole="Brands" />
+    <NavigationProperty Name="EquimentTypes" Relationship="Self.FK__Equiments__Equim__48CFD27E" FromRole="Equiments" ToRole="EquimentTypes" />
+    <NavigationProperty Name="Models" Relationship="Self.FK__Equiments__Model__4AB81AF0" FromRole="Equiments" ToRole="Models" />
+    <NavigationProperty Name="EquimentsStates" Relationship="Self.FK__Equiments__State__4CA06362" FromRole="Equiments" ToRole="EquimentsStates" />
+    <NavigationProperty Name="TechnologiesConnections" Relationship="Self.FK__Equiments__Techn__4BAC3F29" FromRole="Equiments" ToRole="TechnologiesConnections" />
+    <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__Equim__6D0D32F4" FromRole="Equiments" ToRole="RentReturns" />
+  </EntityType>
+  <EntityType Name="EquimentsStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Equiments" Relationship="Self.FK__Equiments__State__4CA06362" FromRole="EquimentsStates" ToRole="Equiments" />
+  </EntityType>
+  <EntityType Name="EquimentTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Equiments" Relationship="Self.FK__Equiments__Equim__48CFD27E" FromRole="EquimentTypes" ToRole="Equiments" />
+    <NavigationProperty Name="EquimentTypesStates" Relationship="Self.FK__EquimentT__State__656C112C" FromRole="EquimentTypes" ToRole="EquimentTypesStates" />
+  </EntityType>
+  <EntityType Name="EquimentTypesStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="EquimentTypes" Relationship="Self.FK__EquimentT__State__656C112C" FromRole="EquimentTypesStates" ToRole="EquimentTypes" />
+  </EntityType>
+  <EntityType Name="Models">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BranksId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Brands" Relationship="Self.FK__Models__BranksId__66603565" FromRole="Models" ToRole="Brands" />
+    <NavigationProperty Name="Equiments" Relationship="Self.FK__Equiments__Model__4AB81AF0" FromRole="Models" ToRole="Equiments" />
+    <NavigationProperty Name="ModelsStates" Relationship="Self.FK__Models__StateId__6754599E" FromRole="Models" ToRole="ModelsStates" />
+  </EntityType>
+  <EntityType Name="ModelsStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Models" Relationship="Self.FK__Models__StateId__6754599E" FromRole="ModelsStates" ToRole="Models" />
+  </EntityType>
+  <EntityType Name="PersonalTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__PersonalT__6D0D32F4" FromRole="PersonalTypes" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="RentReturns">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NoPay" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="EquimentId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="LoanDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+    <Property Name="Comentary" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__RentRetur__Emplo__68487DD7" FromRole="RentReturns" ToRole="Employees" />
+    <NavigationProperty Name="Equiments" Relationship="Self.FK__RentRetur__Equim__6D0D32F4" FromRole="RentReturns" ToRole="Equiments" />
+    <NavigationProperty Name="RentReturnStates" Relationship="Self.FK__RentRetur__State__6A30C649" FromRole="RentReturns" ToRole="RentReturnStates" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__RentRetur__UserI__6B24EA82" FromRole="RentReturns" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="RentReturnStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__State__6A30C649" FromRole="RentReturnStates" ToRole="RentReturns" />
+  </EntityType>
+  <EntityType Name="TechnologiesConnections">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Equiments" Relationship="Self.FK__Equiments__Techn__4BAC3F29" FromRole="TechnologiesConnections" ToRole="Equiments" />
+    <NavigationProperty Name="TechnologiesConnectionStates" Relationship="Self.FK__Technolog__State__6C190EBB" FromRole="TechnologiesConnections" ToRole="TechnologiesConnectionStates" />
+  </EntityType>
+  <EntityType Name="TechnologiesConnectionStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TechnologiesConnections" Relationship="Self.FK__Technolog__State__6C190EBB" FromRole="TechnologiesConnectionStates" ToRole="TechnologiesConnections" />
+  </EntityType>
+  <EntityType Name="UserLogins">
+    <Key>
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="role" />
+      <PropertyRef Name="isActive" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdentificationCard" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Carnet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UsersTypesId" Type="Int32" />
+    <Property Name="PersonalTypesID" Type="Int32" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PersonalTypes" Relationship="Self.FK__Users__PersonalT__6D0D32F4" FromRole="Users" ToRole="PersonalTypes" />
+    <NavigationProperty Name="RentReturns" Relationship="Self.FK__RentRetur__UserI__6B24EA82" FromRole="Users" ToRole="RentReturns" />
+    <NavigationProperty Name="UsersStates" Relationship="Self.FK__Users__StateId__6E01572D" FromRole="Users" ToRole="UsersStates" />
+    <NavigationProperty Name="UsersTypes" Relationship="Self.FK__Users__UsersType__6EF57B66" FromRole="Users" ToRole="UsersTypes" />
+  </EntityType>
+  <EntityType Name="UsersStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__StateId__6E01572D" FromRole="UsersStates" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="UsersTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__UsersType__6EF57B66" FromRole="UsersTypes" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK__Brands__StateId__5EBF139D">
+    <End Role="BrandsStates" Type="Self.BrandsStates" Multiplicity="0..1" />
+    <End Role="Brands" Type="Self.Brands" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BrandsStates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Brands">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equiments__Brand__49C3F6B7">
+    <End Role="Brands" Type="Self.Brands" Multiplicity="1" />
+    <End Role="Equiments" Type="Self.Equiments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brands">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equiments">
+        <PropertyRef Name="BrandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Models__BranksId__66603565">
+    <End Role="Brands" Type="Self.Brands" Multiplicity="1" />
+    <End Role="Models" Type="Self.Models" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brands">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Models">
+        <PropertyRef Name="BranksId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employees__State__5FB337D6">
+    <End Role="EmployeesStates" Type="Self.EmployeesStates" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeesStates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RentRetur__Emplo__68487DD7">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="RentReturns" Type="Self.RentReturns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RentReturns">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equiments__Equim__48CFD27E">
+    <End Role="EquimentTypes" Type="Self.EquimentTypes" Multiplicity="1" />
+    <End Role="Equiments" Type="Self.Equiments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquimentTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equiments">
+        <PropertyRef Name="EquimentTypesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equiments__Model__4AB81AF0">
+    <End Role="Models" Type="Self.Models" Multiplicity="1" />
+    <End Role="Equiments" Type="Self.Equiments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Models">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equiments">
+        <PropertyRef Name="ModelsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equiments__State__4CA06362">
+    <End Role="EquimentsStates" Type="Self.EquimentsStates" Multiplicity="0..1" />
+    <End Role="Equiments" Type="Self.Equiments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquimentsStates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equiments">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equiments__Techn__4BAC3F29">
+    <End Role="TechnologiesConnections" Type="Self.TechnologiesConnections" Multiplicity="1" />
+    <End Role="Equiments" Type="Self.Equiments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TechnologiesConnections">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equiments">
+        <PropertyRef Name="TechnologiesConnectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RentRetur__Equim__6D0D32F4">
+    <End Role="Equiments" Type="Self.Equiments" Multiplicity="1" />
+    <End Role="RentReturns" Type="Self.RentReturns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equiments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RentReturns">
+        <PropertyRef Name="EquimentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EquimentT__State__656C112C">
+    <End Role="EquimentTypesStates" Type="Self.EquimentTypesStates" Multiplicity="0..1" />
+    <End Role="EquimentTypes" Type="Self.EquimentTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquimentTypesStates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EquimentTypes">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Models__StateId__6754599E">
+    <End Role="ModelsStates" Type="Self.ModelsStates" Multiplicity="0..1" />
+    <End Role="Models" Type="Self.Models" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModelsStates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Models">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__PersonalT__6D0D32F4">
+    <End Role="PersonalTypes" Type="Self.PersonalTypes" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersonalTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="PersonalTypesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RentRetur__State__6A30C649">
+    <End Role="RentReturnStates" Type="Self.RentReturnStates" Multiplicity="0..1" />
+    <End Role="RentReturns" Type="Self.RentReturns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RentReturnStates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RentReturns">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RentRetur__UserI__6B24EA82">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="RentReturns" Type="Self.RentReturns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RentReturns">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Technolog__State__6C190EBB">
+    <End Role="TechnologiesConnectionStates" Type="Self.TechnologiesConnectionStates" Multiplicity="0..1" />
+    <End Role="TechnologiesConnections" Type="Self.TechnologiesConnections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TechnologiesConnectionStates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TechnologiesConnections">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__StateId__6E01572D">
+    <End Role="UsersStates" Type="Self.UsersStates" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersStates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__UsersType__6EF57B66">
+    <End Role="UsersTypes" Type="Self.UsersTypes" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="UsersTypesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="audiovisualdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="Self.Brands" />
+    <EntitySet Name="BrandsStates" EntityType="Self.BrandsStates" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" />
+    <EntitySet Name="EmployeesStates" EntityType="Self.EmployeesStates" />
+    <EntitySet Name="Equiments" EntityType="Self.Equiments" />
+    <EntitySet Name="EquimentsStates" EntityType="Self.EquimentsStates" />
+    <EntitySet Name="EquimentTypes" EntityType="Self.EquimentTypes" />
+    <EntitySet Name="EquimentTypesStates" EntityType="Self.EquimentTypesStates" />
+    <EntitySet Name="Models" EntityType="Self.Models" />
+    <EntitySet Name="ModelsStates" EntityType="Self.ModelsStates" />
+    <EntitySet Name="PersonalTypes" EntityType="Self.PersonalTypes" />
+    <EntitySet Name="RentReturns" EntityType="Self.RentReturns" />
+    <EntitySet Name="RentReturnStates" EntityType="Self.RentReturnStates" />
+    <EntitySet Name="TechnologiesConnections" EntityType="Self.TechnologiesConnections" />
+    <EntitySet Name="TechnologiesConnectionStates" EntityType="Self.TechnologiesConnectionStates" />
+    <EntitySet Name="UserLogins" EntityType="Self.UserLogins" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="UsersStates" EntityType="Self.UsersStates" />
+    <EntitySet Name="UsersTypes" EntityType="Self.UsersTypes" />
+    <AssociationSet Name="FK__Brands__StateId__5EBF139D" Association="Self.FK__Brands__StateId__5EBF139D">
+      <End Role="BrandsStates" EntitySet="BrandsStates" />
+      <End Role="Brands" EntitySet="Brands" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equiments__Brand__49C3F6B7" Association="Self.FK__Equiments__Brand__49C3F6B7">
+      <End Role="Brands" EntitySet="Brands" />
+      <End Role="Equiments" EntitySet="Equiments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Models__BranksId__66603565" Association="Self.FK__Models__BranksId__66603565">
+      <End Role="Brands" EntitySet="Brands" />
+      <End Role="Models" EntitySet="Models" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employees__State__5FB337D6" Association="Self.FK__Employees__State__5FB337D6">
+      <End Role="EmployeesStates" EntitySet="EmployeesStates" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RentRetur__Emplo__68487DD7" Association="Self.FK__RentRetur__Emplo__68487DD7">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="RentReturns" EntitySet="RentReturns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equiments__Equim__48CFD27E" Association="Self.FK__Equiments__Equim__48CFD27E">
+      <End Role="EquimentTypes" EntitySet="EquimentTypes" />
+      <End Role="Equiments" EntitySet="Equiments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equiments__Model__4AB81AF0" Association="Self.FK__Equiments__Model__4AB81AF0">
+      <End Role="Models" EntitySet="Models" />
+      <End Role="Equiments" EntitySet="Equiments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equiments__State__4CA06362" Association="Self.FK__Equiments__State__4CA06362">
+      <End Role="EquimentsStates" EntitySet="EquimentsStates" />
+      <End Role="Equiments" EntitySet="Equiments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equiments__Techn__4BAC3F29" Association="Self.FK__Equiments__Techn__4BAC3F29">
+      <End Role="TechnologiesConnections" EntitySet="TechnologiesConnections" />
+      <End Role="Equiments" EntitySet="Equiments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RentRetur__Equim__6D0D32F4" Association="Self.FK__RentRetur__Equim__6D0D32F4">
+      <End Role="Equiments" EntitySet="Equiments" />
+      <End Role="RentReturns" EntitySet="RentReturns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EquimentT__State__656C112C" Association="Self.FK__EquimentT__State__656C112C">
+      <End Role="EquimentTypesStates" EntitySet="EquimentTypesStates" />
+      <End Role="EquimentTypes" EntitySet="EquimentTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Models__StateId__6754599E" Association="Self.FK__Models__StateId__6754599E">
+      <End Role="ModelsStates" EntitySet="ModelsStates" />
+      <End Role="Models" EntitySet="Models" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__PersonalT__6D0D32F4" Association="Self.FK__Users__PersonalT__6D0D32F4">
+      <End Role="PersonalTypes" EntitySet="PersonalTypes" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RentRetur__State__6A30C649" Association="Self.FK__RentRetur__State__6A30C649">
+      <End Role="RentReturnStates" EntitySet="RentReturnStates" />
+      <End Role="RentReturns" EntitySet="RentReturns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RentRetur__UserI__6B24EA82" Association="Self.FK__RentRetur__UserI__6B24EA82">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="RentReturns" EntitySet="RentReturns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Technolog__State__6C190EBB" Association="Self.FK__Technolog__State__6C190EBB">
+      <End Role="TechnologiesConnectionStates" EntitySet="TechnologiesConnectionStates" />
+      <End Role="TechnologiesConnections" EntitySet="TechnologiesConnections" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__StateId__6E01572D" Association="Self.FK__Users__StateId__6E01572D">
+      <End Role="UsersStates" EntitySet="UsersStates" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__UsersType__6EF57B66" Association="Self.FK__Users__UsersType__6EF57B66">
+      <End Role="UsersTypes" EntitySet="UsersTypes" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

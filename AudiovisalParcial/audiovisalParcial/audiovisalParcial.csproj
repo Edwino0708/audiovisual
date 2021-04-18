@@ -227,31 +227,28 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Brand.cs">
+    <Compile Include="Model\Brands.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\BrandsState.cs">
+    <Compile Include="Model\BrandsStates.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Employee.cs">
+    <Compile Include="Model\Employees.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\EmployeesState.cs">
+    <Compile Include="Model\EmployeesStates.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Equiment.cs">
+    <Compile Include="Model\Equiments.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\EquimentsState.cs">
+    <Compile Include="Model\EquimentsStates.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\EquimentType.cs">
+    <Compile Include="Model\EquimentTypes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\EquimentTypesState.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model.cs">
+    <Compile Include="Model\EquimentTypesStates.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Model1.Context.cs">
@@ -269,34 +266,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\ModelsState.cs">
+    <Compile Include="Model\Models.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\PersonalType.cs">
+    <Compile Include="Model\ModelsStates.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\RentReturn.cs">
+    <Compile Include="Model\PersonalTypes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\RentReturnState.cs">
+    <Compile Include="Model\RentReturns.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\TechnologiesConnection.cs">
+    <Compile Include="Model\RentReturnStates.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\TechnologiesConnectionState.cs">
+    <Compile Include="Model\TechnologiesConnections.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\User.cs">
+    <Compile Include="Model\TechnologiesConnectionStates.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\UserLogin.cs">
+    <Compile Include="Model\UserLogins.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\UsersState.cs">
+    <Compile Include="Model\Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\UsersType.cs">
+    <Compile Include="Model\UsersStates.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UsersTypes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -352,6 +352,9 @@
     <EmbeddedResource Include="Design\Panel\Maintenances\RentReturns\RentReturnsControl.resx">
       <DependentUpon>RentReturnsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\Panel\Maintenances\RentReturns\RentReturnsForm.resx">
+      <DependentUpon>RentReturnsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\Panel\Maintenances\TechnologiesConnections\TechnologiesConnectionControl.resx">
       <DependentUpon>TechnologiesConnectionControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,9 +372,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\Panel\Reports\ReportControl.resx">
       <DependentUpon>ReportControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Design\Panel\Reports\ReportEquiment.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -435,6 +435,16 @@
     <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -453,16 +463,6 @@
     <None Include="Design\Icon\student.png" />
     <None Include="Design\Icon\admin.png" />
     <None Include="Design\Icon\csv.jpg" />
-    <Content Include="Model\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

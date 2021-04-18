@@ -18,7 +18,7 @@ namespace audiovisalParcial.Design.Panel.Reports
 
         private void EquimentReport_Load(object sender, EventArgs e)
         {
-            this.reportViewer1.LocalReport.ReportPath = "ReportEquiment.rdlc";
+            /*this.reportViewer1.LocalReport.ReportPath = "ReportEquiment.rdlc";
             var equimentList = audiovisualEntities.Equiments.ToList();
 
             List<EquimentReportModel> dataSource = new List<EquimentReportModel>();
@@ -37,7 +37,7 @@ namespace audiovisalParcial.Design.Panel.Reports
             }
             ReportDataSource rds = new ReportDataSource("ReportEquiment", dataSource);
             this.reportViewer1.LocalReport.DataSources.Add(rds);
-            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();*/
 
         }
     }

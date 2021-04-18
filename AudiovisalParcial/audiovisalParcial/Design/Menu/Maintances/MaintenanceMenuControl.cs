@@ -2,6 +2,7 @@
 using audiovisalParcial.Design.Panel.EquipmentType;
 using audiovisalParcial.Design.Panel.Maintenances.Brands;
 using audiovisalParcial.Design.Panel.Maintenances.Employees;
+using audiovisalParcial.Design.Panel.Maintenances.RentReturns;
 using audiovisalParcial.Design.Panel.Models;
 using audiovisalParcial.Design.Panel.TechnologiesConnection;
 using audiovisalParcial.Design.Panel.Users;
@@ -20,6 +21,7 @@ namespace audiovisalParcial.Design.Menu.Maintances
         private TechnologiesConnectionControl technologies;
         private EquimentControl equipo;
         private EmployeesControl employeesControl;
+        private RentReturnsControl rentReturnsControl;
         public MaintenanceMenuControl(HomeControl form)
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace audiovisalParcial.Design.Menu.Maintances
             technologies = new TechnologiesConnectionControl();
             equipo = new EquimentControl();
             employeesControl = new EmployeesControl();
+            rentReturnsControl = new RentReturnsControl();
         }
 
 
@@ -78,7 +81,9 @@ namespace audiovisalParcial.Design.Menu.Maintances
         }
         private void btnMaintenanceOption8_Click(object sender, EventArgs e)
         {
-
+            var body = this.form.getPanelBody();
+            body.Controls.Clear();
+            body.Controls.Add(rentReturnsControl);
         }
     }
 }
