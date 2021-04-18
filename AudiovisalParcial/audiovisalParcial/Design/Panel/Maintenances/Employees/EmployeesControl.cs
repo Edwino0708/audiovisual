@@ -1,4 +1,5 @@
-﻿using audiovisalParcial.Model;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Data;
 using System.Linq;
@@ -115,8 +116,37 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Employees
             Filter();
         }
 
-        private void dgvListEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnExport_Click(object sender, EventArgs e)
         {
+            //Configuration file header y declare variable;
+            string headerCsv, path = string.Empty;
+            headerCsv = "Nombre,Apellido,Cedula,Turno de trabajo,Fecha de contratación,Estado,Activo";
+
+            //open dialog and get pathDirectory
+            path = Util.OpenSaveFileDialog();
+
+            if (path != null && !string.IsNullOrWhiteSpace(path))
+            {
+                ExportCsv exportCsv = new ExportCsv(path);
+                exportCsv.WriteFileHeader(headerCsv);
+                var dataToExport = audiovisualEntities.Employees.ToList();
+                foreach (Employee data in dataToExport)
+                {
+                    //Data to insert into body
+                    string linea = string.Format("{0},{1},{2},{4},{5},{6}",
+                        data.FirstName,
+                        data.LastName,
+                        data.IdentificationCard,
+                        data.Workshift,
+                        data.HiredDate,
+                        data.EmployeesState.Description,
+                        data.Enabled
+                        );
+
+                    exportCsv.WriteFileLine(linea);
+                }
+            };
+
 
         }
     }

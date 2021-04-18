@@ -1,4 +1,5 @@
-﻿using audiovisalParcial.Model;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,19 +88,19 @@ namespace audiovisalParcial.Design.Panel.Equiment
         }
 
 
-        private void btnRefresh_Click_1(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             GetList();
         }
 
-        private void btnUpdate_Click_1(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
             createForm = new EquimentForm(id);
             createForm.ShowDialog();
         }
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -120,6 +121,39 @@ namespace audiovisalParcial.Design.Panel.Equiment
 
                 MessageBox.Show("No se pudo eliminar el Equipo");
             }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            //Configuration file header y declare variable;
+            string headerCsv, path = string.Empty;
+            headerCsv = "Descripcion,Serial,Tag Servicio,Modelo,Marca,Tecnologia Conexion,Estado,Activo";
+
+            //open dialog and get pathDirectory
+            path = Util.OpenSaveFileDialog();
+
+            if (path != null && !string.IsNullOrWhiteSpace(path))
+            {
+                ExportCsv exportCsv = new ExportCsv(path);
+                exportCsv.WriteFileHeader(headerCsv);
+                var dataToExport = audiovisualEntities.Equiments.ToList();
+                foreach (Model.Equiment data in dataToExport)
+                {
+                    //Data to insert into body
+                    string linea = string.Format("{0},{1},{2},{3},{4},{5},{6}",
+                        data.Description,
+                        data.Serial,
+                        data.ServiceTag,
+                        data.Model.Description,
+                        data.Brand.Description,
+                        data.TechnologiesConnection.Description,
+                        data.EquimentsState.Description
+                        );
+
+                    exportCsv.WriteFileLine(linea);
+                }
+            };
+
         }
     }
 }

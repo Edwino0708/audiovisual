@@ -1,4 +1,5 @@
-﻿using audiovisalParcial.Model;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -114,5 +115,36 @@ namespace audiovisalParcial.Design.Panel.TechnologiesConnection
                 MessageBox.Show("No se pudo eliminar el Equipo de tipo");
             }
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            //Configuration file header y declare variable;
+            string headerCsv, path = string.Empty;
+            headerCsv = "Descripcion,Estado,Activo";
+
+            //open dialog and get pathDirectory
+            path = Util.OpenSaveFileDialog();
+
+            if (path != null && !string.IsNullOrWhiteSpace(path))
+            {
+                ExportCsv exportCsv = new ExportCsv(path);
+                exportCsv.WriteFileHeader(headerCsv);
+                var dataToExport = audiovisualEntities.TechnologiesConnections.ToList();
+                foreach (Model.TechnologiesConnection data in dataToExport)
+                {
+                    //Data to insert into body
+                    string linea = string.Format("{0},{1},{2}",
+                        data.Description,
+                        data.TechnologiesConnectionState.Description,
+                        data.Enabled);
+
+                    exportCsv.WriteFileLine(linea);
+                }
+            };
+
+
+        }
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using audiovisalParcial.Model;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -118,6 +119,39 @@ namespace audiovisalParcial.Design.Panel.Users
 
                 MessageBox.Show("No se pudo eliminar el Usuario");
             }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            //Configuration file header y declare variable;
+            string headerCsv, path = string.Empty;
+            headerCsv = "Nombre,Apellido,Cedula,Carnet,Tipo de personal,Tipo usuario,Estado,Activo";
+
+            //open dialog and get pathDirectory
+            path = Util.OpenSaveFileDialog();
+
+            if (path != null && !string.IsNullOrWhiteSpace(path))
+            {
+                ExportCsv exportCsv = new ExportCsv(path);
+                exportCsv.WriteFileHeader(headerCsv);
+                var dataToExport = audiovisualEntities.Users.ToList();
+                foreach (User data in dataToExport)
+                {
+                    //Data to insert into body
+                    string linea = string.Format("{0},{1},{2},{3},{4},{5},{6},{7}",
+                        data.FirstName,
+                        data.LastName,
+                        data.IdentificationCard,
+                        data.Carnet,
+                        data.PersonalType.Description,
+                        data.UsersType.Description,
+                        data.UsersState.Description,
+                        data.Enabled);
+
+                    exportCsv.WriteFileLine(linea);
+                }
+            };
+
         }
     }
 }

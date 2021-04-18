@@ -1,4 +1,5 @@
-﻿using audiovisalParcial.Model;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,6 +110,35 @@ namespace audiovisalParcial.Design.Panel.Models
         private void btnSearch_Click(object sender, EventArgs e)
         {
             filter();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            //Configuration file header y declare variable;
+            string headerCsv, path = string.Empty;
+            headerCsv = "Descripcion,Marca,Estado,Activo";
+
+            //open dialog and get pathDirectory
+            path = Util.OpenSaveFileDialog();
+
+            if (path != null && !string.IsNullOrWhiteSpace(path))
+            {
+                ExportCsv exportCsv = new ExportCsv(path);
+                exportCsv.WriteFileHeader(headerCsv);
+                var dataToExport = audiovisualEntities.Models.ToList();
+                foreach (Model.Model data in dataToExport)
+                {
+                    //Data to insert into body
+                    string linea = string.Format("{0},{1},{2},{3}",
+                        data.Description,
+                        data.Brand.Description,
+                        data.ModelsState.Description,
+                        data.Enabled);
+
+                    exportCsv.WriteFileLine(linea);
+                }
+            };
+
         }
     }
 }

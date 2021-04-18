@@ -42,10 +42,11 @@ namespace audiovisalParcial.Design.Panel.Models
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnExport = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModelo)).BeginInit();
@@ -85,7 +86,7 @@ namespace audiovisalParcial.Design.Panel.Models
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(1506, 131);
+            this.groupBox1.Size = new System.Drawing.Size(1516, 131);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscador";
@@ -159,13 +160,13 @@ namespace audiovisalParcial.Design.Panel.Models
             this.Id,
             this.Descripcion,
             this.Estado});
-            this.dgvModelo.Location = new System.Drawing.Point(77, 157);
+            this.dgvModelo.Location = new System.Drawing.Point(43, 157);
             this.dgvModelo.Margin = new System.Windows.Forms.Padding(6);
             this.dgvModelo.Name = "dgvModelo";
             this.dgvModelo.ReadOnly = true;
             this.dgvModelo.RowHeadersWidth = 82;
             this.dgvModelo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvModelo.Size = new System.Drawing.Size(1371, 849);
+            this.dgvModelo.Size = new System.Drawing.Size(1438, 722);
             this.dgvModelo.TabIndex = 8;
             // 
             // Id
@@ -194,79 +195,102 @@ namespace audiovisalParcial.Design.Panel.Models
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnExport);
+            this.panel2.Controls.Add(this.dgvModelo);
             this.panel2.Controls.Add(this.btnRefresh);
             this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.dgvModelo);
+            this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Location = new System.Drawing.Point(4, 281);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1532, 1012);
+            this.panel2.Size = new System.Drawing.Size(1532, 928);
             this.panel2.TabIndex = 14;
+            // 
+            // btnExport
+            // 
+            this.btnExport.AutoSize = true;
+            this.btnExport.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnExport.Image = global::audiovisalParcial.Properties.Resources.csv1;
+            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExport.Location = new System.Drawing.Point(1175, 52);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(6);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(167, 59);
+            this.btnExport.TabIndex = 19;
+            this.btnExport.Text = "Exporta";
+            this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnRefresh
             // 
+            this.btnRefresh.AutoSize = true;
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRefresh.Image = global::audiovisalParcial.Properties.Resources.refresh;
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(6, 38);
+            this.btnRefresh.Location = new System.Drawing.Point(11, 52);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(6);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(244, 69);
-            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Size = new System.Drawing.Size(186, 58);
+            this.btnRefresh.TabIndex = 15;
             this.btnRefresh.Text = "Refrescar";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Teal;
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAdd.Image = global::audiovisalParcial.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(692, 38);
+            this.btnAdd.Location = new System.Drawing.Point(793, 53);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(242, 69);
-            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Size = new System.Drawing.Size(169, 58);
+            this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "Agregar";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Blue;
-            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Image = global::audiovisalParcial.Properties.Resources.update;
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(970, 38);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(240, 69);
-            this.btnUpdate.TabIndex = 9;
-            this.btnUpdate.Text = "Actualizar";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.AutoSize = true;
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDelete.Image = global::audiovisalParcial.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(1204, 38);
+            this.btnDelete.Location = new System.Drawing.Point(1355, 52);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(244, 69);
-            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Size = new System.Drawing.Size(170, 58);
+            this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Eliminar";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AutoSize = true;
+            this.btnUpdate.BackColor = System.Drawing.Color.Blue;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdate.Image = global::audiovisalParcial.Properties.Resources.update;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(974, 52);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(188, 58);
+            this.btnUpdate.TabIndex = 17;
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // ModelsControl
             // 
@@ -277,13 +301,14 @@ namespace audiovisalParcial.Design.Panel.Models
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ModelsControl";
-            this.Size = new System.Drawing.Size(1562, 1329);
+            this.Size = new System.Drawing.Size(1542, 1205);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModelo)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -303,9 +328,10 @@ namespace audiovisalParcial.Design.Panel.Models
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

@@ -30,7 +30,7 @@ namespace audiovisalParcial
             try
             {
                 username = $@"" + txbUsername.Text.ToString();
-                password = $@""+txbPassword.Text.ToString();
+                password = Util.EncryptionPassowrd($@""+txbPassword.Text.ToString());
 
                 UserLogin userLogin = audiovisualEntities.UserLogins.Where(w =>
                 w.username.Equals(this.username) &&
@@ -54,7 +54,9 @@ namespace audiovisalParcial
 
             } 
             catch(Exception ex) 
-            { }
+            {
+                MessageBox.Show("Error interno, por favor comunicase con los administrados");
+            }
         }
 
         private void txbPassword_TextChanged(object sender, EventArgs e)
@@ -81,5 +83,7 @@ namespace audiovisalParcial
             }
 
         }
+
+      
     }
 }

@@ -30,10 +30,11 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnRefreshMarca = new System.Windows.Forms.Button();
-            this.btnAddMarca = new System.Windows.Forms.Button();
-            this.btnUpdateMarca = new System.Windows.Forms.Button();
-            this.btnDeleteMarca = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.dgvMarca = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearchMarca = new System.Windows.Forms.Button();
@@ -51,79 +52,106 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnRefreshMarca);
-            this.panel2.Controls.Add(this.btnAddMarca);
-            this.panel2.Controls.Add(this.btnUpdateMarca);
-            this.panel2.Controls.Add(this.btnDeleteMarca);
+            this.panel2.Controls.Add(this.btnExport);
+            this.panel2.Controls.Add(this.btnRefresh);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.dgvMarca);
-            this.panel2.Location = new System.Drawing.Point(2, 146);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(4, 281);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(720, 526);
+            this.panel2.Size = new System.Drawing.Size(1546, 1012);
             this.panel2.TabIndex = 11;
             // 
-            // btnRefreshMarca
+            // btnExport
             // 
-            this.btnRefreshMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnRefreshMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefreshMarca.Image = global::audiovisalParcial.Properties.Resources.refresh;
-            this.btnRefreshMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefreshMarca.Location = new System.Drawing.Point(-1, 26);
-            this.btnRefreshMarca.Name = "btnRefreshMarca";
-            this.btnRefreshMarca.Size = new System.Drawing.Size(91, 36);
-            this.btnRefreshMarca.TabIndex = 5;
-            this.btnRefreshMarca.Text = "Refrescar";
-            this.btnRefreshMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefreshMarca.UseVisualStyleBackColor = false;
-            this.btnRefreshMarca.Click += new System.EventHandler(this.btnRefreshMarca_Click);
+            this.btnExport.AutoSize = true;
+            this.btnExport.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnExport.Image = global::audiovisalParcial.Properties.Resources.csv1;
+            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExport.Location = new System.Drawing.Point(1190, 42);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(6);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(167, 59);
+            this.btnExport.TabIndex = 11;
+            this.btnExport.Text = "Exporta";
+            this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.bntExport_Click);
             // 
-            // btnAddMarca
+            // btnRefresh
             // 
-            this.btnAddMarca.BackColor = System.Drawing.Color.Teal;
-            this.btnAddMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddMarca.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddMarca.Image = global::audiovisalParcial.Properties.Resources.add;
-            this.btnAddMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddMarca.Location = new System.Drawing.Point(419, 26);
-            this.btnAddMarca.Name = "btnAddMarca";
-            this.btnAddMarca.Size = new System.Drawing.Size(93, 36);
-            this.btnAddMarca.TabIndex = 10;
-            this.btnAddMarca.Text = "Agregar";
-            this.btnAddMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddMarca.UseVisualStyleBackColor = false;
-            this.btnAddMarca.Click += new System.EventHandler(this.btnAddMarca_Click);
+            this.btnRefresh.AutoSize = true;
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.Image = global::audiovisalParcial.Properties.Resources.refresh;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(26, 42);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(6);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(186, 58);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Refrescar";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefreshMarca_Click);
             // 
-            // btnUpdateMarca
+            // btnAdd
             // 
-            this.btnUpdateMarca.BackColor = System.Drawing.Color.Blue;
-            this.btnUpdateMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdateMarca.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdateMarca.Image = global::audiovisalParcial.Properties.Resources.update;
-            this.btnUpdateMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateMarca.Location = new System.Drawing.Point(517, 26);
-            this.btnUpdateMarca.Name = "btnUpdateMarca";
-            this.btnUpdateMarca.Size = new System.Drawing.Size(102, 36);
-            this.btnUpdateMarca.TabIndex = 9;
-            this.btnUpdateMarca.Text = "Actualizar";
-            this.btnUpdateMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateMarca.UseVisualStyleBackColor = false;
-            this.btnUpdateMarca.Click += new System.EventHandler(this.btnUpdateMarca_Click);
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAdd.Image = global::audiovisalParcial.Properties.Resources.add;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(808, 43);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(169, 58);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAddMarca_Click);
             // 
-            // btnDeleteMarca
+            // btnUpdate
             // 
-            this.btnDeleteMarca.BackColor = System.Drawing.Color.Red;
-            this.btnDeleteMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDeleteMarca.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeleteMarca.Image = global::audiovisalParcial.Properties.Resources.delete;
-            this.btnDeleteMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteMarca.Location = new System.Drawing.Point(626, 26);
-            this.btnDeleteMarca.Name = "btnDeleteMarca";
-            this.btnDeleteMarca.Size = new System.Drawing.Size(94, 36);
-            this.btnDeleteMarca.TabIndex = 5;
-            this.btnDeleteMarca.Text = "Eliminar";
-            this.btnDeleteMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteMarca.UseVisualStyleBackColor = false;
-            this.btnDeleteMarca.Click += new System.EventHandler(this.btnDeleteMarca_Click);
+            this.btnUpdate.AutoSize = true;
+            this.btnUpdate.BackColor = System.Drawing.Color.Blue;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdate.Image = global::audiovisalParcial.Properties.Resources.update;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(989, 42);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(188, 58);
+            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdateMarca_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDelete.Image = global::audiovisalParcial.Properties.Resources.delete;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(1370, 42);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(170, 58);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDeleteMarca_Click);
             // 
             // dgvMarca
             // 
@@ -136,12 +164,13 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMarca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarca.Location = new System.Drawing.Point(3, 68);
+            this.dgvMarca.Location = new System.Drawing.Point(26, 133);
+            this.dgvMarca.Margin = new System.Windows.Forms.Padding(6);
             this.dgvMarca.Name = "dgvMarca";
             this.dgvMarca.ReadOnly = true;
             this.dgvMarca.RowHeadersWidth = 82;
             this.dgvMarca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMarca.Size = new System.Drawing.Size(714, 465);
+            this.dgvMarca.Size = new System.Drawing.Size(1490, 858);
             this.dgvMarca.TabIndex = 8;
             // 
             // groupBox1
@@ -153,9 +182,11 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cbxCriterioMarca);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 73);
+            this.groupBox1.Location = new System.Drawing.Point(0, 140);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(724, 68);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox1.Size = new System.Drawing.Size(1554, 131);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscador";
@@ -166,9 +197,10 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             this.btnSearchMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearchMarca.Image = global::audiovisalParcial.Properties.Resources.search;
             this.btnSearchMarca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchMarca.Location = new System.Drawing.Point(655, 26);
+            this.btnSearchMarca.Location = new System.Drawing.Point(1345, 39);
+            this.btnSearchMarca.Margin = new System.Windows.Forms.Padding(6);
             this.btnSearchMarca.Name = "btnSearchMarca";
-            this.btnSearchMarca.Size = new System.Drawing.Size(67, 36);
+            this.btnSearchMarca.Size = new System.Drawing.Size(175, 69);
             this.btnSearchMarca.TabIndex = 4;
             this.btnSearchMarca.Text = "Buscar";
             this.btnSearchMarca.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -177,17 +209,19 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             // 
             // txtBuscarMarca
             // 
-            this.txtBuscarMarca.Location = new System.Drawing.Point(412, 28);
+            this.txtBuscarMarca.Location = new System.Drawing.Point(824, 54);
+            this.txtBuscarMarca.Margin = new System.Windows.Forms.Padding(6);
             this.txtBuscarMarca.Name = "txtBuscarMarca";
-            this.txtBuscarMarca.Size = new System.Drawing.Size(186, 20);
+            this.txtBuscarMarca.Size = new System.Drawing.Size(368, 31);
             this.txtBuscarMarca.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(326, 30);
+            this.label2.Location = new System.Drawing.Point(652, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(151, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Valor a buscar";
             // 
@@ -196,50 +230,54 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
             this.cbxCriterioMarca.FormattingEnabled = true;
             this.cbxCriterioMarca.Items.AddRange(new object[] {
             "Descripcion"});
-            this.cbxCriterioMarca.Location = new System.Drawing.Point(150, 30);
+            this.cbxCriterioMarca.Location = new System.Drawing.Point(300, 58);
+            this.cbxCriterioMarca.Margin = new System.Windows.Forms.Padding(6);
             this.cbxCriterioMarca.Name = "cbxCriterioMarca";
-            this.cbxCriterioMarca.Size = new System.Drawing.Size(121, 21);
+            this.cbxCriterioMarca.Size = new System.Drawing.Size(238, 33);
             this.cbxCriterioMarca.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 30);
+            this.label1.Location = new System.Drawing.Point(180, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(81, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Criterio";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lTitle);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 67);
+            this.panel1.Size = new System.Drawing.Size(1550, 129);
             this.panel1.TabIndex = 10;
             // 
             // lTitle
             // 
             this.lTitle.AutoSize = true;
-            this.lTitle.Font = new System.Drawing.Font("Constantia", 14F, System.Drawing.FontStyle.Bold);
-            this.lTitle.Location = new System.Drawing.Point(207, 20);
-            this.lTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lTitle.Font = new System.Drawing.Font("Constantia", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTitle.Location = new System.Drawing.Point(455, 24);
+            this.lTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lTitle.Name = "lTitle";
-            this.lTitle.Size = new System.Drawing.Size(327, 23);
+            this.lTitle.Size = new System.Drawing.Size(733, 53);
             this.lTitle.TabIndex = 0;
             this.lTitle.Text = "Mantenimiento de Tipos de Marcas";
             // 
             // BrandControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "BrandControl";
-            this.Size = new System.Drawing.Size(724, 674);
+            this.Size = new System.Drawing.Size(1554, 1296);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -252,10 +290,10 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnRefreshMarca;
-        private System.Windows.Forms.Button btnAddMarca;
-        private System.Windows.Forms.Button btnUpdateMarca;
-        private System.Windows.Forms.Button btnDeleteMarca;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dgvMarca;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSearchMarca;
@@ -265,5 +303,6 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lTitle;
+        private System.Windows.Forms.Button btnExport;
     }
 }

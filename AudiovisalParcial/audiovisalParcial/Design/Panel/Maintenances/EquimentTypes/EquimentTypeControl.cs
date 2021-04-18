@@ -1,4 +1,5 @@
-﻿using audiovisalParcial.Model;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -66,19 +67,19 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
 
         #endregion
 
-        private void btnUpdateEquipmentType_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dgvListEquipmentType.Rows[dgvListEquipmentType.CurrentRow.Index].Cells[0].Value.ToString());
             createForm = new EquipmentTypeControlForm(id);
             createForm.ShowDialog();
         }
 
-        private void btnSearchEquipmentType_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             Filter();
         }
 
-        private void btnAddEquipmentType_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             createForm = new EquipmentTypeControlForm();
             createForm.ShowDialog();
@@ -89,7 +90,7 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
             GetList();
         }
 
-        private void btnDeleteEquipmentType_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -111,5 +112,36 @@ namespace audiovisalParcial.Design.Panel.EquipmentType
                 MessageBox.Show("No se pudo eliminar el Equipo de tipo");
             }
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            //Configuration file header y declare variable;
+            string headerCsv, path = string.Empty;
+            headerCsv = "Descripcion,Estado,Activo";
+
+            //open dialog and get pathDirectory
+            path = Util.OpenSaveFileDialog();
+
+            if (path != null && !string.IsNullOrWhiteSpace(path))
+            {
+                ExportCsv exportCsv = new ExportCsv(path);
+                exportCsv.WriteFileHeader(headerCsv);
+                var dataToExport = audiovisualEntities.EquimentTypes.ToList();
+                foreach (EquimentType data in dataToExport)
+                {
+                    //Data to insert into body
+                    string linea = string.Format("{0},{1},{2}",
+                        data.Description,
+                        data.EquimentTypesState.Description,
+                        data.Enabled);
+
+                    exportCsv.WriteFileLine(linea);
+                }
+            };
+
+
+        }
+
+
     }
 }

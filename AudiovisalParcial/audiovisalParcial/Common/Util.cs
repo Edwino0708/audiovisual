@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,5 +63,32 @@ namespace audiovisalParcial.Common
             return encryptdata.ToString();
             
         }
+
+        public static string OpenSaveFileDialog() 
+        {
+            string path = string.Empty;
+            try 
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.InitialDirectory = @"C:\";      
+                saveFileDialog1.Title = "Save text Files";
+                saveFileDialog1.DefaultExt = "csv";
+                saveFileDialog1.Filter = "Csv file (*.csv)|*.csv|Text file (*.txt)|*.txt|All files (*.*)|*.*";
+                saveFileDialog1.FilterIndex = 2;
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    path = saveFileDialog1.FileName;
+                }
+
+            }
+            catch (Exception ex) 
+            {
+                Message("Hubo un incoveniente al selecional la ubicacion para el guardado del archivo");
+            }
+            return path;
+        }
+
+
     }
 }

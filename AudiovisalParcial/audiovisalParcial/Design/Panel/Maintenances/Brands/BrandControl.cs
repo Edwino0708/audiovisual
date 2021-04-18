@@ -1,4 +1,5 @@
-﻿using audiovisalParcial.Model;
+﻿using audiovisalParcial.Common;
+using audiovisalParcial.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -107,5 +108,34 @@ namespace audiovisalParcial.Design.Panel.Maintenances.Brands
         {
             Filter();
         }
+
+        private void bntExport_Click(object sender, EventArgs e)
+        {
+            //Configuration file header y declare variable;
+            string headerCsv, path = string.Empty;
+            headerCsv = "Descripcion,Estado,Activo";
+
+            //open dialog and get pathDirectory
+            path = Util.OpenSaveFileDialog();
+
+            if (path != null && !string.IsNullOrWhiteSpace(path)) 
+            {
+                ExportCsv exportCsv = new ExportCsv(path);
+                exportCsv.WriteFileHeader(headerCsv);
+                var brands = audiovisualEntities.Brands.ToList();
+                foreach (Brand data in brands)
+                {
+                    //Data to insert into body
+                    string linea = string.Format("{0},{1},{2}",
+                        data.Description,
+                        data.BrandsState.Description,
+                        data.Enabled);
+
+                    exportCsv.WriteFileLine(linea);
+                }
+            };
+
+        }
+
     }
 }
